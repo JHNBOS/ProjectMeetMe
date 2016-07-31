@@ -14,13 +14,11 @@ namespace Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Database context
+            //1. Database context
+            //2. Current user
+            //3. AspNetUser
             var data = new SchedulerContextDataContext();
-
-            //Current user
             string user = User.Identity.Name;
-
-            //AspNetUser
             AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
 
             //Scheduler
@@ -38,10 +36,10 @@ namespace Project
             Scheduler.DataAction = this.ResolveUrl("~/Data.ashx");// the handler which defines loading data to Scheduler
             Scheduler.SaveAction = this.ResolveUrl("~/Save.ashx");// the handler which defines create/update/delete logic
             Scheduler.EnableDataprocessor = true;
+            Scheduler.Data.DataProcessor.UpdateFieldsAfterSave = true;
 
-            Scheduler.Config.displayed_event_color = CurrentUser.Colour;
             Scheduler.Templates.event_header = "{start_date:date(%H:%i)} - {end_date:date(%H:%i)} \n by {creator}";
-   
+
         }
     }
 

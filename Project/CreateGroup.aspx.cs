@@ -30,8 +30,15 @@ namespace Project
             g.Name = GroupNameBox.Text;
             g.Creator = user;
 
+            Member m = new Member();
+            m.Group = g.Name;
+            m.User = user;
+
             data.Groups.InsertOnSubmit(g);
+            data.Members.InsertOnSubmit(m);
             data.SubmitChanges();
+
+            Response.Redirect("~/Groups.aspx");
         }
     }
 }

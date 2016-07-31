@@ -21,27 +21,32 @@ namespace Project
             //3. Name of current user
             //4. User logged in?
             //5. Name of selected group
+            //6. Curren ASPNetUser
+            //7. Color of eventbox based on colour user has chosen.
             var action = new DataAction(context.Request.Form);
             var data = new SchedulerContextDataContext();
             var user = context.User.Identity.Name;
             Boolean allowed = context.User.Identity.IsAuthenticated;
             string group = context.Session["Group"].ToString();
+            AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
+            string colour = CurrentUser.Colour;
 
             try
             {
                 //1. New Event
                 //2. Assign name of current user to this event
                 //3. Assign name of selected group to this event
+                //4. Assign color to this event
                 var changedEvent = (Event)DHXEventsHelper.Bind(typeof(Event), context.Request.Form);//see details below
                 changedEvent.creator = user;
                 changedEvent.group = group;
+                changedEvent.color = colour;
 
                 switch (action.Type)
                 {
                     case DataActionTypes.Insert: // your Insert logic
                         if (allowed && changedEvent.creator == user)
                         {
-                            System.Diagnostics.Debug.WriteLine(changedEvent.group);
                             data.Events.InsertOnSubmit(changedEvent);
                         }
                         else
@@ -66,7 +71,9 @@ namespace Project
                 action.Type = DataActionTypes.Error;
             }
 
-            context.Response.Write(new AjaxSaveResponse(action));
+            var result = new AjaxSaveResponse(action);
+            result.UpdateField("color", colour);
+            context.Response.Write(result);
         }
 
         public bool IsReusable
