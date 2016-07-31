@@ -88,9 +88,10 @@ input[type="select"] {
 }
 
 input#MainContent_colorPicker {
-    margin-left: 15px;
     background: white;
     border-radius: 4px;
+    height: 45px;
+    width: 80px;
 }
 
 #collapsebutton {
@@ -124,4 +125,9 @@ input#MainContent_colorPicker {
 
 #MainContent_GroupTitle {
     text-align: center;
+}
+
+#MainContent_RegisterHyperLink {
+    font-weight: bold;
+    margin-left: -10px;
 }

@@ -43,12 +43,16 @@
         <br />
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Choose Color</asp:Label>
+            <div class="col-md-10">    
                 <input type="color" id="colorPicker" runat="server" CssClass="colorpicker" />
+            </div>
         </div>
+
+        <br />
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-default" />
+                <asp:Button runat="server" OnClick="CreateUser_Click" Text="Register" CssClass="btn btn-info" Width="120" />
             </div>
         </div>
     </div>

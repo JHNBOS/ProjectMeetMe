@@ -7,6 +7,7 @@
     <br />
     <asp:TextBox ID="GroupNameBox" runat="server"></asp:TextBox>
     <br />
+    <br />
     <asp:Button ID="CreateGroupButton" runat="server" Text="Create" />
 
 </asp:Content>
