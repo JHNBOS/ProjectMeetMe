@@ -2,30 +2,30 @@
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="SchedulerContext">
   <DataContextMoniker Name="/SchedulerContextDataContext" />
   <nestedChildShapes>
-    <classShape Id="2f507e7a-9edb-45ce-96ef-1ef670e01ac2" absoluteBounds="0.625, 0.5, 2, 3.1170068359375">
-      <DataClassMoniker Name="/SchedulerContextDataContext/AspNetUser" />
-      <nestedChildShapes>
-        <elementListCompartment Id="f4c9ce51-a12d-4d01-94cc-58c0e4d3601c" absoluteBounds="0.64000000000000012, 0.96, 1.9700000000000002, 2.5570068359375" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
     <classShape Id="950870a1-0acd-40d8-a8f0-e003dc9a1a1d" absoluteBounds="3.625, 2.875, 2, 1.3862939453125">
       <DataClassMoniker Name="/SchedulerContextDataContext/Group" />
       <nestedChildShapes>
         <elementListCompartment Id="3fb5b567-9f28-4e5c-aeb9-b0c87a70fad6" absoluteBounds="3.64, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.625 : 3.24600341796875); (3.625 : 3.24600341796875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
-      <AssociationMoniker Name="/SchedulerContextDataContext/AspNetUser/AspNetUser_Group" />
-      <nodes>
-        <classShapeMoniker Id="2f507e7a-9edb-45ce-96ef-1ef670e01ac2" />
-        <classShapeMoniker Id="950870a1-0acd-40d8-a8f0-e003dc9a1a1d" />
-      </nodes>
-    </associationConnector>
     <classShape Id="b15e4e28-9f49-4e14-9b60-7680b9f836e9" absoluteBounds="3.625, 0.5, 2, 1.9631982421875">
       <DataClassMoniker Name="/SchedulerContextDataContext/Event" />
       <nestedChildShapes>
         <elementListCompartment Id="78911831-89ad-49c1-85d6-a63410f11377" absoluteBounds="3.6399999999999997, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
+    <classShape Id="8ac26034-949a-4e87-a6c5-e5ecf87d9baa" absoluteBounds="0.75, 0.5, 2, 3.3093082682291666">
+      <DataClassMoniker Name="/SchedulerContextDataContext/AspNetUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53a9b308-c2af-4b31-9866-6a4049de600d" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.34215413411458); (3.625 : 3.34215413411458)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SchedulerContextDataContext/AspNetUser/AspNetUser_Group" />
+      <nodes>
+        <classShapeMoniker Id="8ac26034-949a-4e87-a6c5-e5ecf87d9baa" />
+        <classShapeMoniker Id="950870a1-0acd-40d8-a8f0-e003dc9a1a1d" />
+      </nodes>
+    </associationConnector>
   </nestedChildShapes>
 </ordesignerObjectsDiagram>

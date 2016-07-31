@@ -14,6 +14,15 @@ namespace Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Database context
+            var data = new SchedulerContextDataContext();
+
+            //Current user
+            string user = User.Identity.Name;
+
+            //AspNetUser
+            AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
+
             //Scheduler
             this.Scheduler = new DHXScheduler();
             //Scheduler.Localization.Set(SchedulerLocalization.Localizations.Dutch);
@@ -30,6 +39,9 @@ namespace Project
             Scheduler.SaveAction = this.ResolveUrl("~/Save.ashx");// the handler which defines create/update/delete logic
             Scheduler.EnableDataprocessor = true;
 
+            Scheduler.Config.displayed_event_color = CurrentUser.Colour;
+            Scheduler.Templates.event_header = "{start_date:date(%H:%i)} - {end_date:date(%H:%i)} \n by {creator}";
+   
         }
     }
 

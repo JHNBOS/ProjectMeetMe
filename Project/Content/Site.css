@@ -86,3 +86,9 @@ input[type="select"] {
 .GroupButton:hover {
     background-color: #539af2;
 }
+
+input#MainContent_colorPicker {
+    margin-left: 15px;
+    background: white;
+    border-radius: 4px;
+}

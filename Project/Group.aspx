@@ -7,4 +7,6 @@
     </div>
     <br />
     <a href="CreateGroup.aspx"><b>Create new group</b></a>
+    <br />
+    <a href="AddMembers.aspx"><b>Add members to group</b></a>
 </asp:Content>
