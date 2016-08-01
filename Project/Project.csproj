@@ -177,7 +177,6 @@
     <Content Include="Account\ResetPasswordConfirmation.aspx" />
     <Content Include="Account\TwoFactorAuthenticationSignIn.aspx" />
     <Content Include="Account\VerifyPhoneNumber.aspx" />
-    <Content Include="AddMembers.aspx" />
     <Content Include="App_Data\project_db.mdf" />
     <Content Include="App_Data\project_db_log.ldf">
       <DependentUpon>project_db.mdf</DependentUpon>
@@ -551,13 +550,6 @@
     </Compile>
     <Compile Include="Account\VerifyPhoneNumber.aspx.designer.cs">
       <DependentUpon>VerifyPhoneNumber.aspx</DependentUpon>
-    </Compile>
-    <Compile Include="AddMembers.aspx.cs">
-      <DependentUpon>AddMembers.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="AddMembers.aspx.designer.cs">
-      <DependentUpon>AddMembers.aspx</DependentUpon>
     </Compile>
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="About.aspx.cs">
