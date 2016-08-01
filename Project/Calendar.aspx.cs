@@ -79,6 +79,11 @@ namespace Project
                 m.Text = userlist[i].FirstName + " " + userlist[i].LastName;
                 d.Text = "X";
 
+                string color = userlist[i].Colour;
+                m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
+                m.BorderStyle = BorderStyle.Solid;
+                m.BorderWidth = 2;
+
                 m.CssClass = "GroupmemberButton";
                 d.CssClass = "DeleteButton";
 
