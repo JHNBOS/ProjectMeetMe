@@ -69,12 +69,14 @@ namespace Project
 
             for (int i = 0; i < memberlist.Count; i++)
             {
+                List<AspNetUser> userlist = data.AspNetUsers.Where(ev => ev.UserName == memberlist[i].User).ToList();
+
                 Button m = new Button();
                 Button d = new Button();
-                m.ID = memberlist[i].User + i;
-                d.ID = memberlist[i].User;
+                m.ID = userlist[i].UserName + i;
+                d.ID = userlist[i].UserName;
 
-                m.Text = memberlist[i].User;
+                m.Text = userlist[i].FirstName + " " + userlist[i].LastName;
                 d.Text = "X";
 
                 m.CssClass = "GroupmemberButton";

@@ -607,7 +607,6 @@
     <Compile Include="Group.aspx.designer.cs">
       <DependentUpon>Group.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Save.ashx.cs">
