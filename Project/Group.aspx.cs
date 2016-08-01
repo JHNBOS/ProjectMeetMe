@@ -26,19 +26,22 @@ namespace Project
             //Create and add buttons to ul and add ul to div
             for (int i=0; i < grouplist.Count; i++)
             {
+                
                 Button b = new Button();
                 b.ID = grouplist[i].Name + i;
                 b.Text = grouplist[i].Name;
                 b.CssClass = "GroupButton";
                 b.Height = 35;
-                b.Width = 160;
+                b.Width = 200;
                 b.Click += B_Click;
 
                 buttons[i] = b;
-
+                
                 groupdiv.Controls.Add(new LiteralControl("<li>"));
                 groupdiv.Controls.Add(b);
                 groupdiv.Controls.Add(new LiteralControl("</li>"));
+                
+
             }
             //Close ul
             groupdiv.Controls.Add(new LiteralControl("</ul>"));

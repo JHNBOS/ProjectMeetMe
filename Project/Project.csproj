@@ -183,7 +183,7 @@
       <DependentUpon>project_db.mdf</DependentUpon>
     </Content>
     <Content Include="Calendar.aspx" />
-    <Content Include="Contact.aspx" />
+    <Content Include="Contacts.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -577,12 +577,12 @@
     <Compile Include="Calendar.aspx.designer.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contact.aspx.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="Contacts.aspx.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contact.aspx.designer.cs">
-      <DependentUpon>Contact.aspx</DependentUpon>
+    <Compile Include="Contacts.aspx.designer.cs">
+      <DependentUpon>Contacts.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateGroup.aspx.cs">
       <DependentUpon>CreateGroup.aspx</DependentUpon>

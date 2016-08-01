@@ -80,13 +80,13 @@ D:\Johan Bos\Documents\Visual Studio 2015\Projects\MeetMeWeb\Project\bin\Microso
 D:\Johan Bos\Documents\Visual Studio 2015\Projects\MeetMeWeb\Project\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Johan Bos\Documents\Visual Studio 2015\Projects\MeetMeWeb\Project\obj\Debug\Project.dll
 D:\Johan Bos\Documents\Visual Studio 2015\Projects\MeetMeWeb\Project\obj\Debug\Project.pdb
-C:\Github\ProjectMeetMe\Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Github\ProjectMeetMe\Project\bin\roslyn\csc.exe
 C:\Github\ProjectMeetMe\Project\bin\roslyn\csc.exe.config
 C:\Github\ProjectMeetMe\Project\bin\roslyn\csc.rsp
 C:\Github\ProjectMeetMe\Project\bin\roslyn\csi.exe
 C:\Github\ProjectMeetMe\Project\bin\roslyn\csi.rsp
 C:\Github\ProjectMeetMe\Project\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Github\ProjectMeetMe\Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
 C:\Github\ProjectMeetMe\Project\bin\roslyn\Microsoft.CodeAnalysis.CSharp.Scripting.dll
 C:\Github\ProjectMeetMe\Project\bin\roslyn\Microsoft.CodeAnalysis.dll
 C:\Github\ProjectMeetMe\Project\bin\roslyn\Microsoft.CodeAnalysis.Scripting.dll
