@@ -38,7 +38,7 @@ namespace Project
             data.Members.InsertOnSubmit(m);
             data.SubmitChanges();
 
-            Response.Redirect("~/Groups.aspx");
+            Response.Redirect("~/Group.aspx");
         }
     }
 }
