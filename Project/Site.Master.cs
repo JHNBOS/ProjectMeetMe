@@ -7,6 +7,8 @@ using System.Web.Security;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
+using System.Web.Providers.Entities;
+using System.Linq;
 
 namespace Project
 {
@@ -16,8 +18,16 @@ namespace Project
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
 
+        public static SchedulerContextDataContext data = new SchedulerContextDataContext();
+        public static string user = HttpContext.Current.User.Identity.Name;
+        public static AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
+
+
+
         protected void Page_Init(object sender, EventArgs e)
         {
+            
+
             // The code below helps to protect against XSRF attacks
             var requestCookie = Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;
@@ -69,7 +79,7 @@ namespace Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)

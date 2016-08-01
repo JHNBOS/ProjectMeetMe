@@ -8,19 +8,6 @@
         <elementListCompartment Id="3fb5b567-9f28-4e5c-aeb9-b0c87a70fad6" absoluteBounds="3.64, 3.335, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="8ac26034-949a-4e87-a6c5-e5ecf87d9baa" absoluteBounds="0.75, 0.5, 2, 3.3093082682291666">
-      <DataClassMoniker Name="/SchedulerContextDataContext/AspNetUser" />
-      <nestedChildShapes>
-        <elementListCompartment Id="53a9b308-c2af-4b31-9866-6a4049de600d" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 2.7493082682291665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
-      </nestedChildShapes>
-    </classShape>
-    <associationConnector edgePoints="[(2.75 : 3.34215413411458); (3.625 : 3.34215413411458)]" fixedFrom="NotFixed" fixedTo="NotFixed">
-      <AssociationMoniker Name="/SchedulerContextDataContext/AspNetUser/AspNetUser_Group" />
-      <nodes>
-        <classShapeMoniker Id="8ac26034-949a-4e87-a6c5-e5ecf87d9baa" />
-        <classShapeMoniker Id="950870a1-0acd-40d8-a8f0-e003dc9a1a1d" />
-      </nodes>
-    </associationConnector>
     <classShape Id="ad26dca9-4f73-4f9e-b192-0e9e1b747cc8" absoluteBounds="3.625, 0.5, 2, 2.1554996744791666">
       <DataClassMoniker Name="/SchedulerContextDataContext/Event" />
       <nestedChildShapes>
@@ -40,10 +27,23 @@
         <classShapeMoniker Id="274a3d85-7463-4c44-a800-5a2a1ae1cea2" />
       </nodes>
     </associationConnector>
+    <classShape Id="51c53046-754d-4cd7-adc3-a9be25f1f7ce" absoluteBounds="0.75, 0.5, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/SchedulerContextDataContext/AspNetUser" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c49b3f32-c75f-4ede-8a69-1e214019df7d" absoluteBounds="0.76500000000000012, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.75 : 3.53445556640625); (3.625 : 3.53445556640625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/SchedulerContextDataContext/AspNetUser/AspNetUser_Group" />
+      <nodes>
+        <classShapeMoniker Id="51c53046-754d-4cd7-adc3-a9be25f1f7ce" />
+        <classShapeMoniker Id="950870a1-0acd-40d8-a8f0-e003dc9a1a1d" />
+      </nodes>
+    </associationConnector>
     <associationConnector edgePoints="[(2.75 : 2.76524983723958); (6.125 : 2.76524983723958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/SchedulerContextDataContext/AspNetUser/AspNetUser_Member" />
       <nodes>
-        <classShapeMoniker Id="8ac26034-949a-4e87-a6c5-e5ecf87d9baa" />
+        <classShapeMoniker Id="51c53046-754d-4cd7-adc3-a9be25f1f7ce" />
         <classShapeMoniker Id="274a3d85-7463-4c44-a800-5a2a1ae1cea2" />
       </nodes>
     </associationConnector>

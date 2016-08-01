@@ -394,6 +394,10 @@
       <LastGenOutput>SchedulerContext.designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </Content>
+    <Content Include="fonts\Champagne &amp; Limousines Bold Italic.ttf" />
+    <Content Include="fonts\Champagne &amp; Limousines Bold.ttf" />
+    <Content Include="fonts\Champagne &amp; Limousines Italic.ttf" />
+    <Content Include="fonts\Champagne &amp; Limousines.ttf" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />

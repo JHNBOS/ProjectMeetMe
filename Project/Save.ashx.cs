@@ -34,18 +34,20 @@ namespace Project
             try
             {
                 //1. New Event
-                //2. Assign name of current user to this event
-                //3. Assign name of selected group to this event
-                //4. Assign color to this event
+                //2. Full name of user
+                //3. Assign name of current user to this event
+                //4. Assign name of selected group to this event
+                //5. Assign color to this event
                 var changedEvent = (Event)DHXEventsHelper.Bind(typeof(Event), context.Request.Form);//see details below
-                changedEvent.creator = user;
+                string fullname = CurrentUser.FirstName + " " + CurrentUser.LastName;
+                changedEvent.creator = fullname;
                 changedEvent.group = group;
                 changedEvent.color = colour;
 
                 switch (action.Type)
                 {
                     case DataActionTypes.Insert: // your Insert logic
-                        if (allowed && changedEvent.creator == user)
+                        if (allowed && changedEvent.creator == fullname)
                         {
                             data.Events.InsertOnSubmit(changedEvent);
                         }

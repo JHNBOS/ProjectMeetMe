@@ -50,8 +50,10 @@ namespace Project
             Scheduler.SaveAction = this.ResolveUrl("~/Save.ashx");// the handler which defines create/update/delete logic
             Scheduler.EnableDataprocessor = true;
             Scheduler.Data.DataProcessor.UpdateFieldsAfterSave = true;
-            Scheduler.Templates.event_header = "{start_date:date(%H:%i)} - {end_date:date(%H:%i)} \n by {creator}";
-            
+            Scheduler.Templates.event_header = "{start_date:date(%H:%i)} - {end_date:date(%H:%i)}";
+            Scheduler.Templates.event_text = "<b>{creator}:</b> <br /> {text}";
+
+
         }
 
         private void CreateButtons()
