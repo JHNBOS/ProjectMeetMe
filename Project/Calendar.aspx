@@ -20,8 +20,22 @@
     <div id="membersdiv" runat="server">
         <h4>Members of this group.</h4>
     </div>
+    <div class="container">
+            <div class="row" style="height: 60px;">
+                <div class="col-sm-3" id="groupmembers" runat="server">
 
-    <a href="#" id="collapsebutton" onclick="showhide()">-</a>
+                </div>
+                <div class="col-sm-3" id="deletebuttondiv" runat="server">
+
+                </div>
+                <div class="col-sm-3" id="Div1" runat="server">
+
+                </div>
+                <div class="col-sm-3" id="Div2" runat="server">
+                    <a href="#" id="collapsebutton" onclick="showhide()">-</a>
+                </div>
+            </div>
+    </div>
    
     <div style="clear:both;margin-top: 50px;"><hr /></div>
 

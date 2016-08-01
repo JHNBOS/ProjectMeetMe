@@ -10,25 +10,35 @@ namespace Project
 {
     public partial class Calendar : System.Web.UI.Page
     {
+        //1. Scheduler
+        //2. Database context
+        //3. Current group
+        //4. Current user
         public DHXScheduler Scheduler { get; set; }
+        SchedulerContextDataContext data;
 
         protected void Page_Load(object sender, EventArgs e)
         {
             //1. Database context
             //2. Current user
-            //3. AspNetUser
-            //4. Group
-            //5. Scheduler
-            var data = new SchedulerContextDataContext();
+            //3. Group
+            //4. AspNetUser
+            data = new SchedulerContextDataContext();
             string user = User.Identity.Name;
+            string group = Session["Group"].ToString();
             AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
-            string group = HttpContext.Current.Session["Group"].ToString();
 
+
+            //Set title above calendar to show group
             GroupTitle.InnerText = group;
+
+            //Groupmembers
+            groupmembers.Controls.Clear();
+            deletebuttondiv.Controls.Clear();
+            CreateButtons();
 
             //Scheduler settings
             this.Scheduler = new DHXScheduler();
-
             Scheduler.InitialDate = DateTime.Now;// the initial data of Scheduler
             Scheduler.Config.first_hour = 0;//the minimum value of the hour scale
             Scheduler.Config.last_hour = 24;//the maximum value of the hour scale
@@ -41,27 +51,71 @@ namespace Project
             Scheduler.EnableDataprocessor = true;
             Scheduler.Data.DataProcessor.UpdateFieldsAfterSave = true;
             Scheduler.Templates.event_header = "{start_date:date(%H:%i)} - {end_date:date(%H:%i)} \n by {creator}";
+            
+        }
 
-            /*********************************************************************/
+        private void CreateButtons()
+        {
+            //1. Database context
+            //2. Group
+            data = new SchedulerContextDataContext();
+            string group = Session["Group"].ToString();
+
+
             //Show members of this group.
             List<Member> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
 
-            membersdiv.Controls.Add(new LiteralControl("<ul style='list-style-type: none;'>"));
-
-            foreach (var member in memberlist)
+            for (int i = 0; i < memberlist.Count; i++)
             {
-                string name = member.User;
-                membersdiv.Controls.Add(new LiteralControl("<li>"));
-                membersdiv.Controls.Add(new LiteralControl(name));
-                membersdiv.Controls.Add(new LiteralControl("</li>"));
+                Button m = new Button();
+                Button d = new Button();
+                m.ID = memberlist[i].User + i;
+                d.ID = memberlist[i].User;
+
+                m.Text = memberlist[i].User;
+                d.Text = "X";
+
+                m.CssClass = "GroupmemberButton";
+                d.CssClass = "DeleteButton";
+
+                m.Height = 35;
+                d.Height = 35;
+
+                m.Width = 200;
+                d.Width = 35;
+
+                d.Click += D_Click;
+                
+                groupmembers.Controls.Add(m);
+                groupmembers.Controls.Add(new LiteralControl("<br />"));
+
+                deletebuttondiv.Controls.Add(d);
+                deletebuttondiv.Controls.Add(new LiteralControl("<br />"));
+
             }
+        }
 
-            membersdiv.Controls.Add(new LiteralControl("</ul>"));
+        private void D_Click(object sender, EventArgs e)
+        {
+            //1. New Button
+            //2. Database context
+            //3. Group
+           
+            Button btn = (Button)sender;
+            data = new SchedulerContextDataContext();
+            string group = Session["Group"].ToString();
 
+            //List of members
+            List<Member> memberstodelete = data.Members.Where(ev => ev.User == btn.ID).ToList();
 
+            data.Members.DeleteAllOnSubmit(memberstodelete);
+            data.SubmitChanges();
 
+            groupmembers.Controls.Clear();
+            deletebuttondiv.Controls.Clear();
 
-
+            CreateButtons();
+            Response.Redirect("~/Calendar.aspx");
         }
     }
 

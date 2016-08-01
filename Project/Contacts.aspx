@@ -6,16 +6,16 @@
     <h3>Add contacts to your group.</h3>
     <br />
     <div id="contactdiv" runat="server">
-        <h4>Contacts</h4>
+        <h5>Select one or more contacts you wish to add to your group.</h5>
         <asp:CheckBoxList ID="ContaxtCheckBoxList" runat="server">
         </asp:CheckBoxList>
         <br />
     </div>
     <div>
-        <br />
+        <h5>Select a group you want to add the selected contact(s) to.</h5>
         <asp:DropDownList ID="GroupDropDownList" runat="server"></asp:DropDownList>
         <br />
         <br />
-        <asp:Button ID="AddContactButton" runat="server" Text="Add To Group" />
+        <asp:Button ID="AddContactButton" runat="server" Text="Add Contact(s) to Group" />
     </div>
 </asp:Content>
