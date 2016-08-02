@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
@@ -49,18 +50,31 @@ namespace Project
         private void ListMembers()
         {
             //Show members of this group.
+            //1. Get all members
+            //2. Current user
+            //3. Remove current user from list
             List<AspNetUser> memberlist = data.AspNetUsers.ToList();
+            AspNetUser current = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
+            memberlist.Remove(current);
 
             foreach (var member in memberlist)
             {
                 string name = member.UserName;
-                ContaxtCheckBoxList.Items.Add(new ListItem(name));
+                string first = member.FirstName;
+                string last = member.LastName;
+
+                ListItem item = new ListItem();
+                item.Text = first + " " + last + " - " + name;
+                item.Value = name;
+
+                ContaxtCheckBoxList.Items.Add(item);
             }            
         }
 
         private void LoadGroupsDDL()
         {
-            List<Group> groups = data.Groups.ToList();
+            string user = User.Identity.Name;
+            List<Group> groups = data.Groups.Where(ev => ev.Creator == user).ToList();
 
             //Add empty listitem
             GroupDropDownList.Items.Add(new ListItem(""));

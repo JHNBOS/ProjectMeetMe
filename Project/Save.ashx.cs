@@ -76,6 +76,8 @@ namespace Project
             var result = new AjaxSaveResponse(action);
             result.UpdateField("color", colour);
             context.Response.Write(result);
+
+            context.Response.Redirect("~/Calendar.aspx");
         }
 
         public bool IsReusable

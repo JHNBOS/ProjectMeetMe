@@ -196,6 +196,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Account\Web.config" />
     <Content Include="CreateGroup.aspx" />
+    <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Group.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -431,7 +432,6 @@
     <Content Include="Scripts\WebForms\WebUIValidation.js" />
     <Content Include="Scripts\_references.js" />
     <Content Include="Default.aspx" />
-    <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="Site.Master" />
     <Content Include="ViewSwitcher.ascx" />

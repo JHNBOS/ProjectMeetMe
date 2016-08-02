@@ -12,22 +12,17 @@ using System.Linq;
 
 namespace Project
 {
+    
     public partial class SiteMaster : MasterPage
     {
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
-
         public static SchedulerContextDataContext data = new SchedulerContextDataContext();
-        public static string user = HttpContext.Current.User.Identity.Name;
-        public static AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
-
-
+        public AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault();
 
         protected void Page_Init(object sender, EventArgs e)
         {
-            
-
             // The code below helps to protect against XSRF attacks
             var requestCookie = Request.Cookies[AntiXsrfTokenKey];
             Guid requestCookieGuidValue;
@@ -59,7 +54,7 @@ namespace Project
         }
 
         protected void master_Page_PreLoad(object sender, EventArgs e)
-        {
+        { 
             if (!IsPostBack)
             {
                 // Set Anti-XSRF token
@@ -79,8 +74,13 @@ namespace Project
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            
-        }
+            Response.Cache.SetCacheability(HttpCacheability.NoCache); //Cache-Control : no-cache, Pragma : no-cache
+            Response.Cache.SetExpires(DateTime.Now.AddDays(-1)); //Expires : date time
+            Response.Cache.SetNoStore(); //Cache-Control :  no-store
+            Response.Cache.SetProxyMaxAge(new TimeSpan(0, 0, 0)); //Cache-Control: s-maxage=0
+            Response.Cache.SetValidUntilExpires(false);
+            Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);//Cache-Control:  must-revalidate
+    }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
         {

@@ -63,23 +63,22 @@ namespace Project
             data = new SchedulerContextDataContext();
             string group = Session["Group"].ToString();
 
-
             //Show members of this group.
             List<Member> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
 
             for (int i = 0; i < memberlist.Count; i++)
             {
-                List<AspNetUser> userlist = data.AspNetUsers.Where(ev => ev.UserName == memberlist[i].User).ToList();
+                AspNetUser asp = data.AspNetUsers.Where(ev => ev.UserName == memberlist[i].User).FirstOrDefault();
 
                 Button m = new Button();
                 Button d = new Button();
-                m.ID = userlist[i].UserName + i;
-                d.ID = userlist[i].UserName;
+                m.ID = asp.UserName + i;
+                d.ID = asp.UserName;
 
-                m.Text = userlist[i].FirstName + " " + userlist[i].LastName;
+                m.Text = asp.FirstName + " " + asp.LastName;
                 d.Text = "X";
 
-                string color = userlist[i].Colour;
+                string color = asp.Colour;
                 m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
                 m.BorderStyle = BorderStyle.Solid;
                 m.BorderWidth = 2;
@@ -96,10 +95,8 @@ namespace Project
                 d.Click += D_Click;
                 
                 groupmembers.Controls.Add(m);
-                groupmembers.Controls.Add(new LiteralControl("<br />"));
 
                 deletebuttondiv.Controls.Add(d);
-                deletebuttondiv.Controls.Add(new LiteralControl("<br />"));
 
             }
         }
