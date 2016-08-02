@@ -63,7 +63,6 @@ namespace Project
             data = new SchedulerContextDataContext();
             string group = Session["Group"].ToString();
 
-
             try
             {
                 //Show members of this group.
@@ -84,7 +83,7 @@ namespace Project
                     string color = asp.Colour;
                     m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
                     m.BorderStyle = BorderStyle.Solid;
-                    m.BorderWidth = 2;
+                    m.BorderWidth = 4;
 
                     m.CssClass = "GroupmemberButton";
                     d.CssClass = "DeleteButton";
