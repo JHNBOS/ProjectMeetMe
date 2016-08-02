@@ -58,11 +58,18 @@ namespace Project
                         break;
                     case DataActionTypes.Delete: // your Delete logic
                         changedEvent = data.Events.SingleOrDefault(ev => ev.id == action.SourceId);
-                        data.Events.DeleteOnSubmit(changedEvent);
+                        if (allowed && changedEvent.creator == fullname)
+                        {
+                            data.Events.DeleteOnSubmit(changedEvent);
+                        }
+                            
                         break;
                     default:// "update" // your Update logic
                         var updated = data.Events.SingleOrDefault(ev => ev.id == action.SourceId);
-                        DHXEventsHelper.Update(updated, changedEvent, new List<string>() { "id" });// see details below
+                        if (allowed && updated.creator == fullname)
+                        {
+                            DHXEventsHelper.Update(updated, changedEvent, new List<string>() { "id" });// see details below
+                        }
                         break;
                 }
                 data.SubmitChanges();
@@ -76,8 +83,6 @@ namespace Project
             var result = new AjaxSaveResponse(action);
             result.UpdateField("color", colour);
             context.Response.Write(result);
-
-            context.Response.Redirect("~/Calendar.aspx");
         }
 
         public bool IsReusable

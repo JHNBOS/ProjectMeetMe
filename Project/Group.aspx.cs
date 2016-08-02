@@ -66,38 +66,41 @@ namespace Project
         private void CreateButtons()
         {
             data = new SchedulerContextDataContext();
-            List<Group> grouplist = data.Groups.ToList();
 
-            //Create and add buttons to ul and add ul to div
-            for (int i = 0; i < grouplist.Count; i++)
-            {
-                Button b = new Button();
-                Button d = new Button();
-                b.ID = grouplist[i].Name + i;
-                d.ID = grouplist[i].Name;
+            try {
+                Member member = data.Members.Where(p => p.User == User.Identity.Name).FirstOrDefault();
+                List<Group> grouplist = data.Groups.Where(ev => ev.Name == member.Group).ToList();
 
-                b.Text = grouplist[i].Name;
-                d.Text = "X";
+                //Create and add buttons to ul and add ul to div
+                for (int i = 0; i < grouplist.Count(); i++)
+                {
+                    Button b = new Button();
+                    Button d = new Button();
+                    b.ID = grouplist[i].Name + i;
+                    d.ID = grouplist[i].Name;
 
-                b.CssClass = "GroupButton";
-                d.CssClass = "DeleteButton";
+                    b.Text = grouplist[i].Name;
+                    d.Text = "X";
 
-                b.Height = 35;
-                d.Height = 35;
+                    b.CssClass = "GroupButton";
+                    d.CssClass = "DeleteButton";
 
-                b.Width = 200;
-                d.Width = 35;
+                    b.Height = 35;
+                    d.Height = 35;
 
-                b.Click += B_Click;
-                d.Click += D_Click;
+                    b.Width = 200;
+                    d.Width = 35;
 
-                groupbuttondiv.Controls.Add(b);
-                groupbuttondiv.Controls.Add(new LiteralControl("<br />"));
+                    b.Click += B_Click;
+                    d.Click += D_Click;
 
-                deletebuttondiv.Controls.Add(d);
-                deletebuttondiv.Controls.Add(new LiteralControl("<br />"));
+                    groupbuttondiv.Controls.Add(b);
+                    groupbuttondiv.Controls.Add(new LiteralControl("<br />"));
 
-            }
+                    deletebuttondiv.Controls.Add(d);
+                    deletebuttondiv.Controls.Add(new LiteralControl("<br />"));
+                }
+            } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
 
         }
 
