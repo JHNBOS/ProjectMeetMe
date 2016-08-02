@@ -38,11 +38,19 @@ namespace Project
 
             List<Member> memberstodelete = data.Members.Where(ev => ev.Group == btn.ID).ToList();
 
-            data.Members.DeleteAllOnSubmit(memberstodelete);
-            data.SubmitChanges();
+            try
+            {
+                data.Members.DeleteAllOnSubmit(memberstodelete);
+                data.SubmitChanges();
 
-            data.Groups.DeleteOnSubmit(data.Groups.Where(ev => ev.Name == btn.ID).FirstOrDefault());
-            data.SubmitChanges();
+                data.Groups.DeleteOnSubmit(data.Groups.Where(ev => ev.Name == btn.ID).FirstOrDefault());
+                data.SubmitChanges();
+            }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+            }
+            
 
             groupbuttondiv.Controls.Clear();
             deletebuttondiv.Controls.Clear();

@@ -40,8 +40,12 @@ namespace Project
                 m.Group = groupname;
                 m.User = user;
 
-                data.Members.InsertOnSubmit(m);
-                data.SubmitChanges();
+                try
+                {
+                    data.Members.InsertOnSubmit(m);
+                    data.SubmitChanges();
+
+                } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
             }
             
             Response.Redirect("~/Group.aspx");
@@ -55,7 +59,11 @@ namespace Project
             //3. Remove current user from list
             List<AspNetUser> memberlist = data.AspNetUsers.ToList();
             AspNetUser current = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
-            memberlist.Remove(current);
+
+            try
+            {
+                memberlist.Remove(current);
+            } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
 
             foreach (var member in memberlist)
             {

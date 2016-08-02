@@ -63,42 +63,48 @@ namespace Project
             data = new SchedulerContextDataContext();
             string group = Session["Group"].ToString();
 
-            //Show members of this group.
-            List<Member> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
 
-            for (int i = 0; i < memberlist.Count; i++)
+            try
             {
-                AspNetUser asp = data.AspNetUsers.Where(ev => ev.UserName == memberlist[i].User).FirstOrDefault();
+                //Show members of this group.
+                List<Member> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
 
-                Button m = new Button();
-                Button d = new Button();
-                m.ID = asp.UserName + i;
-                d.ID = asp.UserName;
+                for (int i = 0; i < memberlist.Count; i++)
+                {
+                    AspNetUser asp = data.AspNetUsers.Where(ev => ev.UserName == memberlist[i].User).FirstOrDefault();
 
-                m.Text = asp.FirstName + " " + asp.LastName;
-                d.Text = "X";
+                    Button m = new Button();
+                    Button d = new Button();
+                    m.ID = asp.UserName + i;
+                    d.ID = asp.UserName;
 
-                string color = asp.Colour;
-                m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
-                m.BorderStyle = BorderStyle.Solid;
-                m.BorderWidth = 2;
+                    m.Text = asp.FirstName + " " + asp.LastName;
+                    d.Text = "X";
 
-                m.CssClass = "GroupmemberButton";
-                d.CssClass = "DeleteButton";
+                    string color = asp.Colour;
+                    m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
+                    m.BorderStyle = BorderStyle.Solid;
+                    m.BorderWidth = 2;
 
-                m.Height = 35;
-                d.Height = 35;
+                    m.CssClass = "GroupmemberButton";
+                    d.CssClass = "DeleteButton";
 
-                m.Width = 200;
-                d.Width = 35;
+                    m.Height = 35;
+                    d.Height = 35;
 
-                d.Click += D_Click;
-                
-                groupmembers.Controls.Add(m);
+                    m.Width = 200;
+                    d.Width = 35;
 
-                deletebuttondiv.Controls.Add(d);
+                    d.Click += D_Click;
+
+                    groupmembers.Controls.Add(m);
+
+                    deletebuttondiv.Controls.Add(d);
+
+                }
 
             }
+            catch (Exception e) { System.Diagnostics.Debug.WriteLine(e.StackTrace); }
         }
 
         private void D_Click(object sender, EventArgs e)
@@ -111,17 +117,21 @@ namespace Project
             data = new SchedulerContextDataContext();
             string group = Session["Group"].ToString();
 
-            //List of members
-            List<Member> memberstodelete = data.Members.Where(ev => ev.User == btn.ID).ToList();
+            try
+            {
+                //List of members
+                List<Member> memberstodelete = data.Members.Where(ev => ev.User == btn.ID).ToList();
 
-            data.Members.DeleteAllOnSubmit(memberstodelete);
-            data.SubmitChanges();
+                data.Members.DeleteAllOnSubmit(memberstodelete);
+                data.SubmitChanges();
 
-            groupmembers.Controls.Clear();
-            deletebuttondiv.Controls.Clear();
+                groupmembers.Controls.Clear();
+                deletebuttondiv.Controls.Clear();
 
-            CreateButtons();
-            Response.Redirect("~/Calendar.aspx");
+                CreateButtons();
+                Response.Redirect("~/Calendar.aspx");
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
         }
     }
 

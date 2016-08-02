@@ -18,10 +18,14 @@ namespace Project
             string group = context.Session["Group"].ToString();
 
             //Load events to scheduler where groupname equals groupname of those events
-            context.Response.ContentType = "text/json";
-            context.Response.Write(
-                new SchedulerAjaxData(data.Events.Where(ev => ev.group == group))
-                );
+            try
+            {
+                context.Response.ContentType = "text/json";
+                context.Response.Write(
+                    new SchedulerAjaxData(data.Events.Where(ev => ev.group == group))
+                    );
+            }
+            catch (Exception ex){ System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
             
         }
 

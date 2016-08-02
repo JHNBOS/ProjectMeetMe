@@ -34,9 +34,13 @@ namespace Project
             m.Group = g.Name;
             m.User = user;
 
-            data.Groups.InsertOnSubmit(g);
-            data.Members.InsertOnSubmit(m);
-            data.SubmitChanges();
+            try
+            {
+                data.Groups.InsertOnSubmit(g);
+                data.Members.InsertOnSubmit(m);
+                data.SubmitChanges();
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
 
             Response.Redirect("~/Group.aspx");
         }
