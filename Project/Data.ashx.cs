@@ -14,7 +14,7 @@ namespace Project
 
         public void ProcessRequest(HttpContext context)
         {
-            var data = new SchedulerContextDataContext();
+            var data = new meetmeEntities();
             string group = context.Session["Group"].ToString();
 
             //Load events to scheduler where groupname equals groupname of those events

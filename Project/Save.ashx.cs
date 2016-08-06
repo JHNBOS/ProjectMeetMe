@@ -1,4 +1,5 @@
 ﻿using DHTMLX.Common;
+using Project;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,11 +25,11 @@ namespace Project
             //6. Curren ASPNetUser
             //7. Color of eventbox based on colour user has chosen.
             var action = new DataAction(context.Request.Form);
-            var data = new SchedulerContextDataContext();
+            var data = new meetmeEntities();
             var user = context.User.Identity.Name;
             Boolean allowed = context.User.Identity.IsAuthenticated;
             string group = context.Session["Group"].ToString();
-            AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
+            AspNetUsers CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
             string colour = CurrentUser.Colour;
 
             try
@@ -38,8 +39,8 @@ namespace Project
                 //3. Assign name of current user to this event
                 //4. Assign name of selected group to this event
                 //5. Assign color to this event
-                var changedEvent = (Event)DHXEventsHelper.Bind(typeof(Event), context.Request.Form);//see details below
-                string fullname = CurrentUser.FirstName + " " + CurrentUser.LastName;
+                var changedEvent = (Events)DHXEventsHelper.Bind(typeof(Events), context.Request.Form);//see details below
+                string fullname = CurrentUser.Firstname + " " + CurrentUser.Lastname;
                 changedEvent.creator = fullname;
                 changedEvent.group = group;
                 changedEvent.color = colour;
@@ -49,7 +50,7 @@ namespace Project
                     case DataActionTypes.Insert: // your Insert logic
                         if (allowed && changedEvent.creator == fullname)
                         {
-                            data.Events.InsertOnSubmit(changedEvent);
+                            data.Events.Add(changedEvent);
                         }
                         else
                         {
@@ -60,7 +61,7 @@ namespace Project
                         changedEvent = data.Events.SingleOrDefault(ev => ev.id == action.SourceId);
                         if (allowed && changedEvent.creator == fullname)
                         {
-                            data.Events.DeleteOnSubmit(changedEvent);
+                            data.Events.Remove(changedEvent);
                         }
                             
                         break;
@@ -72,7 +73,7 @@ namespace Project
                         }
                         break;
                 }
-                data.SubmitChanges();
+                data.SaveChanges();
                 action.TargetId = changedEvent.id;
             }
             catch (Exception a)

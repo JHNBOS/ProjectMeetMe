@@ -1,4 +1,5 @@
 ﻿using DHTMLX.Scheduler;
+using Project;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +16,7 @@ namespace Project
         //3. Current group
         //4. Current user
         public DHXScheduler Scheduler { get; set; }
-        SchedulerContextDataContext data;
+        public meetmeEntities data = new meetmeEntities();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -23,11 +24,10 @@ namespace Project
             //2. Current user
             //3. Group
             //4. AspNetUser
-            data = new SchedulerContextDataContext();
+            data = new meetmeEntities();
             string user = User.Identity.Name;
             string group = Session["Group"].ToString();
-            AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
-
+            AspNetUsers CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
 
             //Set title above calendar to show group
             GroupTitle.InnerText = group;
@@ -58,52 +58,49 @@ namespace Project
 
         private void CreateButtons()
         {
-            //1. Database context
-            //2. Group
-            data = new SchedulerContextDataContext();
+            //1. Group
             string group = Session["Group"].ToString();
 
-            try
+            //Show members of this group.
+            List<Members> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
+            List<AspNetUsers> userlist = data.AspNetUsers.ToList();
+
+            for (int i = 0; i < memberlist.Count; i++)
             {
-                //Show members of this group.
-                List<Member> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
+                AspNetUsers asp = null;
 
-                for (int i = 0; i < memberlist.Count; i++)
+                if (userlist[i].UserName == memberlist[i].User)
                 {
-                    AspNetUser asp = data.AspNetUsers.Where(ev => ev.UserName == memberlist[i].User).FirstOrDefault();
-
-                    Button m = new Button();
-                    Button d = new Button();
-                    m.ID = asp.UserName + i;
-                    d.ID = asp.UserName;
-
-                    m.Text = asp.FirstName + " " + asp.LastName;
-                    d.Text = "X";
-
-                    string color = asp.Colour;
-                    m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
-                    m.BorderStyle = BorderStyle.Solid;
-                    m.BorderWidth = 4;
-
-                    m.CssClass = "GroupmemberButton";
-                    d.CssClass = "DeleteButton";
-
-                    m.Height = 35;
-                    d.Height = 35;
-
-                    m.Width = 200;
-                    d.Width = 35;
-
-                    d.Click += D_Click;
-
-                    groupmembers.Controls.Add(m);
-
-                    deletebuttondiv.Controls.Add(d);
-
+                    asp = userlist[i];
                 }
 
+                Button m = new Button();
+                Button d = new Button();
+                m.ID = asp.UserName + i;
+                d.ID = asp.UserName;
+
+                m.Text = asp.Firstname + " " + asp.Lastname;
+                d.Text = "X";
+
+                string color = asp.Colour;
+                m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
+                m.BorderStyle = BorderStyle.Solid;
+                m.BorderWidth = 4;
+
+                m.CssClass = "GroupmemberButton";
+                d.CssClass = "DeleteButton";
+
+                m.Height = 35;
+                d.Height = 35;
+
+                m.Width = 200;
+                d.Width = 35;
+
+                d.Click += D_Click;
+
+                groupmembers.Controls.Add(m);
+                deletebuttondiv.Controls.Add(d);
             }
-            catch (Exception e) { System.Diagnostics.Debug.WriteLine(e.StackTrace); }
         }
 
         private void D_Click(object sender, EventArgs e)
@@ -113,16 +110,16 @@ namespace Project
             //3. Group
            
             Button btn = (Button)sender;
-            data = new SchedulerContextDataContext();
+            data = new meetmeEntities();
             string group = Session["Group"].ToString();
 
             try
             {
                 //List of members
-                List<Member> memberstodelete = data.Members.Where(ev => ev.User == btn.ID).ToList();
+                List<Members> memberstodelete = data.Members.Where(ev => ev.User == btn.ID).ToList();
 
-                data.Members.DeleteAllOnSubmit(memberstodelete);
-                data.SubmitChanges();
+                data.Members.RemoveRange(memberstodelete);
+                data.SaveChanges();
 
                 groupmembers.Controls.Clear();
                 deletebuttondiv.Controls.Clear();

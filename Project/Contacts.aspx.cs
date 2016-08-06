@@ -10,7 +10,7 @@ namespace Project
 {
     public partial class Contacts : System.Web.UI.Page
     {
-        SchedulerContextDataContext data = new SchedulerContextDataContext();
+        meetmeEntities data = new meetmeEntities();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -36,14 +36,14 @@ namespace Project
 
             foreach (var user in selected_users)
             {
-                Member m = new Member();
+                Members m = new Members();
                 m.Group = groupname;
                 m.User = user;
 
                 try
                 {
-                    data.Members.InsertOnSubmit(m);
-                    data.SubmitChanges();
+                    data.Members.Add(m);
+                    data.SaveChanges();
 
                 } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
             }
@@ -57,8 +57,8 @@ namespace Project
             //1. Get all members
             //2. Current user
             //3. Remove current user from list
-            List<AspNetUser> memberlist = data.AspNetUsers.ToList();
-            AspNetUser current = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
+            List<AspNetUsers> memberlist = data.AspNetUsers.ToList();
+            AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
 
             try
             {
@@ -68,8 +68,8 @@ namespace Project
             foreach (var member in memberlist)
             {
                 string name = member.UserName;
-                string first = member.FirstName;
-                string last = member.LastName;
+                string first = member.Firstname;
+                string last = member.Lastname;
 
                 ListItem item = new ListItem();
                 item.Text = first + " " + last + " - " + name;
@@ -82,7 +82,7 @@ namespace Project
         private void LoadGroupsDDL()
         {
             string user = User.Identity.Name;
-            List<Group> groups = data.Groups.Where(ev => ev.Creator == user).ToList();
+            List<Groups> groups = data.Groups.Where(ev => ev.Creator == user).ToList();
 
             //Add empty listitem
             GroupDropDownList.Items.Add(new ListItem(""));

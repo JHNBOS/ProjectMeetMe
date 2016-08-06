@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Project.Models;
+using System.Data.Entity;
 
 namespace Project.Models
 {
@@ -37,6 +38,16 @@ namespace Project.Models
         public ApplicationDbContext()
             : base("DefaultConnection", throwIfV1Schema: false)
         {
+        }
+
+        public DbSet<Events> Events { get; set; }
+        public DbSet<Groups> Groups { get; set; }
+        public DbSet<Members> Members { get; set; }
+
+        protected override void OnModelCreating(DbModelBuilder modelBuilder)
+        {
+            modelBuilder.HasDefaultSchema("public");
+            base.OnModelCreating(modelBuilder);
         }
 
         public static ApplicationDbContext Create()

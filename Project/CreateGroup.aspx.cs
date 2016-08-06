@@ -12,7 +12,7 @@ namespace Project
         //1. Get name of current user
         //2. Database context
         string user = HttpContext.Current.User.Identity.Name;
-        SchedulerContextDataContext data = new SchedulerContextDataContext();
+        meetmeEntities data = new meetmeEntities();
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -26,19 +26,19 @@ namespace Project
             //2. Assign name to this group
             //3. Assign name of current user to this group
             //4-5. Add this group to database
-            Group g = new Group();
+            Groups g = new Groups();
             g.Name = GroupNameBox.Text;
             g.Creator = user;
 
-            Member m = new Member();
+            Members m = new Members();
             m.Group = g.Name;
             m.User = user;
 
             try
             {
-                data.Groups.InsertOnSubmit(g);
-                data.Members.InsertOnSubmit(m);
-                data.SubmitChanges();
+                data.Groups.Add(g);
+                data.Members.Add(m);
+                data.SaveChanges();
             }
             catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
 

@@ -9,6 +9,7 @@ using System.Web.UI.WebControls;
 using Microsoft.AspNet.Identity;
 using System.Web.Providers.Entities;
 using System.Linq;
+using Project;
 
 namespace Project
 {
@@ -18,9 +19,10 @@ namespace Project
         private const string AntiXsrfTokenKey = "__AntiXsrfToken";
         private const string AntiXsrfUserNameKey = "__AntiXsrfUserName";
         private string _antiXsrfTokenValue;
-        public static SchedulerContextDataContext data = new SchedulerContextDataContext();
-        public AspNetUser CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault();
-
+        public static meetmeEntities data = new meetmeEntities();
+        public AspNetUsers CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).SingleOrDefault();
+        
+        
         protected void Page_Init(object sender, EventArgs e)
         {
             // The code below helps to protect against XSRF attacks

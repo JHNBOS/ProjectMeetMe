@@ -14,7 +14,7 @@ namespace Project
         //2. List of items in table 'Groups'
         //3. Number of items in the List
         //4. Array of buttons to hold the groupnames
-        SchedulerContextDataContext data;
+        meetmeEntities data;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -30,21 +30,21 @@ namespace Project
             //2. Test to check which group has been clicked
             //3. Set Session Variable to send to Data.ashx
             //4. Redirect to Calendar.aspx
-            data = new SchedulerContextDataContext();
+            data = new meetmeEntities();
 
             Button btn = (Button)sender;
 
             System.Diagnostics.Debug.WriteLine("Button text: " + btn.Text);
 
-            List<Member> memberstodelete = data.Members.Where(ev => ev.Group == btn.ID).ToList();
+            List<Members> memberstodelete = data.Members.Where(ev => ev.Group == btn.ID).ToList();
 
             try
             {
-                data.Members.DeleteAllOnSubmit(memberstodelete);
-                data.SubmitChanges();
+                data.Members.RemoveRange(memberstodelete);
+                data.SaveChanges();
 
-                data.Groups.DeleteOnSubmit(data.Groups.Where(ev => ev.Name == btn.ID).FirstOrDefault());
-                data.SubmitChanges();
+                data.Groups.Remove(data.Groups.Where(ev => ev.Name == btn.ID).FirstOrDefault());
+                data.SaveChanges();
             }
             catch (Exception ex)
             {
@@ -73,11 +73,11 @@ namespace Project
 
         private void CreateButtons()
         {
-            data = new SchedulerContextDataContext();
+            data = new meetmeEntities();
 
             try {
-                Member member = data.Members.Where(p => p.User == User.Identity.Name).FirstOrDefault();
-                List<Group> grouplist = data.Groups.Where(ev => ev.Name == member.Group).ToList();
+                Members member = data.Members.Where(p => p.User == User.Identity.Name).FirstOrDefault();
+                List<Groups> grouplist = data.Groups.Where(ev => ev.Name == member.Group).ToList();
 
                 //Create and add buttons to ul and add ul to div
                 for (int i = 0; i < grouplist.Count(); i++)
