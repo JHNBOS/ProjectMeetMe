@@ -10,42 +10,60 @@
 namespace Project {
     
     
-    public partial class Contacts {
+    public partial class Contacts1 {
         
         /// <summary>
-        /// contactdiv control.
+        /// contactform control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactdiv;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactform;
         
         /// <summary>
-        /// ContaxtCheckBoxList control.
+        /// Label1 control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ContaxtCheckBoxList;
+        protected global::System.Web.UI.WebControls.Label Label1;
         
         /// <summary>
-        /// GroupDropDownList control.
+        /// SearchBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList GroupDropDownList;
+        protected global::System.Web.UI.WebControls.TextBox SearchBox;
         
         /// <summary>
-        /// AddContactButton control.
+        /// SearchButton control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button AddContactButton;
+        protected global::System.Web.UI.WebControls.Button SearchButton;
+        
+        /// <summary>
+        /// contactlist control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactlist;
+        
+        /// <summary>
+        /// ContactTable control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Table ContactTable;
     }
 }

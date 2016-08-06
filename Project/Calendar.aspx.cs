@@ -37,6 +37,16 @@ namespace Project
             deletebuttondiv.Controls.Clear();
             CreateButtons();
 
+            //Button to add contacts to group
+            Button plus = new Button();
+            plus.Text = "+";
+            plus.CssClass = "plusbutton";
+            plus.ID = group;
+            plus.Click += Plus_Click;
+
+            //Add to div2
+            Div2.Controls.Add(plus);
+
             //Scheduler settings
             this.Scheduler = new DHXScheduler();
             Scheduler.InitialDate = DateTime.Now;// the initial data of Scheduler
@@ -54,6 +64,13 @@ namespace Project
             Scheduler.Templates.event_text = "<b>{creator}:</b> <br /> {text}";
 
 
+        }
+
+        private void Plus_Click(object sender, EventArgs e)
+        {
+            Button btn = (Button)sender;
+            Session["AddContact"] = btn.ID;
+            HttpContext.Current.Response.Redirect("~/AddContacts.aspx");
         }
 
         private void CreateButtons()

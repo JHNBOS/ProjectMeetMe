@@ -266,6 +266,7 @@
       <DependentUpon>project_db.mdf</DependentUpon>
     </Content>
     <Content Include="Calendar.aspx" />
+    <Content Include="AddContacts.aspx" />
     <Content Include="Contacts.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -671,6 +672,13 @@
     </Compile>
     <Compile Include="Calendar.aspx.designer.cs">
       <DependentUpon>Calendar.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="AddContacts.aspx.cs">
+      <DependentUpon>AddContacts.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="AddContacts.aspx.designer.cs">
+      <DependentUpon>AddContacts.aspx</DependentUpon>
     </Compile>
     <Compile Include="Contacts.aspx.cs">
       <DependentUpon>Contacts.aspx</DependentUpon>

@@ -1,99 +1,77 @@
-﻿using System;
+﻿using Project;
+using System;
 using System.Collections.Generic;
-using System.Data.Entity;
+using System.Data;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
 
 namespace Project
 {
-    public partial class Contacts : System.Web.UI.Page
+    public partial class Contacts1 : System.Web.UI.Page
     {
         meetmeEntities data = new meetmeEntities();
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            AddContactButton.Click += AddContactButton_Click;
-
-            if (!IsPostBack)
+            if(!IsPostBack)
             {
-                ListMembers();
-                LoadGroupsDDL();
+                
             }
+
+            SearchButton.Click += SearchButton_Click;
+
         }
 
-        private void AddContactButton_Click(object sender, EventArgs e)
+        private void SearchButton_Click(object sender, EventArgs e)
         {
-            string groupname = GroupDropDownList.SelectedValue;
-            List<string> selected_users = new List<string>();
+            //1. List of users searched for
+            //2. Name filled in textbox to search for
+            List<AspNetUsers> searchuser = null;
+            string name = SearchBox.Text;
 
-            foreach (ListItem item in ContaxtCheckBoxList.Items)
+            //1. Temporary string with split of name
+            //2. Length of temporary string
+            string[] tmp = name.Split(' ');
+            int words = tmp.Length;
+
+            //1. Firstname filled in
+            //2. Lastname if filled in
+            string Firstname = tmp[0];
+            string Lastname = "";
+
+            if (words < 2)
             {
-                if (item.Selected)
-                    selected_users.Add(item.Value);
+                searchuser = data.AspNetUsers.Where(ev => ev.Firstname == Firstname).ToList();
+            }
+            else {
+                Lastname = tmp[1];
+                searchuser = data.AspNetUsers.Where(ev => ev.Firstname == Firstname && ev.Lastname == Lastname).ToList();
             }
 
-            foreach (var user in selected_users)
+            foreach (var user in searchuser)
             {
-                Members m = new Members();
-                m.Group = groupname;
-                m.User = user;
+                TableRow row = new TableRow();
+                TableCell cell1 = new TableCell();
+                TableCell cell2 = new TableCell();
+                TableCell cell3 = new TableCell();
+                TableCell checkbox = new TableCell();
+                TableCell add = new TableCell();
 
-                try
-                {
-                    data.Members.Add(m);
-                    data.SaveChanges();
+                cell1.Text = user.Firstname;
+                cell2.Text = user.Lastname;
+                cell3.Text = user.UserName;
+                checkbox.Controls.Add(new CheckBox());
 
-                } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
+                row.Cells.Add(cell1);
+                row.Cells.Add(cell2);
+                row.Cells.Add(cell3);
+
+                ContactTable.Rows.Add(row);
             }
-            
-            Response.Redirect("~/Group.aspx");
         }
-
-        private void ListMembers()
-        {
-            //Show members of this group.
-            //1. Get all members
-            //2. Current user
-            //3. Remove current user from list
-            List<AspNetUsers> memberlist = data.AspNetUsers.ToList();
-            AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
-
-            try
-            {
-                memberlist.Remove(current);
-            } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
-
-            foreach (var member in memberlist)
-            {
-                string name = member.UserName;
-                string first = member.Firstname;
-                string last = member.Lastname;
-
-                ListItem item = new ListItem();
-                item.Text = first + " " + last + " - " + name;
-                item.Value = name;
-
-                ContaxtCheckBoxList.Items.Add(item);
-            }            
-        }
-
-        private void LoadGroupsDDL()
-        {
-            string user = User.Identity.Name;
-            List<Groups> groups = data.Groups.Where(ev => ev.Creator == user).ToList();
-
-            //Add empty listitem
-            GroupDropDownList.Items.Add(new ListItem(""));
-
-            //Add listitems with groupnames
-            foreach (var group in groups)
-            {
-                string groupname = group.Name;
-                GroupDropDownList.Items.Add(new ListItem(groupname));
-            }
-
-        }
+    
     }
 }
