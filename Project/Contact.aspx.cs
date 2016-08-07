@@ -35,17 +35,24 @@ namespace Project
             {
                 ListedContacts c = new ListedContacts();
 
-                c.FirstName = user.Firstname;
-                c.LastName = user.Lastname;
                 c.Username = user.UserName;
                 c.Owner = currentuser;
 
-                data.ListedContacts.Add(c);
-                data.SaveChanges();
+                if(user.UserName == User.Identity.Name)
+                {
+                    MessageBox.Show("You cannot add yourself as a contact!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                    SearchBox.Text = "";
+                }
+                else
+                {
+                    data.ListedContacts.Add(c);
+                    data.SaveChanges();
+                }
+                
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Email not available!");
+                MessageBox.Show("Email not available or contact is already added to the list!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 
@@ -59,6 +66,9 @@ namespace Project
 
             for (int i = 0; i < contactlist.Count; i++)
             {
+                string contactname = contactlist[i].Username;
+                AspNetUsers user = data.AspNetUsers.Where(ep => ep.UserName == contactname).SingleOrDefault();
+
                 TableRow row = new TableRow();
                 TableCell cell1 = new TableCell();
                 TableCell cell2 = new TableCell();
@@ -73,8 +83,8 @@ namespace Project
                     row.BackColor = System.Drawing.Color.LightGray;
                 }
 
-                cell1.Text = contactlist[i].FirstName;
-                cell2.Text = contactlist[i].LastName;
+                cell1.Text = user.Firstname;
+                cell2.Text = user.Lastname;
                 cell3.Text = contactlist[i].Username;
 
                 row.Cells.Add(cell1);

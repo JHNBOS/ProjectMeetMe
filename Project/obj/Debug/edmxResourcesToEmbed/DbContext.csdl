@@ -44,9 +44,9 @@
     <Key>
       <PropertyRef Name="Id" />
     </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" />
     <Property Name="Group" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="User" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
   </EntityType>
   <EntityContainer Name="meetmeEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" />
@@ -57,12 +57,11 @@
   </EntityContainer>
   <EntityType Name="ListedContacts">
     <Key>
-      <PropertyRef Name="Id" />
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="Owner" />
     </Key>
     <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
-    <Property Name="Owner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Owner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" Nullable="false" />
   </EntityType>
 </Schema>

@@ -47,7 +47,7 @@ namespace Project
 
                 } catch (Exception ex)
                 {
-                    MessageBox.Show("Contact is already added to this group!");
+                    MessageBox.Show("Contact is already added to this group!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                     System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
                 }

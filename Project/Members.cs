@@ -14,8 +14,8 @@ namespace Project
     
     public partial class Members
     {
+        public int Id { get; set; }
         public string Group { get; set; }
         public string User { get; set; }
-        public int Id { get; set; }
     }
 }

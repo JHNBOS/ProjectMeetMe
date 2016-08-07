@@ -43,7 +43,7 @@ namespace Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Group already exists!");
+                MessageBox.Show("Group already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 

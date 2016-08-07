@@ -57,8 +57,6 @@
       <EntityTypeMapping TypeName="meetmeModel.ListedContacts">
         <MappingFragment StoreEntitySet="ListedContacts">
           <ScalarProperty Name="Owner" ColumnName="Owner" />
-          <ScalarProperty Name="LastName" ColumnName="LastName" />
-          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="Username" ColumnName="Username" />
           <ScalarProperty Name="Id" ColumnName="Id" />
         </MappingFragment>
