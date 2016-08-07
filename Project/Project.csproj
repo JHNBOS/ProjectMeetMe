@@ -267,7 +267,7 @@
     </Content>
     <Content Include="Calendar.aspx" />
     <Content Include="AddContacts.aspx" />
-    <Content Include="Contacts.aspx" />
+    <Content Include="Contact.aspx" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
@@ -680,12 +680,12 @@
     <Compile Include="AddContacts.aspx.designer.cs">
       <DependentUpon>AddContacts.aspx</DependentUpon>
     </Compile>
-    <Compile Include="Contacts.aspx.cs">
-      <DependentUpon>Contacts.aspx</DependentUpon>
+    <Compile Include="Contact.aspx.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
-    <Compile Include="Contacts.aspx.designer.cs">
-      <DependentUpon>Contacts.aspx</DependentUpon>
+    <Compile Include="Contact.aspx.designer.cs">
+      <DependentUpon>Contact.aspx</DependentUpon>
     </Compile>
     <Compile Include="CreateGroup.aspx.cs">
       <DependentUpon>CreateGroup.aspx</DependentUpon>
@@ -733,6 +733,9 @@
       <DependentUpon>Group.aspx</DependentUpon>
     </Compile>
     <Compile Include="Groups.cs">
+      <DependentUpon>DbContext.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ListedContacts.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
     </Compile>
     <Compile Include="Members.cs">

@@ -9,10 +9,9 @@
 
 namespace Project
 {
-    using Models;
     using System;
     using System.Collections.Generic;
-
+    
     public partial class AspNetUsers
     {
         public string Id { get; set; }

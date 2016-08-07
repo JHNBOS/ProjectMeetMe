@@ -29,5 +29,6 @@ namespace Project
         public virtual DbSet<Events> Events { get; set; }
         public virtual DbSet<Groups> Groups { get; set; }
         public virtual DbSet<Members> Members { get; set; }
+        public virtual DbSet<ListedContacts> ListedContacts { get; set; }
     }
 }

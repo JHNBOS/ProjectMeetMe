@@ -40,6 +40,16 @@
     <Property Name="Name" Type="text" />
     <Property Name="Creator" Type="text" />
   </EntityType>
+  <EntityType Name="ListedContacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="text" />
+    <Property Name="FirstName" Type="text" />
+    <Property Name="LastName" Type="text" />
+    <Property Name="Owner" Type="text" />
+  </EntityType>
   <EntityType Name="Members">
     <Key>
       <PropertyRef Name="Id" />
@@ -61,6 +71,7 @@ warning 6035: The relationship 'fk_members_users' has columns that are not part 
     <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="public" store:Type="Tables" />
     <EntitySet Name="Events" EntityType="Self.Events" Schema="public" store:Type="Tables" />
     <EntitySet Name="Groups" EntityType="Self.Groups" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ListedContacts" EntityType="Self.ListedContacts" Schema="public" store:Type="Tables" />
     <EntitySet Name="Members" EntityType="Self.Members" Schema="public" store:Type="Tables" />
   </EntityContainer>
 </Schema>

@@ -45,6 +45,16 @@
           <Property Name="Name" Type="text" />
           <Property Name="Creator" Type="text" />
         </EntityType>
+        <EntityType Name="ListedContacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Username" Type="text" />
+          <Property Name="FirstName" Type="text" />
+          <Property Name="LastName" Type="text" />
+          <Property Name="Owner" Type="text" />
+        </EntityType>
         <EntityType Name="Members">
           <Key>
             <PropertyRef Name="Id" />
@@ -66,6 +76,7 @@ warning 6035: The relationship 'fk_members_users' has columns that are not part 
           <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="public" store:Type="Tables" />
           <EntitySet Name="Events" EntityType="Self.Events" Schema="public" store:Type="Tables" />
           <EntitySet Name="Groups" EntityType="Self.Groups" Schema="public" store:Type="Tables" />
+          <EntitySet Name="ListedContacts" EntityType="Self.ListedContacts" Schema="public" store:Type="Tables" />
           <EntitySet Name="Members" EntityType="Self.Members" Schema="public" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
@@ -125,7 +136,18 @@ warning 6035: The relationship 'fk_members_users' has columns that are not part 
           <EntitySet Name="Events" EntityType="Self.Events" />
           <EntitySet Name="Groups" EntityType="Self.Groups" />
           <EntitySet Name="Members" EntityType="Self.Members" />
+          <EntitySet Name="ListedContacts" EntityType="meetmeModel.ListedContacts" />
         </EntityContainer>
+        <EntityType Name="ListedContacts">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Owner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -180,6 +202,17 @@ warning 6035: The relationship 'fk_members_users' has columns that are not part 
               <MappingFragment StoreEntitySet="Members">
                 <ScalarProperty Name="Group" ColumnName="Group" />
                 <ScalarProperty Name="User" ColumnName="User" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="ListedContacts">
+            <EntityTypeMapping TypeName="meetmeModel.ListedContacts">
+              <MappingFragment StoreEntitySet="ListedContacts">
+                <ScalarProperty Name="Owner" ColumnName="Owner" />
+                <ScalarProperty Name="LastName" ColumnName="LastName" />
+                <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+                <ScalarProperty Name="Username" ColumnName="Username" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>

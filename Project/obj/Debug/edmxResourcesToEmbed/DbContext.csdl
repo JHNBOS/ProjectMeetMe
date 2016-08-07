@@ -53,5 +53,16 @@
     <EntitySet Name="Events" EntityType="Self.Events" />
     <EntitySet Name="Groups" EntityType="Self.Groups" />
     <EntitySet Name="Members" EntityType="Self.Members" />
+    <EntitySet Name="ListedContacts" EntityType="meetmeModel.ListedContacts" />
   </EntityContainer>
+  <EntityType Name="ListedContacts">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="FirstName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="LastName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Owner" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+  </EntityType>
 </Schema>

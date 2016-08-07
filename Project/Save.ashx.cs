@@ -79,6 +79,7 @@ namespace Project
             catch (Exception a)
             {
                 action.Type = DataActionTypes.Error;
+                System.Diagnostics.Debug.WriteLine(a.StackTrace);
             }
 
             var result = new AjaxSaveResponse(action);

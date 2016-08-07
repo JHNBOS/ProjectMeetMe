@@ -5,6 +5,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Project
 {
@@ -44,7 +45,12 @@ namespace Project
                     data.Members.Add(m);
                     data.SaveChanges();
 
-                } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
+                } catch (Exception ex)
+                {
+                    MessageBox.Show("Contact is already added to this group!");
+                    System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+
+                }
             }
             
             Response.Redirect("~/Group.aspx");
@@ -57,12 +63,16 @@ namespace Project
             //2. Current user
             //3. Remove current user from list
             List<AspNetUsers> memberlist = data.AspNetUsers.ToList();
-            AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
+            AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault();
 
             try
             {
                 memberlist.Remove(current);
-            } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
+            } catch (Exception ex)
+            {
+                MessageBox.Show("Member cannot be removed from group/Member is already removed!");
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+            }
 
             foreach (var member in memberlist)
             {

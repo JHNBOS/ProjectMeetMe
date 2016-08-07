@@ -4,7 +4,7 @@
 
     <div class="jumbotron">
         <h1>Meet Me</h1>
-        <p class="lead">Meet Me is a Web Application in which it is possible to share a calendar with a group of people, such as family, friends, colleagues and many more!.</p>
+        <p class="lead">Meet Me is a Web Application in which it is possible to share a calendar with a group of people, such as family, friends, colleagues and many more!</p>
         <p><a href="Account/Register.aspx" class="btn btn-primary btn-lg">Start using now &raquo;</a></p>
     </div>
 

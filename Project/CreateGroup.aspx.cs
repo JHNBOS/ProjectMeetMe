@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
+using System.Windows.Forms;
 
 namespace Project
 {
@@ -40,7 +41,11 @@ namespace Project
                 data.Members.Add(m);
                 data.SaveChanges();
             }
-            catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Group already exists!");
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+            }
 
             Response.Redirect("~/Group.aspx");
         }

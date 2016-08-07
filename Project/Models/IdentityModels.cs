@@ -43,6 +43,8 @@ namespace Project.Models
         public DbSet<Events> Events { get; set; }
         public DbSet<Groups> Groups { get; set; }
         public DbSet<Members> Members { get; set; }
+        public DbSet<ListedContacts> ListedContacts { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
