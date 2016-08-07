@@ -62,7 +62,17 @@ namespace Project
             //1. Get all members
             //2. Current user
             //3. Remove current user from list
-            List<AspNetUsers> memberlist = data.AspNetUsers.ToList();
+            string groupname = Session["AddContact"].ToString();
+
+            List<Members> members = data.Members.Where(ev => ev.Group == groupname).ToList();
+            List<AspNetUsers> memberlist = null;
+
+            for (int i = 0; i < members.Count; i++)
+            {
+                string username = members[i].User;
+                memberlist = data.AspNetUsers.Where(ep => ep.UserName != username).ToList();
+            }
+
             AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault();
 
             try
