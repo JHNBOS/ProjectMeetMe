@@ -37,15 +37,14 @@ namespace Project
             deletebuttondiv.Controls.Clear();
             CreateButtons();
 
-            //Button to add contacts to group
-            Button plus = new Button();
-            plus.Text = "+";
-            plus.CssClass = "plusbutton";
-            plus.ID = group;
-            plus.Click += Plus_Click;
+            //Add member button
+            Button AddMemButton = new Button();
+            AddMemButton.Click += AddMemButton_Click;
+            AddMemButton.ID = group;
+            AddMemButton.Text = "Add Member";
+            AddMemButton.CssClass = "btn btn-default AddM";
 
-            //Add to div2
-            Div2.Controls.Add(plus);
+            addmembersdiv.Controls.Add(AddMemButton);
 
             //Scheduler settings
             this.Scheduler = new DHXScheduler();
@@ -66,7 +65,7 @@ namespace Project
 
         }
 
-        private void Plus_Click(object sender, EventArgs e)
+        private void AddMemButton_Click(object sender, EventArgs e)
         {
             Button btn = (Button)sender;
             Session["AddContact"] = btn.ID;
@@ -82,6 +81,8 @@ namespace Project
             List<Members> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
             List<AspNetUsers> userlist = data.AspNetUsers.ToList();
 
+            groupmembers.Controls.Add(new LiteralControl("<ul style='list-style-type:none;'>"));
+
             for (int i = 0; i < memberlist.Count; i++)
             {
                 AspNetUsers asp = null;
@@ -91,33 +92,42 @@ namespace Project
                     asp = userlist[i];
                 }
 
-                Button m = new Button();
+                string color = asp.Colour;
+
+                groupmembers.Controls.Add(new LiteralControl("<li style='margin-bottom: 5px;'>"));
+                groupmembers.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i><span style='font-size: 17px;'>" + " " + asp.Firstname + " " + asp.Lastname + "</span>"));
+                groupmembers.Controls.Add(new LiteralControl("<li>"));
+
+                //Button m = new Button();
                 Button d = new Button();
-                m.ID = asp.UserName + i;
+                //m.ID = asp.UserName + i;
                 d.ID = asp.UserName;
 
-                m.Text = asp.Firstname + " " + asp.Lastname;
+                //m.Text = asp.Firstname + " " + asp.Lastname;
                 d.Text = "X";
 
-                string color = asp.Colour;
-                m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
-                m.BorderStyle = BorderStyle.Solid;
-                m.BorderWidth = 4;
+                //string color = asp.Colour;
+                //m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
+                //m.BorderStyle = BorderStyle.Solid;
+                //m.BorderWidth = 4;
 
-                m.CssClass = "GroupmemberButton";
-                d.CssClass = "DeleteButton";
+                //m.CssClass = "GroupmemberButton";
+                d.CssClass = "MDeleteButton";
 
-                m.Height = 35;
-                d.Height = 35;
+                //m.Height = 35;
+                d.Height = 24;
 
-                m.Width = 200;
-                d.Width = 35;
+                //m.Width = 200;
+                d.Width = 24;
 
                 d.Click += D_Click;
 
-                groupmembers.Controls.Add(m);
+                //groupmembers.Controls.Add(m);
                 deletebuttondiv.Controls.Add(d);
             }
+
+            groupmembers.Controls.Add(new LiteralControl("</ul>"));
+
         }
 
         private void D_Click(object sender, EventArgs e)
@@ -125,7 +135,7 @@ namespace Project
             //1. New Button
             //2. Database context
             //3. Group
-           
+
             Button btn = (Button)sender;
             data = new meetmeEntities();
             string group = Session["Group"].ToString();
@@ -146,6 +156,7 @@ namespace Project
             }
             catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
         }
+
     }
 
 }

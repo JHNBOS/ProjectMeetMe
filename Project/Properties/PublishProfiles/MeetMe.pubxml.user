@@ -1,0 +1,1060 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<!--
+This file is used by the publish/package process of your Web project. You can customize the behavior of this process
+by editing this MSBuild file. In order to learn more about this please visit http://go.microsoft.com/fwlink/?LinkID=208121. 
+-->
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <TimeStampOfAssociatedLegacyPublishXmlFile />
+    <_PublishTargetUrl>C:\MeetMeFiles</_PublishTargetUrl>
+  </PropertyGroup>
+  <ItemGroup>
+    <File Include="About.aspx">
+      <publishTime>05/08/2016 20:44:55</publishTime>
+    </File>
+    <File Include="Account/AddPhoneNumber.aspx">
+      <publishTime>07/30/2016 12:37:17</publishTime>
+    </File>
+    <File Include="Account/Confirm.aspx">
+      <publishTime>07/30/2016 12:37:18</publishTime>
+    </File>
+    <File Include="Account/Forgot.aspx">
+      <publishTime>07/30/2016 12:37:18</publishTime>
+    </File>
+    <File Include="Account/Lockout.aspx">
+      <publishTime>07/30/2016 12:37:18</publishTime>
+    </File>
+    <File Include="Account/Login.aspx">
+      <publishTime>07/31/2016 21:41:13</publishTime>
+    </File>
+    <File Include="Account/Manage.aspx">
+      <publishTime>07/30/2016 12:37:18</publishTime>
+    </File>
+    <File Include="Account/ManageLogins.aspx">
+      <publishTime>07/30/2016 12:37:18</publishTime>
+    </File>
+    <File Include="Account/ManagePassword.aspx">
+      <publishTime>07/30/2016 12:37:18</publishTime>
+    </File>
+    <File Include="Account/OpenAuthProviders.ascx">
+      <publishTime>07/30/2016 12:37:18</publishTime>
+    </File>
+    <File Include="Account/Register.aspx">
+      <publishTime>01/08/2016 20:21:17</publishTime>
+    </File>
+    <File Include="Account/RegisterExternalLogin.aspx">
+      <publishTime>07/30/2016 12:37:19</publishTime>
+    </File>
+    <File Include="Account/ResetPassword.aspx">
+      <publishTime>07/30/2016 12:37:19</publishTime>
+    </File>
+    <File Include="Account/ResetPasswordConfirmation.aspx">
+      <publishTime>07/30/2016 12:37:19</publishTime>
+    </File>
+    <File Include="Account/TwoFactorAuthenticationSignIn.aspx">
+      <publishTime>07/30/2016 12:37:19</publishTime>
+    </File>
+    <File Include="Account/VerifyPhoneNumber.aspx">
+      <publishTime>07/30/2016 12:37:19</publishTime>
+    </File>
+    <File Include="Account/Web.config">
+      <publishTime>07/30/2016 12:37:19</publishTime>
+    </File>
+    <File Include="AddContacts.aspx">
+      <publishTime>06/08/2016 21:45:42</publishTime>
+    </File>
+    <File Include="App_Data/project_db.mdf">
+      <publishTime>05/08/2016 20:55:06</publishTime>
+    </File>
+    <File Include="App_Data/project_db_log.ldf">
+      <publishTime>05/08/2016 20:55:06</publishTime>
+    </File>
+    <File Include="bin/Antlr3.Runtime.dll">
+      <publishTime>12/21/2015 07:55:38</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.bootstrap.dll">
+      <publishTime>12/21/2015 07:55:51</publishTime>
+    </File>
+    <File Include="bin/AspNet.ScriptManager.jQuery.dll">
+      <publishTime>07/15/2016 10:18:52</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.Core.dll">
+      <publishTime>11/14/2015 13:35:30</publishTime>
+    </File>
+    <File Include="bin/Common.Logging.dll">
+      <publishTime>11/14/2015 13:35:30</publishTime>
+    </File>
+    <File Include="bin/DHTMLX.dll">
+      <publishTime>07/18/2016 18:02:44</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.dll">
+      <publishTime>02/03/2015 08:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework.SqlServer.dll">
+      <publishTime>02/03/2015 08:32:26</publishTime>
+    </File>
+    <File Include="bin/EntityFramework6.Npgsql.dll">
+      <publishTime>03/05/2016 04:09:00</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.FriendlyUrls.dll">
+      <publishTime>07/30/2013 16:57:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Core.dll">
+      <publishTime>03/04/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.EntityFramework.dll">
+      <publishTime>03/04/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Identity.Owin.dll">
+      <publishTime>03/04/2015 17:07:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.AspNet.Web.Optimization.WebForms.dll">
+      <publishTime>11/02/2014 14:26:04</publishTime>
+    </File>
+    <File Include="bin/Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll">
+      <publishTime>12/21/2015 07:55:59</publishTime>
+    </File>
+    <File Include="bin/Microsoft.EntityFrameworkCore.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.EntityFrameworkCore.Relational.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Caching.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Caching.Memory.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.DependencyInjection.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.DependencyInjection.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Logging.Abstractions.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Logging.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Options.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Extensions.Primitives.dll">
+      <publishTime>06/22/2016 09:14:56</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.dll">
+      <publishTime>02/13/2015 12:16:30</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Host.SystemWeb.dll">
+      <publishTime>02/13/2015 12:16:34</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Cookies.dll">
+      <publishTime>02/13/2015 12:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.dll">
+      <publishTime>02/13/2015 12:16:36</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Facebook.dll">
+      <publishTime>02/13/2015 12:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Google.dll">
+      <publishTime>02/13/2015 12:16:38</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.MicrosoftAccount.dll">
+      <publishTime>02/13/2015 12:16:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.OAuth.dll">
+      <publishTime>02/13/2015 12:16:40</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Owin.Security.Twitter.dll">
+      <publishTime>02/13/2015 12:16:42</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ScriptManager.MSAjax.dll">
+      <publishTime>06/09/2013 11:20:12</publishTime>
+    </File>
+    <File Include="bin/Microsoft.ScriptManager.WebForms.dll">
+      <publishTime>06/09/2013 11:20:22</publishTime>
+    </File>
+    <File Include="bin/Microsoft.Web.Infrastructure.dll">
+      <publishTime>05/01/2012 10:08:46</publishTime>
+    </File>
+    <File Include="bin/Newtonsoft.Json.dll">
+      <publishTime>06/13/2016 23:06:14</publishTime>
+    </File>
+    <File Include="bin/Npgsql.dll">
+      <publishTime>03/05/2016 04:09:00</publishTime>
+    </File>
+    <File Include="bin/Owin.dll">
+      <publishTime>11/27/2012 12:00:52</publishTime>
+    </File>
+    <File Include="bin/pgProvider.dll">
+      <publishTime>05/02/2016 21:45:34</publishTime>
+    </File>
+    <File Include="bin/Project.dll">
+      <publishTime>08/08/2016 10:36:11</publishTime>
+    </File>
+    <File Include="bin/Remotion.Linq.dll">
+      <publishTime>06/14/2016 23:16:48</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/csi.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.Build.Tasks.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.CSharp.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.Scripting.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CodeAnalysis.VisualBasic.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.CSharp.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.amd64.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.DiaSymReader.Native.x86.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/Microsoft.VisualBasic.Core.targets">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.AppContext.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Collections.Immutable.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Diagnostics.StackTrace.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.IO.FileSystem.Primitives.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/System.Reflection.Metadata.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/vbc.rsp">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/roslyn/VBCSCompiler.exe.config">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/System.Collections.Immutable.dll">
+      <publishTime>06/27/2016 14:50:24</publishTime>
+    </File>
+    <File Include="bin/System.Diagnostics.DiagnosticSource.dll">
+      <publishTime>11/06/2016 23:13:28</publishTime>
+    </File>
+    <File Include="bin/System.Interactive.Async.dll">
+      <publishTime>06/21/2016 21:47:14</publishTime>
+    </File>
+    <File Include="bin/System.Web.Optimization.dll">
+      <publishTime>11/02/2014 14:26:04</publishTime>
+    </File>
+    <File Include="bin/System.Web.Providers.dll">
+      <publishTime>11/22/2013 09:21:56</publishTime>
+    </File>
+    <File Include="bin/WebGrease.dll">
+      <publishTime>12/21/2015 07:56:08</publishTime>
+    </File>
+    <File Include="Bundle.config">
+      <publishTime>07/30/2016 12:36:59</publishTime>
+    </File>
+    <File Include="Calendar.aspx">
+      <publishTime>06/08/2016 16:47:07</publishTime>
+    </File>
+    <File Include="Contact.aspx">
+      <publishTime>07/08/2016 13:29:16</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.css.map">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap-theme.min.css.map">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap.css.map">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Content/bootstrap.min.css.map">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Content/dhtmlxScheduler/dhtmlxscheduler-responsive-classic.css">
+      <publishTime>07/30/2016 12:44:23</publishTime>
+    </File>
+    <File Include="Content/dhtmlxScheduler/dhtmlxscheduler-responsive.css">
+      <publishTime>07/30/2016 12:44:23</publishTime>
+    </File>
+    <File Include="Content/flatly.css">
+      <publishTime>07/31/2016 21:14:16</publishTime>
+    </File>
+    <File Include="Content/flatly.min.css">
+      <publishTime>07/31/2016 21:13:44</publishTime>
+    </File>
+    <File Include="Content/paper.css">
+      <publishTime>07/31/2016 20:52:43</publishTime>
+    </File>
+    <File Include="Content/paper.min.css">
+      <publishTime>07/31/2016 20:53:48</publishTime>
+    </File>
+    <File Include="Content/Site.css">
+      <publishTime>08/08/2016 10:27:25</publishTime>
+    </File>
+    <File Include="CreateGroup.aspx">
+      <publishTime>07/31/2016 21:17:41</publishTime>
+    </File>
+    <File Include="Data.ashx">
+      <publishTime>07/30/2016 12:54:11</publishTime>
+    </File>
+    <File Include="DbContext.edmx.diagram">
+      <publishTime>07/08/2016 13:08:11</publishTime>
+    </File>
+    <File Include="Default.aspx">
+      <publishTime>06/08/2016 22:28:19</publishTime>
+    </File>
+    <File Include="favicon.ico">
+      <publishTime>02/08/2016 12:36:14</publishTime>
+    </File>
+    <File Include="fonts/Champagne &amp; Limousines Bold Italic.ttf">
+      <publishTime>03/31/2015 00:35:02</publishTime>
+    </File>
+    <File Include="fonts/Champagne &amp; Limousines Bold.ttf">
+      <publishTime>03/31/2015 00:36:52</publishTime>
+    </File>
+    <File Include="fonts/Champagne &amp; Limousines Italic.ttf">
+      <publishTime>03/31/2015 00:28:18</publishTime>
+    </File>
+    <File Include="fonts/Champagne &amp; Limousines.ttf">
+      <publishTime>03/31/2015 00:28:18</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.eot">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.svg">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.ttf">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="fonts/glyphicons-halflings-regular.woff2">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Global.asax">
+      <publishTime>07/30/2016 12:36:59</publishTime>
+    </File>
+    <File Include="Group.aspx">
+      <publishTime>01/08/2016 13:34:28</publishTime>
+    </File>
+    <File Include="packages.config">
+      <publishTime>05/08/2016 20:15:24</publishTime>
+    </File>
+    <File Include="Save.ashx">
+      <publishTime>07/30/2016 12:55:08</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.js">
+      <publishTime>07/30/2016 12:45:59</publishTime>
+    </File>
+    <File Include="Scripts/bootstrap.min.js">
+      <publishTime>07/30/2016 12:45:58</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/dhtmlxscheduler-responsive.js">
+      <publishTime>07/30/2016 12:44:22</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/dhtmlxscheduler.css">
+      <publishTime>07/30/2016 12:44:10</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/dhtmlxscheduler.js">
+      <publishTime>07/30/2016 12:44:09</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/dhtmlxscheduler_classic.css">
+      <publishTime>07/30/2016 12:44:09</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/dhtmlxscheduler_custom_lightbox.js">
+      <publishTime>07/30/2016 12:44:09</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/dhtmlxscheduler_flat.css">
+      <publishTime>07/30/2016 12:44:09</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/dhtmlxscheduler_glossy.css">
+      <publishTime>07/30/2016 12:44:09</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_active_links.js">
+      <publishTime>07/30/2016 12:44:08</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_agenda_view.js">
+      <publishTime>07/30/2016 12:44:08</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_all_timed.js">
+      <publishTime>07/30/2016 12:44:08</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_collision.js">
+      <publishTime>07/30/2016 12:44:07</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_container_autoresize.js">
+      <publishTime>07/30/2016 12:44:07</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_cookie.js">
+      <publishTime>07/30/2016 12:44:06</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_daytimeline.js">
+      <publishTime>07/30/2016 12:44:06</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_drag_between.js">
+      <publishTime>07/30/2016 12:44:06</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_editors.js">
+      <publishTime>07/30/2016 12:44:05</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_expand.js">
+      <publishTime>07/30/2016 12:44:05</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_grid_view.js">
+      <publishTime>07/30/2016 12:44:05</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_html_templates.js">
+      <publishTime>07/30/2016 12:44:04</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_key_nav.js">
+      <publishTime>07/30/2016 12:44:04</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_layer.js">
+      <publishTime>07/30/2016 12:44:04</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_limit.js">
+      <publishTime>07/30/2016 12:44:03</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_live_updates.js">
+      <publishTime>07/30/2016 12:44:03</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_map_view.js">
+      <publishTime>07/30/2016 12:44:03</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_minical.js">
+      <publishTime>07/30/2016 12:44:02</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_monthheight.js">
+      <publishTime>07/30/2016 12:44:02</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_multisection.js">
+      <publishTime>07/30/2016 12:44:02</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_multiselect.js">
+      <publishTime>07/30/2016 12:44:01</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_multisource.js">
+      <publishTime>07/30/2016 12:44:01</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_mvc.js">
+      <publishTime>07/30/2016 12:44:01</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_offline.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_outerdrag.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_pdf.js">
+      <publishTime>01/01/0001 00:00:00</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_quick_info.js">
+      <publishTime>07/30/2016 12:43:59</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_readonly.js">
+      <publishTime>07/30/2016 12:43:59</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_recurring.js">
+      <publishTime>07/30/2016 12:43:59</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_serialize.js">
+      <publishTime>07/30/2016 12:43:59</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_timeline.js">
+      <publishTime>07/30/2016 12:43:59</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_tooltip.js">
+      <publishTime>07/30/2016 12:43:58</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_treetimeline.js">
+      <publishTime>07/30/2016 12:43:58</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_units.js">
+      <publishTime>07/30/2016 12:43:58</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_url.js">
+      <publishTime>07/30/2016 12:43:58</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_week_agenda.js">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_wp.js">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/ext/dhtmlxscheduler_year_view.js">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/buttons.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/but_repeat.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/calendar.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/clock_big.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/clock_small.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/collapse_expand_icon.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/controls.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/databg.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/databg_now.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/export_ical.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/export_pdf.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/icon.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/images.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/loading.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs/resize_dots.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/arrow_left.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/arrow_right.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/but_repeat.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/calendar.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/clock_big.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/clock_small.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/close_icon.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/collapse_expand_icon.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/controls.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/databg.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/databg_now.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/export_ical.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/export_pdf.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/resize_dots.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_dhx_terrace/resizing.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/agenda_bg.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/arrow_left.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/arrow_right.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/but_repeat.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/calendar.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/clock.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/clock_big.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/clock_small.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/close_icon.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/collapse_expand_icon.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/controls.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/databg.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/databg_now.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/export_ical.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/export_pdf.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/resize_dots.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_flat/resizing.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/blue_tab.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/blue_tab_wide.png">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/buttons.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/but_repeat.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/calendar.gif">
+      <publishTime>07/30/2016 12:43:57</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/clock_big.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/clock_small.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/collapse_expand_icon.gif">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/controlls5.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/databg.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/databg_now.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/event-bg.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/export_ical.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/export_pdf.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/icon.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/left-separator.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/left-time-bg.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/lightbox.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/loading.gif">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/move.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/multi-days-bg.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/second-top-days-bg.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/top-days-bg.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/top-separator.gif">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/white_tab.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/imgs_glossy/white_tab_wide.png">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_ar.js">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_be.js">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_ca.js">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_cn.js">
+      <publishTime>07/30/2016 12:43:56</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_cs.js">
+      <publishTime>07/30/2016 12:43:55</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_da.js">
+      <publishTime>07/30/2016 12:43:55</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_de.js">
+      <publishTime>07/30/2016 12:43:55</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_el.js">
+      <publishTime>07/30/2016 12:43:55</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_en.js">
+      <publishTime>07/30/2016 12:43:55</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_es.js">
+      <publishTime>07/30/2016 12:43:54</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_fi.js">
+      <publishTime>07/30/2016 12:43:54</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_fr.js">
+      <publishTime>07/30/2016 12:43:54</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_he.js">
+      <publishTime>07/30/2016 12:43:54</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_hu.js">
+      <publishTime>07/30/2016 12:43:54</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_id.js">
+      <publishTime>07/30/2016 12:43:54</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_it.js">
+      <publishTime>07/30/2016 12:43:54</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_jp.js">
+      <publishTime>07/30/2016 12:43:53</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_nb.js">
+      <publishTime>07/30/2016 12:43:53</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_nl.js">
+      <publishTime>07/30/2016 12:43:53</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_no.js">
+      <publishTime>07/30/2016 12:43:53</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_pl.js">
+      <publishTime>07/30/2016 12:43:53</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_pt.js">
+      <publishTime>07/30/2016 12:43:53</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_ro.js">
+      <publishTime>07/30/2016 12:43:53</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_ru.js">
+      <publishTime>07/30/2016 12:43:53</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_si.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_sk.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_sv.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_tr.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/locale_ua.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_be.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_cn.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_cs.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_da.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_de.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_el.js">
+      <publishTime>07/30/2016 12:43:52</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_en.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_es.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_fi.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_fr.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_it.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_nb.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_nl.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_pl.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_pt.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_ro.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_ru.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_sk.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_sv.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/locale_recurring_ua.js">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_be.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_cn.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_de.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_el.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_en.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_es.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_fr.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_it.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_nl.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_ro.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_ru.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/dhtmlxScheduler/locale/recurring/repeat_template_sk.html">
+      <publishTime>07/30/2016 12:43:51</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.0.js">
+      <publishTime>07/30/2016 12:45:56</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.0.min.js">
+      <publishTime>07/30/2016 12:45:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.0.min.map">
+      <publishTime>07/30/2016 12:45:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.0.slim.js">
+      <publishTime>07/30/2016 12:45:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.0.slim.min.js">
+      <publishTime>07/30/2016 12:45:55</publishTime>
+    </File>
+    <File Include="Scripts/jquery-3.1.0.slim.min.map">
+      <publishTime>07/30/2016 12:45:55</publishTime>
+    </File>
+    <File Include="Scripts/modernizr-2.8.3.js">
+      <publishTime>07/30/2016 12:46:05</publishTime>
+    </File>
+    <File Include="Scripts/respond.js">
+      <publishTime>07/30/2016 12:46:09</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.js">
+      <publishTime>07/30/2016 12:46:09</publishTime>
+    </File>
+    <File Include="Scripts/respond.matchmedia.addListener.min.js">
+      <publishTime>07/30/2016 12:46:09</publishTime>
+    </File>
+    <File Include="Scripts/respond.min.js">
+      <publishTime>07/30/2016 12:46:08</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/DetailsView.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/Focus.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/GridView.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/Menu.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MenuStandards.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjax.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxApplicationServices.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxComponentModel.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxCore.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxGlobalization.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxHistory.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxNetwork.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxSerialization.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxTimer.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxWebForms.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/MSAjax/MicrosoftAjaxWebServices.js">
+      <publishTime>07/30/2016 12:37:15</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/SmartNav.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/TreeView.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebForms.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebParts.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/WebForms/WebUIValidation.js">
+      <publishTime>07/30/2016 12:37:16</publishTime>
+    </File>
+    <File Include="Scripts/_references.js">
+      <publishTime>07/30/2016 12:46:09</publishTime>
+    </File>
+    <File Include="Site.Master">
+      <publishTime>08/08/2016 11:29:49</publishTime>
+    </File>
+    <File Include="Site.Mobile.Master">
+      <publishTime>07/30/2016 12:37:17</publishTime>
+    </File>
+    <File Include="ViewSwitcher.ascx">
+      <publishTime>07/30/2016 12:37:17</publishTime>
+    </File>
+    <File Include="Web.config">
+      <publishTime>08/08/2016 10:36:12</publishTime>
+    </File>
+  </ItemGroup>
+</Project>

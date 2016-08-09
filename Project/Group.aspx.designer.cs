@@ -13,15 +13,6 @@ namespace Project {
     public partial class Group1 {
         
         /// <summary>
-        /// groupdiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl groupdiv;
-        
-        /// <summary>
         /// groupbuttondiv control.
         /// </summary>
         /// <remarks>

@@ -15,7 +15,8 @@
     </asp:PlaceHolder>
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-    
+    <script src="https://code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
 <asp:ContentPlaceHolder ID="Head" runat="server">
 </asp:ContentPlaceHolder>
 </head>
@@ -45,18 +46,18 @@
         <div class="navbar navbar-inverse navbar-fixed-top">
             <div class="container">
                 <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">Meet Me</a>
                 </div>
-                <div class="navbar-collapse collapse">
+                <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
                         <li><a runat="server" href="~/Group">Groups</a></li>
-                        <li><a runat="server" href="~/Contacts">Contacts</a></li>
+                        <li><a runat="server" href="~/Contact">Contacts</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
@@ -67,7 +68,7 @@
                         </AnonymousTemplate>
                         <LoggedInTemplate>
                             <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Account/Manage" title="Manage your account">Hello, <%: Context.User.Identity.GetUserName()  %> !</a></li>
+                                <li><a href="~/Account/Manage" id="hello" title="Manage your account" runat="server"><%= "Hello, " + CurrentUser.Firstname + "!" %></a></li>
                                 <li>
                                     <asp:LoginStatus runat="server" LogoutAction="Redirect" LogoutText="Log off" LogoutPageUrl="~/" OnLoggingOut="Unnamed_LoggingOut" />
                                 </li>
@@ -82,6 +83,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <asp:ContentPlaceHolder ID="BodyContent" runat="server">
+                
             </asp:ContentPlaceHolder>
             <footer>
                 <p>&copy; <%: DateTime.Now.Year %> - Powered by ASP.NET Application - Created By Johan Bos</p>

@@ -32,7 +32,7 @@
 
                 </div>
                 <div class="col-sm-3" id="Div2" runat="server">
-                    <a href="#" id="collapsebutton" onclick="showhide()">-</a>
+                    <!--<a href="AddContacts.aspx" id="plusbutton">+</a>-->
                 </div>
             </div>
     </div>

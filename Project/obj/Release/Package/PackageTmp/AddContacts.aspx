@@ -1,4 +1,4 @@
-﻿<%@ Page Title="Contacts" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Contacts.aspx.cs" Inherits="Project.Contacts" %>
+﻿<%@ Page Title="Contacts" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="AddContacts.aspx.cs" Inherits="Project.Contacts" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="Head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -12,9 +12,6 @@
         <br />
     </div>
     <div>
-        <h5>Select a group you want to add the selected contact(s) to.</h5>
-        <asp:DropDownList ID="GroupDropDownList" runat="server"></asp:DropDownList>
-        <br />
         <br />
         <asp:Button ID="AddContactButton" runat="server" Text="Add Contact(s) to Group" />
     </div>

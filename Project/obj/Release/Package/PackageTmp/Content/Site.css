@@ -77,8 +77,8 @@ input[type="select"] {
     white-space: nowrap;
     vertical-align: middle;
     background-image: none;
-    border: 1px solid #939292;
     border-radius: 0px;
+    border: 1px solid #939292;
 }
 
 .GroupButton:hover {
@@ -89,19 +89,41 @@ input[type="select"] {
 
 .DeleteButton {
     display:block;
-    width:15px;
-    height:15px;
     color: #eb2b2b;
     text-align:center;
     text-decoration:none;
     background: #fff;
     font-size:18px !important;
     font-weight:bold !important;
-    padding: 2 2;
+    padding: 2px 2px;
     margin: 0 0 0 0;
     white-space: nowrap;
     background-image: none;
     border: 1px solid #939292;
+}
+
+.DeleteButton:hover {
+    border: 2px solid #939292;
+}
+
+.MDeleteButton {
+    display:block;
+    color: #eb2b2b;
+    text-align:center;
+    text-decoration:none;
+    background: #fff;
+    font-size:18px !important;
+    font-weight:bold !important;
+    padding: 2px 2px;
+    margin: 0 0 0 0;
+    margin-bottom: 10px;
+    white-space: nowrap;
+    background-image: none;
+    border: 1px solid #939292;
+}
+
+.MDeleteButton:hover {
+    border: 2px solid #939292;
 }
 
 .GroupmemberButton {
@@ -111,13 +133,14 @@ input[type="select"] {
     padding: 6px 12px;
     font-size: 14px;
     font-weight: normal;
-    line-height: 1.42857143;
+    line-height: 1.0;
     text-align: center;
     white-space: nowrap;
     vertical-align: middle;
     background-image: none;
     border: 1px solid #939292;
     border-radius: 0px;
+    margin-bottom: 10px;
 }
 
 input#MainContent_colorPicker {
@@ -127,21 +150,21 @@ input#MainContent_colorPicker {
     width: 80px;
 }
 
-#collapsebutton {
+.plusbutton {
     float: right;
     display:block;
     width:35px;
     height:35px;
-    line-height:80%;
+    line-height: 30%;
     border-radius: 50%;
+    border: 1px solid #fff;
     color: #fff;
     text-align:center;
     text-decoration:none;
     background: #539af2;
-    box-shadow: 0 0 3px gray;
     font-size:35px !important;
     font-weight:bold !important;
-    padding: 0 0 0 0;
+    padding: 0 0 5px 0;
     margin: 0 0 35px 0;
     position: relative;
     right: -180%;
@@ -205,4 +228,20 @@ input[type="checkbox"] {
     font-size: 30px;
     font-weight: bold;
     line-height: 18px;
+}
+
+.Addcontactbutton{
+    color: #464646;
+    background-color: #fff;
+    display: block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    text-align: center;
+    white-space: nowrap;
+    vertical-align: middle;
+    background-image: none;
+    border-radius: 0px;
+    border: 1px solid #939292;
 }

@@ -74,13 +74,21 @@ namespace Project
         private void CreateButtons()
         {
             data = new meetmeEntities();
+            List<Groups> grouplist = null;
 
             try {
-                Members member = data.Members.Where(p => p.User == User.Identity.Name).FirstOrDefault();
-                List<Groups> grouplist = data.Groups.Where(ev => ev.Name == member.Group).ToList();
+                List<Members> members = data.Members.Where(p => p.User == User.Identity.Name).ToList();
+
+                for (int i = 0; i < members.Count; i++)
+                {
+                    string group = members[i].Group;
+                    grouplist = data.Groups.Where(ev => ev.Name == group || ev.Creator == User.Identity.Name).ToList();
+                }
+
+                int count = grouplist.Count;
 
                 //Create and add buttons to ul and add ul to div
-                for (int i = 0; i < grouplist.Count(); i++)
+                for (int i = 0; i < count; i++)
                 {
                     Button b = new Button();
                     Button d = new Button();
@@ -96,17 +104,17 @@ namespace Project
                     b.Height = 35;
                     d.Height = 35;
 
-                    b.Width = 200;
+                    b.Width = 320;
                     d.Width = 35;
 
                     b.Click += B_Click;
                     d.Click += D_Click;
 
                     groupbuttondiv.Controls.Add(b);
-                    groupbuttondiv.Controls.Add(new LiteralControl("<br />"));
+                    //groupbuttondiv.Controls.Add(new LiteralControl("<br />"));
 
                     deletebuttondiv.Controls.Add(d);
-                    deletebuttondiv.Controls.Add(new LiteralControl("<br />"));
+                    //deletebuttondiv.Controls.Add(new LiteralControl("<br />"));
                 }
             } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
 

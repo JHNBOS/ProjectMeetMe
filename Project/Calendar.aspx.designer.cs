@@ -13,15 +13,6 @@ namespace Project {
     public partial class Calendar {
         
         /// <summary>
-        /// membersdiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl membersdiv;
-        
-        /// <summary>
         /// groupmembers control.
         /// </summary>
         /// <remarks>
@@ -40,22 +31,22 @@ namespace Project {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl deletebuttondiv;
         
         /// <summary>
-        /// Div1 control.
+        /// addmembersdiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div1;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl addmembersdiv;
         
         /// <summary>
-        /// Div2 control.
+        /// scheduler_here control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl Div2;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl scheduler_here;
         
         /// <summary>
         /// GroupTitle control.
