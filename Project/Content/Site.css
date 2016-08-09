@@ -79,7 +79,6 @@ input[type="select"] {
     background-image: none;
     border: 2px solid #18BC9C;
     margin-bottom: 15px;
-    float: right;
     border-radius: 5px;
 }
 
@@ -213,11 +212,15 @@ input[type="checkbox"] {
 }
 
 #MainContent_groupmembers{
-    width: 140px;
     padding: 0 0 0 0;
+    text-align:center;
 }
 
 #MainContent_deletebuttondiv {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
+}
+
+#MainContent_ButtonTable td{
+    padding-right: 10px;
 }

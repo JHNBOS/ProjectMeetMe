@@ -110,13 +110,21 @@ namespace Project
                     b.Click += B_Click;
                     d.Click += D_Click;
 
-                    groupbuttondiv.Controls.Add(b);
-                    //groupbuttondiv.Controls.Add(new LiteralControl("<br />"));
+                    TableRow row = new TableRow();
+                    TableCell cell1 = new TableCell();
+                    TableCell cell2 = new TableCell();
 
-                    deletebuttondiv.Controls.Add(d);
-                    //deletebuttondiv.Controls.Add(new LiteralControl("<br />"));
+                    cell1.Controls.Add(b);
+                    cell2.Controls.Add(d);
+
+                    row.Cells.Add(cell1);
+                    row.Cells.Add(cell2);
+
+                    ButtonTable.Rows.Add(row);
                 }
-            } catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
+
+            }
+            catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
 
         }
 

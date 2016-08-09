@@ -7,16 +7,21 @@
 
     <br />
 
-    <div class="container">
+    <div class="container-fluid">
     <div class="row groupheader">
         <div class="col-md-3" id="grouptitle"></div>
         <div class="col-md-6"></div>
         <div class="col-md-3"></div>
     </div>
     <div class="row groupcontent">
-        <div class="col-md-1"></div>
-        <div class="col-md-6" id="groupbuttondiv" runat="server"></div>
-        <div class="col-md-2" id="deletebuttondiv" runat="server"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <asp:Table ID="ButtonTable" runat="server" CellSpacing="5" CellPadding="5">
+                
+            </asp:Table>
+            <div class="col-md-4 btn-group" id="groupbuttondiv" runat="server"></div>
+            <div class="col-md-2" id="deletebuttondiv" runat="server"></div>
+        </div>
         <div class="col-md-3"></div>
     </div>
 </div>

@@ -4,21 +4,21 @@
 
     <h2><%: Title %>.</h2>
     <h3>List of groups you joined</h3>
-    <div id="groupdiv" runat="server">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-3" id="groupbuttondiv" runat="server">
 
-                </div>
-                <div class="col-sm-3" id="deletebuttondiv" runat="server">
+    <br />
 
-                </div>
-            </div>
-        </div>
-        
+    <div class="container">
+    <div class="row groupheader">
+        <div class="col-md-3" id="grouptitle"></div>
+        <div class="col-md-6"></div>
+        <div class="col-md-3"></div>
     </div>
-    <br />
-    <a href="CreateGroup.aspx"><b>Create new group</b></a>
-    <br />
-    <a href="Contacts.aspx"><b>Add members to group</b></a>
+    <div class="row groupcontent">
+        <div class="col-md-1"></div>
+        <div class="col-md-6" id="groupbuttondiv" runat="server"></div>
+        <div class="col-md-2" id="deletebuttondiv" runat="server"></div>
+        <div class="col-md-3"></div>
+    </div>
+</div>
+
 </asp:Content>

@@ -497,6 +497,7 @@
       <DependentUpon>DbContext.edmx</DependentUpon>
     </Content>
     <None Include="Properties\PublishProfiles\MeetMe.pubxml" />
+    <None Include="Properties\PublishProfiles\MeetMe2.pubxml" />
     <None Include="Scripts\jquery-3.1.0.intellisense.js" />
     <Content Include="Scripts\jquery-3.1.0.js" />
     <Content Include="Scripts\jquery-3.1.0.min.js" />
