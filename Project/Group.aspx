@@ -3,16 +3,18 @@
      <link rel="stylesheet" type="text/css" href="<%=Request.ApplicationPath%>Content/Site.css" />
 
     <h2><%: Title %>.</h2>
-    <h3>List of groups you joined</h3>
 
     <br />
 
     <div class="container-fluid">
     <div class="row groupheader">
-        <div class="col-md-3" id="grouptitle"></div>
-        <div class="col-md-6"></div>
+        <div class="col-md-3"></div>
+        <div class="col-md-6" id="grouptitle">
+            <h3>List of groups you joined</h3>
+        </div>
         <div class="col-md-3"></div>
     </div>
+        <br />
     <div class="row groupcontent">
         <div class="col-md-3"></div>
         <div class="col-md-6">

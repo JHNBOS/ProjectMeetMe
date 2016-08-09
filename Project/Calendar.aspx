@@ -17,13 +17,13 @@
     <br />
 
     <!-- Row with buttons -->
-    <div class="container">
-    <div class="row" id="settings">
+    <div class="container-fluid">
+    <div class="row collapse" id="settings">
         <h4>Members of this group.</h4>
-        <div class="col-md-3" id="groupmembers" runat="server"></div>
-        <div class="col-md-2" id="deletebuttondiv" runat="server"></div>
-        <div class="col-md-2"></div>
-        <div class="col-md-2"></div>
+        <div class="col-md-6" id="groupmembers" runat="server">
+            <asp:Table ID="MemberTable" runat="server"></asp:Table>
+        </div>
+        <div class="col-md-3"></div>
         <div class="col-md-3" id="addmembersdiv" runat="server">
         </div>
     </div>
@@ -35,7 +35,7 @@
         <div class="col-md-5"></div>
         <div class="col-md-2">
             <a id="collapsebutton" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#settings" onclick="ChangeIcon()">
-                <span id="buttonspan" class="glyphicon glyphicon-chevron-up button"></span>
+                <span id="buttonspan" class="glyphicon glyphicon-chevron-down button"></span>
             </a>
         </div>
         <div class="col-md-5"></div>

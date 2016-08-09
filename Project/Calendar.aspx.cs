@@ -32,9 +32,7 @@ namespace Project
             //Set title above calendar to show group
             GroupTitle.InnerText = group;
 
-            //Groupmembers
-            groupmembers.Controls.Clear();
-            deletebuttondiv.Controls.Clear();
+            //Create Buttons
             CreateButtons();
 
             //Add member button
@@ -78,10 +76,9 @@ namespace Project
             string group = Session["Group"].ToString();
 
             //Show members of this group.
+            //Get list of all users.
             List<Members> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
             List<AspNetUsers> userlist = data.AspNetUsers.ToList();
-
-            groupmembers.Controls.Add(new LiteralControl("<ul style='list-style-type:none;'>"));
 
             for (int i = 0; i < memberlist.Count; i++)
             {
@@ -92,42 +89,37 @@ namespace Project
                     asp = userlist[i];
                 }
 
+                //Color of user
                 string color = asp.Colour;
 
-                groupmembers.Controls.Add(new LiteralControl("<li style='margin-bottom: 5px;'>"));
-                groupmembers.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i><span style='font-size: 17px;'>" + " " + asp.Firstname + " " + asp.Lastname + "</span>"));
-                groupmembers.Controls.Add(new LiteralControl("<li>"));
-
-                //Button m = new Button();
+                //Delete button
                 Button d = new Button();
-                //m.ID = asp.UserName + i;
                 d.ID = asp.UserName;
-
-                //m.Text = asp.Firstname + " " + asp.Lastname;
                 d.Text = "X";
-
-                //string color = asp.Colour;
-                //m.BorderColor = System.Drawing.ColorTranslator.FromHtml(color);
-                //m.BorderStyle = BorderStyle.Solid;
-                //m.BorderWidth = 4;
-
-                //m.CssClass = "GroupmemberButton";
                 d.CssClass = "MDeleteButton";
-
-                //m.Height = 35;
                 d.Height = 24;
-
-                //m.Width = 200;
                 d.Width = 24;
-
                 d.Click += D_Click;
 
-                //groupmembers.Controls.Add(m);
-                deletebuttondiv.Controls.Add(d);
+                //1. Table Row
+                //2 + 3. Table Cells
+                TableRow row = new TableRow();
+                TableCell cell1 = new TableCell();
+                TableCell cell2 = new TableCell();
+
+                //Add Name and color to table
+                cell1.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i>"
+                    + "<span style='font-size: 17px;'>" + " " + asp.Firstname + " " + asp.Lastname + "</span>"));
+
+                //Add button to table
+                cell2.Controls.Add(d);
+
+                row.Cells.Add(cell1);
+                row.Cells.Add(cell2);
+
+                MemberTable.Rows.Add(row);
+
             }
-
-            groupmembers.Controls.Add(new LiteralControl("</ul>"));
-
         }
 
         private void D_Click(object sender, EventArgs e)
@@ -149,7 +141,6 @@ namespace Project
                 data.SaveChanges();
 
                 groupmembers.Controls.Clear();
-                deletebuttondiv.Controls.Clear();
 
                 CreateButtons();
                 Response.Redirect("~/Calendar.aspx");

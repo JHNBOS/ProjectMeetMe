@@ -37,6 +37,8 @@ input[type="select"] {
     }
 }
 
+
+/*BEGIN OF CALENDAR*/
 #scheduler_here table {
     border: none;
     border-collapse: collapse;
@@ -54,13 +56,9 @@ input[type="select"] {
 #scheduler_here {
     margin: 20px 0;
 }
+/*END OF CALENDAR*/
 
-.filterdiv {
-    float: right;
-    padding: 10px 10px;
-    margin: 0 0;
-}
-
+/*BEGIN OF BUTTONS*/
 .GroupsDropDown {
     margin-right: 15px;
 }
@@ -114,7 +112,7 @@ input[type="select"] {
     text-align:center;
     text-decoration:none;
     background: #fff;
-    font-size:10px !important;
+    font-size:12px !important;
     font-weight:bold !important;
     padding: 0 0 0 0;
     margin: 0 0 5px 13px;
@@ -144,17 +142,15 @@ input[type="select"] {
     margin-bottom: 10px;
 }
 
-input#MainContent_colorPicker {
-    background: white;
-    border-radius: 4px;
-    height: 45px;
-    width: 80px;
-}
-
 #collapsebutton {
+    width: 40px;
+    padding: 0 0 0 0; 
+    margin: 0 0 0 0;
     position: absolute;
-    left: 50%;
+    left: 40%;
     vertical-align: middle;
+    background: #539af2;
+    border-color: #e5e5e5;
 }
 
 #MainContent_AddContactButton {
@@ -179,36 +175,30 @@ input#MainContent_colorPicker {
     background: #539af2;
 }
 
+.AddM{
+    float: right;
+    background: #539af2;
+    color: #ffffff;
+    border-color: #e5e5e5;
+}
+/*END OF BUTTONS*/
+
+
+
+/*BEGIN OF COLORPICKER*/
+input#MainContent_colorPicker {
+    background: white;
+    border-radius: 4px;
+    height: 45px;
+    width: 80px;
+}
+/*END OF COLORPICKER*/
+
+
+
+/*BEGIN OF DIV'S*/
 #membersdiv {
     float: left;
-}
-
-#membersul {
-    list-style-type: none;
-}
-
-#MainContent_GroupTitle {
-    text-align: center;
-}
-
-#MainContent_RegisterHyperLink {
-    font-weight: bold;
-    margin-left: -10px;
-}
-
-input[type="checkbox"] {
-    margin-bottom: 4px;
-    margin-left: 0;
-    margin-right: 8px !important;
-    margin-top: 1px \9;
-    line-height: normal;
-}
-
-.navbar-brand {
-    font-family:'Champagne & Limousines','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 30px;
-    font-weight: bold;
-    line-height: 18px;
 }
 
 #MainContent_groupmembers{
@@ -220,7 +210,46 @@ input[type="checkbox"] {
     padding: 0 0 0 0;
     margin: 0 0 0 0;
 }
+/*END OF DIV'S*/
 
+/*BEGIN OF LISTS*/
+#membersul {
+    list-style-type: none;
+}
+/*END OF LISTS*/
+
+/*BEGIN OF TITLES*/
+#MainContent_GroupTitle {
+    text-align: center;
+}
+/*END OF TITLES*/
+
+/*BEGIN OF LINKS*/
+#MainContent_RegisterHyperLink {
+    font-weight: bold;
+    margin-left: -10px;
+}
+
+.navbar-brand {
+    font-family:'Champagne & Limousines','Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+    line-height: 18px;
+}
+/*END OF LINKS*/
+
+/*BEGIN OF INPUT*/
+input[type="checkbox"] {
+    margin-bottom: 4px;
+    margin-left: 0;
+    margin-right: 8px !important;
+    margin-top: 1px \9;
+    line-height: normal;
+}
+/*END OF INPUT*/
+
+/*BEGIN OF TABLES*/
 #MainContent_ButtonTable td{
     padding-right: 10px;
 }
+/*END OF TABLES*/
