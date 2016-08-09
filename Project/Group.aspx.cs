@@ -22,6 +22,13 @@ namespace Project
             deletebuttondiv.Controls.Clear();
 
             CreateButtons();
+
+            CreateGroupLink.Click += CreateGroupLink_Click;
+        }
+
+        private void CreateGroupLink_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CreateGroup.aspx");
         }
 
         private void D_Click(object sender, EventArgs e)

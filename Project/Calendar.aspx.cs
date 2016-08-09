@@ -32,17 +32,11 @@ namespace Project
             //Set title above calendar to show group
             GroupTitle.InnerText = group;
 
+            //Linkbutton click
+            AddMemberLink.Click += AddMemberLink_Click;
+
             //Create Buttons
             CreateButtons();
-
-            //Add member button
-            Button AddMemButton = new Button();
-            AddMemButton.Click += AddMemButton_Click;
-            AddMemButton.ID = group;
-            AddMemButton.Text = "Add Member";
-            AddMemButton.CssClass = "btn btn-default AddM";
-
-            addmembersdiv.Controls.Add(AddMemButton);
 
             //Scheduler settings
             this.Scheduler = new DHXScheduler();
@@ -63,9 +57,9 @@ namespace Project
 
         }
 
-        private void AddMemButton_Click(object sender, EventArgs e)
+        private void AddMemberLink_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
+            LinkButton btn = (LinkButton)sender;
             Session["AddContact"] = btn.ID;
             HttpContext.Current.Response.Redirect("~/AddContacts.aspx");
         }

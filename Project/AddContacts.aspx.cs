@@ -45,14 +45,15 @@ namespace Project
                     data.Members.Add(m);
                     data.SaveChanges();
 
-                } catch (Exception ex)
+                }
+                catch (Exception ex)
                 {
                     MessageBox.Show("Contact is already added to this group!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
                     System.Diagnostics.Debug.WriteLine(ex.StackTrace);
 
                 }
             }
-            
+
             Response.Redirect("~/Group.aspx");
         }
 
@@ -67,35 +68,40 @@ namespace Project
             List<Members> members = data.Members.Where(ev => ev.Group == groupname).ToList();
             List<AspNetUsers> memberlist = null;
 
-            for (int i = 0; i < members.Count; i++)
-            {
-                string username = members[i].User;
-                memberlist = data.AspNetUsers.Where(ep => ep.UserName != username).ToList();
-            }
-
-            AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault();
-
             try
             {
+
+                for (int i = 0; i < members.Count; i++)
+                {
+                    string username = members[i].User;
+                    memberlist = data.AspNetUsers.Where(ep => ep.UserName != username).ToList();
+                }
+
+                AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault();
+
+
                 memberlist.Remove(current);
-            } catch (Exception ex)
+
+                foreach (var member in memberlist)
+                {
+                    string name = member.UserName;
+                    string first = member.Firstname;
+                    string last = member.Lastname;
+
+                    ListItem item = new ListItem();
+                    item.Text = first + " " + last + " - " + name;
+                    item.Value = name;
+
+                    ContaxtCheckBoxList.Items.Add(item);
+                }
+
+            }
+            catch (Exception ex)
             {
                 MessageBox.Show("Member cannot be removed from group/Member is already removed!");
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 
-            foreach (var member in memberlist)
-            {
-                string name = member.UserName;
-                string first = member.Firstname;
-                string last = member.Lastname;
-
-                ListItem item = new ListItem();
-                item.Text = first + " " + last + " - " + name;
-                item.Value = name;
-
-                ContaxtCheckBoxList.Items.Add(item);
-            }            
         }
     }
 }

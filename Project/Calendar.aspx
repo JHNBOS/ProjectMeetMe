@@ -22,6 +22,9 @@
         <h4>Members of this group.</h4>
         <div class="col-md-6" id="groupmembers" runat="server">
             <asp:Table ID="MemberTable" runat="server"></asp:Table>
+            <br />
+            <br />
+            <asp:LinkButton ID="AddMemberLink" runat="server" ForeColor="#18bc9c" Font-Size="15px" Font-Bold="true">Add Member</asp:LinkButton>
         </div>
         <div class="col-md-3"></div>
         <div class="col-md-3" id="addmembersdiv" runat="server">

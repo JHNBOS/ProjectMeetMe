@@ -26,6 +26,15 @@
         </div>
         <div class="col-md-3"></div>
     </div>
+        <br />
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-6">
+            <asp:LinkButton ID="CreateGroupLink" runat="server" ForeColor="#18bc9c" Font-Size="18px" Font-Bold="true">Create a group</asp:LinkButton>
+
+        </div>
+        <div class="col-md-3"></div>
+    </div>
 </div>
 
 </asp:Content>
