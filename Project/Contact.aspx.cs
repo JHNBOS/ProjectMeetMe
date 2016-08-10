@@ -25,8 +25,9 @@ namespace Project
 
             if (!IsPostBack)
             {
-                //FillListedContactsGrid();
+                SearchTitle.Text = "";
             }
+
         }
 
         private void AddContactsButton_Click(object sender, EventArgs e)
@@ -56,14 +57,17 @@ namespace Project
             ListedContactsGridView.DataBind();
         }
 
+        //Method to run when search button is clicked
         private void SearchButton_Click1(object sender, EventArgs e)
         {
             this.FillGrid(SearchBox.Text);
+            SearchTitle.Text = "Contacts that match your search query.";
         }
 
+        //Fill GridView with search query
         private void FillGrid(string name)
         {
-            var griddata = data.AspNetUsers.Where(ev => ev.UserName.Contains(name)).Select(ev => new { ev.Firstname, ev.Lastname, ev.Email }).ToList();
+            var griddata = data.AspNetUsers.Where(ev => ev.UserName.Contains(name) && ev.UserName != User.Identity.Name).Select(ev => new { ev.Firstname, ev.Lastname, ev.Email }).ToList();
 
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[3] { new DataColumn("First Name"), new DataColumn("Last Name"), new DataColumn("Email")});
@@ -81,34 +85,32 @@ namespace Project
             ContactGridView.DataBind();
         }
 
+        //Fill GridView of listed contacts.
         private void FillListedContactsGrid()
         {
-            List<ListedContacts> lcontacts = data.ListedContacts.Where(ev => ev.Owner == User.Identity.Name).ToList();
-            List<AspNetUsers> griddata = null;
-
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[3] { new DataColumn("First Name"), new DataColumn("Last Name"), new DataColumn("Email") });
 
             try
             {
-                for (int i = 0; i < lcontacts.Count; i++)
-                {
-                    string uname = lcontacts[i].Username;
-                    griddata = data.AspNetUsers.Where(ep => ep.UserName == uname).ToList();
-                }
+                List<ListedContacts> contactlist = data.ListedContacts.Where(ev => ev.Owner == User.Identity.Name).ToList();
 
-                for (int i = 0; i < griddata.Count; i++)
+                for (int i = 0; i < contactlist.Count; i++)
                 {
-                    string first = griddata[i].Firstname;
-                    string last = griddata[i].Lastname;
-                    string email = griddata[i].Email;
+                    string contactname = contactlist[i].Username;
+                    AspNetUsers user = data.AspNetUsers.Where(ep => ep.UserName == contactname && ep.UserName != User.Identity.Name).SingleOrDefault();
+
+                    string first = user.Firstname;
+                    string last = user.Lastname;
+                    string email = user.Email;
 
                     dt.Rows.Add(first, last, email);
                 }
 
                 ListedContactsGridView.DataSource = dt;
                 ListedContactsGridView.DataBind();
-            } catch(Exception ex)
+            }
+            catch (Exception ex)
             {
                 //Message m = new Message();
                 //m.Show("No Contacts!");
