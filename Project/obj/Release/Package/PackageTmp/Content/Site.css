@@ -86,13 +86,13 @@ input[type="select"] {
 }
 
 .DeleteButton {
-    display:block;
+    display: block;
     color: #eb2b2b;
-    text-align:center;
-    text-decoration:none;
+    text-align: center;
+    text-decoration: none;
     background: #18BC9C;
-    font-size:18px !important;
-    font-weight:bold !important;
+    font-size: 18px !important;
+    font-weight:bold  !important;
     padding: 6px 6px 30px 6px;
     margin: 0 0 15px 0;
     white-space: nowrap;
@@ -107,13 +107,13 @@ input[type="select"] {
 }
 
 .MDeleteButton {
-    display:block;
+    display: block;
     color: #eb2b2b;
-    text-align:center;
-    text-decoration:none;
+    text-align: center;
+    text-decoration: none;
     background: #fff;
-    font-size:12px !important;
-    font-weight:bold !important;
+    font-size: 13px !important;
+    font-weight: bold !important;
     padding: 0 0 0 0;
     margin: 0 0 5px 13px;
     white-space: nowrap;
@@ -228,6 +228,10 @@ input#MainContent_colorPicker {
 #MainContent_RegisterHyperLink {
     font-weight: bold;
     margin-left: -10px;
+}
+
+.ÄddMemberlink{
+    float: left;
 }
 
 .navbar-brand {

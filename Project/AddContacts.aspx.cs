@@ -98,7 +98,8 @@ namespace Project
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Member cannot be removed from group/Member is already removed!");
+                Message m = new Message();
+                m.Show("Member cannot be removed from group/Member is already removed!");
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 

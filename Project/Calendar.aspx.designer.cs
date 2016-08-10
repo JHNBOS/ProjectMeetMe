@@ -31,15 +31,6 @@ namespace Project {
         protected global::System.Web.UI.WebControls.Table MemberTable;
         
         /// <summary>
-        /// AddMemberLink control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton AddMemberLink;
-        
-        /// <summary>
         /// addmembersdiv control.
         /// </summary>
         /// <remarks>

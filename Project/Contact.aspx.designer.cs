@@ -13,13 +13,13 @@ namespace Project {
     public partial class Contacts1 {
         
         /// <summary>
-        /// contactform control.
+        /// searchdiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactform;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl searchdiv;
         
         /// <summary>
         /// Label1 control.
@@ -49,21 +49,39 @@ namespace Project {
         protected global::System.Web.UI.WebControls.Button SearchButton;
         
         /// <summary>
-        /// contactlist control.
+        /// gridviewdiv control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactlist;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl gridviewdiv;
         
         /// <summary>
-        /// ContactTable control.
+        /// ContactGridView control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Table ContactTable;
+        protected global::System.Web.UI.WebControls.GridView ContactGridView;
+        
+        /// <summary>
+        /// ListedContactsGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView ListedContactsGridView;
+        
+        /// <summary>
+        /// AddContactsButton control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button AddContactsButton;
     }
 }

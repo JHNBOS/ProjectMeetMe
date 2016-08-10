@@ -22,6 +22,8 @@
         <h4>Members of this group.</h4>
         <div class="col-md-6" id="groupmembers" runat="server">
             <asp:Table ID="MemberTable" runat="server"></asp:Table>
+            <br />
+            <br />
         </div>
         <div class="col-md-3"></div>
         <div class="col-md-3" id="addmembersdiv" runat="server">

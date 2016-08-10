@@ -32,8 +32,17 @@ namespace Project
             //Set title above calendar to show group
             GroupTitle.InnerText = group;
 
-            //Linkbutton click
-            AddMemberLink.Click += AddMemberLink_Click;
+            //Linkbutton
+            LinkButton addmemberlink = new LinkButton();
+            addmemberlink.CssClass = "ÄddMemberlink";
+            addmemberlink.ForeColor = System.Drawing.ColorTranslator.FromHtml("#18bc9c");
+            addmemberlink.Font.Size = FontUnit.Medium;
+            addmemberlink.Font.Bold = true;
+            addmemberlink.Text = "Add Member";
+            addmemberlink.ID = group;
+            addmemberlink.Click += AddMemberLink_Click;
+
+            groupmembers.Controls.Add(addmemberlink);
 
             //Create Buttons
             CreateButtons();
@@ -100,17 +109,30 @@ namespace Project
                 TableRow row = new TableRow();
                 TableCell cell1 = new TableCell();
                 TableCell cell2 = new TableCell();
+                TableCell cell3 = new TableCell();
 
-                //Add Name and color to table
-                cell1.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i>"
-                    + "<span style='font-size: 17px;'>" + " " + asp.Firstname + " " + asp.Lastname + "</span>"));
+                //Width and height of cells
+                cell2.Width = 120;
 
+                cell1.Height = 30;
+                cell2.Height = 30;
+                cell3.Height = 30;
+
+                //Add glyphicon with color to table
+                cell1.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i>"));
+
+                //Add name to table
+                cell2.Controls.Add(new LiteralControl("<span style='font-size: 17px;float: right;'>" + asp.Firstname + " " + asp.Lastname + "</span>"));
+                
                 //Add button to table
-                cell2.Controls.Add(d);
+                cell3.Controls.Add(d);
 
+                //Add cells to row
                 row.Cells.Add(cell1);
                 row.Cells.Add(cell2);
+                row.Cells.Add(cell3);
 
+                //Add row to table
                 MemberTable.Rows.Add(row);
 
             }
@@ -139,7 +161,12 @@ namespace Project
                 CreateButtons();
                 Response.Redirect("~/Calendar.aspx");
             }
-            catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
+            catch (Exception ex)
+            {
+                Message m = new Message();
+                m.Show("Cannot delete member!");
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+            }
         }
 
     }

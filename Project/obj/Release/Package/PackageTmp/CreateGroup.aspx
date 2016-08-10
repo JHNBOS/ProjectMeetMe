@@ -8,6 +8,7 @@
     <asp:TextBox ID="GroupNameBox" runat="server"></asp:TextBox>
     <br />
     <br />
-    <asp:Button ID="CreateGroupButton" runat="server" Text="Create" />
+    <asp:Button ID="CreateGroupButton" runat="server" Text="Create"  Width="100" Height="35" Font-Bold="true"
+        BackColor="#539AF2" ForeColor="White" BorderWidth="1" BorderStyle="Solid" BorderColor="#e5e5e5"  />
 
 </asp:Content>

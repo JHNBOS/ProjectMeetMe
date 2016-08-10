@@ -27,23 +27,24 @@ namespace Project
             //2. Assign name to this group
             //3. Assign name of current user to this group
             //4-5. Add this group to database
-            Groups g = new Groups();
-            g.Name = GroupNameBox.Text;
-            g.Creator = user;
-
-            Members m = new Members();
-            m.Group = g.Name;
-            m.User = user;
-
             try
             {
+                Groups g = new Groups();
+                g.Name = GroupNameBox.Text;
+                g.Creator = user;
+
+                Members m = new Members();
+                m.Group = g.Name;
+                m.User = user;
+            
                 data.Groups.Add(g);
                 data.Members.Add(m);
                 data.SaveChanges();
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Group already exists!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
+                Message message = new Message();
+                message.Show("Group already exists!");
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 
