@@ -56,7 +56,30 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Choose Color</asp:Label>
             <div class="col-md-10">    
-                <input type="color" id="colorPicker" runat="server" CssClass="colorpicker" />
+                <input type="color" id="colorpicker" value="#000000" list="color" CssClass="colorpicker" runat="server"/>
+                <datalist id="color">
+                    <option>#ff0000</option> 
+                    <option>#0000ff</option> 
+                    <option>#00ff00</option> 
+                    <option>#ffff00</option> 
+                    <option>#00ffff</option> 
+                    <option>#B81717</option> 
+                    <option>#F11CBC</option> 
+                    <option>#C62A9F</option> 
+                    <option>#AF40EA</option> 
+                    <option>#DC99FF</option> 
+                    <option>#1C89D6</option> 
+                    <option>#3DAFFF</option> 
+                    <option>#05D1DC</option> 
+                    <option>#1DF098</option> 
+                    <option>#2BF16A</option> 
+                    <option>#2EE725</option> 
+                    <option>#45A640</option> 
+                    <option>#8CE32A</option> 
+                    <option>#D1ED1C</option> 
+                    <option>#EDCA1C</option> 
+                    <option>#ED7E1C</option> 
+                </datalist>
             </div>
         </div>
 

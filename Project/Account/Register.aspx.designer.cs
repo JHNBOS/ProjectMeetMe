@@ -67,12 +67,12 @@ namespace Project.Account {
         protected global::System.Web.UI.WebControls.TextBox ConfirmPassword;
         
         /// <summary>
-        /// colorPicker control.
+        /// colorpicker control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl colorPicker;
+        protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl colorpicker;
     }
 }
