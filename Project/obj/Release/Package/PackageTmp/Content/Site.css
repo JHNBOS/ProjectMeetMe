@@ -256,14 +256,4 @@ input[type="checkbox"] {
 #MainContent_ButtonTable td{
     padding-right: 10px;
 }
-
-#MainContent_ListedContactsGridView td{
-    padding-left: 10px;
-    border: 1px solid #e8e8e8;
-}
-
-#MainContent_ContactGridView td{
-    padding-left: 10px;
-    border: 1px solid #e8e8e8;
-}
 /*END OF TABLES*/
