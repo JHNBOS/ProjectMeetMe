@@ -1,7 +1,9 @@
 ﻿<%@ Page Title="Register" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Register.aspx.cs" Inherits="Project.Account.Register" %>
 
 <asp:Content runat="server" ID="BodyContent" ContentPlaceHolderID="MainContent">
-<link rel="stylesheet" type="text/css" href="<%=Request.ApplicationPath%>Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="<%=Request.ApplicationPath%>Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="<%=Request.ApplicationPath%>Content/spectrum.css" />
+    <script type="text/javascript" src="../Scripts/spectrum.js"></script>
 
     <h2><%: Title %>.</h2>
     <p class="text-danger">
@@ -56,7 +58,8 @@
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="ConfirmPassword" CssClass="col-md-2 control-label">Choose Color</asp:Label>
             <div class="col-md-10">    
-                <input type="color" id="colorPicker" runat="server" CssClass="colorpicker" />
+                <input type='text' id="custom" runat="server" />
+
             </div>
         </div>
 
@@ -68,4 +71,20 @@
             </div>
         </div>
     </div>
+
+    <script>
+        $("#custom").spectrum({
+            allowEmpty: false,
+            showInput: false,
+            showAlpha: false,
+            showSelectionPalette: true,
+            selectionPalette: [
+            ['black', 'white', 'blanchedalmond',
+            'rgb(255, 128, 0);', 'hsv 100 70 50'],
+            ['red', 'yellow', 'green', 'blue', 'violet']
+                ],
+            color: "#f00"
+
+        });
+    </script>
 </asp:Content>
