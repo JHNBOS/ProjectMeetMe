@@ -56,8 +56,8 @@
                 <div id="navbar" class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
                         <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/Group">Groups</a></li>
-                        <li><a runat="server" href="~/Contact">Contacts</a></li>
+                        <li><a runat="server" id="Grouplink" href="~/Group">Groups</a></li>
+                        <li><a runat="server" id="Contactlink" href="~/Contact">Contacts</a></li>
                     </ul>
                     <asp:LoginView runat="server" ViewStateMode="Disabled">
                         <AnonymousTemplate>
