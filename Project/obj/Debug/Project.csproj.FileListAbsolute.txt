@@ -198,6 +198,5 @@ C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Security.Google.xml
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Security.Twitter.xml
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Security.OAuth.xml
-C:\Github\ProjectMeetMe\Project\obj\Debug\Project.csprojResolveAssemblyReference.cache
 C:\Github\ProjectMeetMe\Project\obj\Debug\Project.dll
 C:\Github\ProjectMeetMe\Project\obj\Debug\Project.pdb

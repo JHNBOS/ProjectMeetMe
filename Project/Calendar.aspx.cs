@@ -62,6 +62,7 @@ namespace Project
             Scheduler.Data.DataProcessor.UpdateFieldsAfterSave = true;
             Scheduler.Templates.event_header = "{start_date:date(%H:%i)} - {end_date:date(%H:%i)}";
             Scheduler.Templates.event_text = "<b>{creator}:</b> {text}";
+            Scheduler.BeforeInit.Add(string.Format("initResponsive({0})", Scheduler.Name));
 
 
         }

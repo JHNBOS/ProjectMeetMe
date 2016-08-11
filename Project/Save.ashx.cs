@@ -28,9 +28,11 @@ namespace Project
             var data = new meetmeEntities();
             var user = context.User.Identity.Name;
             Boolean allowed = context.User.Identity.IsAuthenticated;
-            string group = context.Session["Group"].ToString();
             AspNetUsers CurrentUser = data.AspNetUsers.Where(ev => ev.UserName == user).FirstOrDefault();
+            string group = context.Session["Group"].ToString();
             string colour = CurrentUser.Colour;
+            string fullname = CurrentUser.Firstname + " " + CurrentUser.Lastname;
+
 
             try
             {
@@ -40,7 +42,6 @@ namespace Project
                 //4. Assign name of selected group to this event
                 //5. Assign color to this event
                 var changedEvent = (Events)DHXEventsHelper.Bind(typeof(Events), context.Request.Form);//see details below
-                string fullname = CurrentUser.Firstname + " " + CurrentUser.Lastname;
                 changedEvent.creator = fullname;
                 changedEvent.email = user;
                 changedEvent.group = group;
