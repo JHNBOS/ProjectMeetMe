@@ -42,6 +42,7 @@ namespace Project
                 var changedEvent = (Events)DHXEventsHelper.Bind(typeof(Events), context.Request.Form);//see details below
                 string fullname = CurrentUser.Firstname + " " + CurrentUser.Lastname;
                 changedEvent.creator = fullname;
+                changedEvent.email = user;
                 changedEvent.group = group;
                 changedEvent.color = colour;
 

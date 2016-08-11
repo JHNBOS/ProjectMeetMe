@@ -31,6 +31,7 @@
     <Property Name="creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="group" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="Groups">
     <Key>

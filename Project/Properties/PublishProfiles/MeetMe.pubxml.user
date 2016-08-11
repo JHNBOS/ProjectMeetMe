@@ -40,7 +40,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>07/30/2016 12:37:18</publishTime>
     </File>
     <File Include="Account/Register.aspx">
-      <publishTime>08/10/2016 22:24:40</publishTime>
+      <publishTime>08/11/2016 09:16:41</publishTime>
     </File>
     <File Include="Account/RegisterExternalLogin.aspx">
       <publishTime>07/30/2016 12:37:19</publishTime>
@@ -193,7 +193,7 @@ by editing this MSBuild file. In order to learn more about this please visit htt
       <publishTime>05/02/2016 21:45:34</publishTime>
     </File>
     <File Include="bin/Project.dll">
-      <publishTime>08/10/2016 22:26:55</publishTime>
+      <publishTime>08/11/2016 09:48:12</publishTime>
     </File>
     <File Include="bin/Remotion.Linq.dll">
       <publishTime>06/14/2016 23:16:48</publishTime>

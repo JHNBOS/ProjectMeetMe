@@ -31,6 +31,7 @@
     <Property Name="creator" Type="text" />
     <Property Name="group" Type="text" />
     <Property Name="color" Type="text" />
+    <Property Name="email" Type="text" />
   </EntityType>
   <EntityType Name="Groups">
     <Key>

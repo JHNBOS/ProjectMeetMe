@@ -21,5 +21,6 @@ namespace Project
         public string creator { get; set; }
         public string group { get; set; }
         public string color { get; set; }
+        public string email { get; set; }
     }
 }

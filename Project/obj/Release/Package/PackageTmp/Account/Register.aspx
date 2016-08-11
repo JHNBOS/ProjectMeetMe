@@ -58,27 +58,35 @@
             <div class="col-md-10">    
                 <input type="color" id="colorpicker" value="#000000" list="color" CssClass="colorpicker" runat="server"/>
                 <datalist id="color">
-                    <option>#ff0000</option> 
-                    <option>#0000ff</option> 
-                    <option>#00ff00</option> 
-                    <option>#ffff00</option> 
-                    <option>#00ffff</option> 
-                    <option>#B81717</option> 
-                    <option>#F11CBC</option> 
-                    <option>#C62A9F</option> 
-                    <option>#AF40EA</option> 
-                    <option>#DC99FF</option> 
-                    <option>#1C89D6</option> 
-                    <option>#3DAFFF</option> 
-                    <option>#05D1DC</option> 
-                    <option>#1DF098</option> 
-                    <option>#2BF16A</option> 
-                    <option>#2EE725</option> 
-                    <option>#45A640</option> 
-                    <option>#8CE32A</option> 
-                    <option>#D1ED1C</option> 
-                    <option>#EDCA1C</option> 
-                    <option>#ED7E1C</option> 
+                    <option>#404040</option>
+                    <option>#FF0000</option>
+                    <option>#FF6A00</option>
+                    <option>#FFD800</option>
+                    <option>#B6FF00</option>
+                    <option>#4CFF00</option>
+                    <option>#00FF90</option>
+                    <option>#00FFFF</option>
+                    <option>#0094FF</option>
+                    <option>#0026FF</option>
+                    <option>#4800FF</option>
+                    <option>#B200FF</option>
+                    <option>#FF00DC</option>
+                    <option>#FF006E</option>
+                    <option>#808080</option>
+                    <option>#7F0000</option>
+                    <option>#7F3300</option>
+                    <option>#7F6A00</option>
+                    <option>#5B7F00</option>
+                    <option>#267F00</option>
+                    <option>#007F0E</option>
+                    <option>#007F46</option>
+                    <option>#007F7F</option>
+                    <option>#004A7F</option>
+                    <option>#00137F</option>
+                    <option>#21007F</option>
+                    <option>#57007F</option>
+                    <option>#7F006E</option>
+                    <option>#7F0037</option>
                 </datalist>
             </div>
         </div>

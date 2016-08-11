@@ -36,6 +36,7 @@
           <Property Name="creator" Type="text" />
           <Property Name="group" Type="text" />
           <Property Name="color" Type="text" />
+          <Property Name="email" Type="text" />
         </EntityType>
         <EntityType Name="Groups">
           <Key>
@@ -115,6 +116,7 @@ warning 6035: The relationship 'fk_members_users' has columns that are not part 
           <Property Name="creator" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="group" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
           <Property Name="color" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="email" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
         </EntityType>
         <EntityType Name="Groups">
           <Key>
@@ -180,6 +182,7 @@ warning 6035: The relationship 'fk_members_users' has columns that are not part 
           <EntitySetMapping Name="Events">
             <EntityTypeMapping TypeName="meetmeModel.Events">
               <MappingFragment StoreEntitySet="Events">
+                <ScalarProperty Name="email" ColumnName="email" />
                 <ScalarProperty Name="color" ColumnName="color" />
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="text" ColumnName="text" />
