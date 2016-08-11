@@ -49,22 +49,13 @@ namespace Project {
         protected global::System.Web.UI.WebControls.Button SearchButton;
         
         /// <summary>
-        /// ListedContactsGridView control.
+        /// line control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView ListedContactsGridView;
-        
-        /// <summary>
-        /// gridviewdiv control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl gridviewdiv;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl line;
         
         /// <summary>
         /// SearchTitle control.
@@ -92,5 +83,23 @@ namespace Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button AddContactsButton;
+        
+        /// <summary>
+        /// ListedContactsGridView control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView ListedContactsGridView;
+        
+        /// <summary>
+        /// gridviewdiv control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl gridviewdiv;
     }
 }

@@ -26,6 +26,8 @@ namespace Project
             if (!IsPostBack)
             {
                 SearchTitle.Text = "";
+                AddContactsButton.Visible = false;
+                line.Visible = false;
             }
 
         }
@@ -61,7 +63,9 @@ namespace Project
         private void SearchButton_Click1(object sender, EventArgs e)
         {
             this.FillGrid(SearchBox.Text);
+            line.Visible = true;
             SearchTitle.Text = "Contacts that match your search query.";
+            AddContactsButton.Visible = true;
         }
 
         //Fill GridView with search query
