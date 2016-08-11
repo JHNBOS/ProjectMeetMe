@@ -61,7 +61,7 @@ namespace Project
             Scheduler.EnableDataprocessor = true;
             Scheduler.Data.DataProcessor.UpdateFieldsAfterSave = true;
             Scheduler.Templates.event_header = "{start_date:date(%H:%i)} - {end_date:date(%H:%i)}";
-            Scheduler.Templates.event_text = "<b>{creator}:</b> <br /> {text}";
+            Scheduler.Templates.event_text = "<b>{creator}:</b> {text}";
 
 
         }
@@ -82,14 +82,17 @@ namespace Project
             //Get list of all users.
             List<Members> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
             List<AspNetUsers> userlist = data.AspNetUsers.ToList();
+            AspNetUsers asp = null;
 
             for (int i = 0; i < memberlist.Count; i++)
             {
-                AspNetUsers asp = null;
-
                 if (userlist[i].UserName == memberlist[i].User)
                 {
                     asp = userlist[i];
+                }
+                else
+                {
+                    asp = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
                 }
 
                 //Color of user
