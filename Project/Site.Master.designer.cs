@@ -22,6 +22,24 @@ namespace Project {
         protected global::System.Web.UI.WebControls.ContentPlaceHolder Head;
         
         /// <summary>
+        /// Grouplink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Grouplink;
+        
+        /// <summary>
+        /// Contactlink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor Contactlink;
+        
+        /// <summary>
         /// MainContent control.
         /// </summary>
         /// <remarks>

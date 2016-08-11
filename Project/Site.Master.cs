@@ -82,6 +82,17 @@ namespace Project
             Response.Cache.SetProxyMaxAge(new TimeSpan(0, 0, 0)); //Cache-Control: s-maxage=0
             Response.Cache.SetValidUntilExpires(false);
             Response.Cache.SetRevalidation(HttpCacheRevalidation.AllCaches);//Cache-Control:  must-revalidate
+
+            if(Context.User.Identity.IsAuthenticated == false)
+            {
+                Grouplink.Visible = false;
+                Contactlink.Visible = false;
+            }
+            else
+            {
+                Grouplink.Visible = true;
+                Contactlink.Visible = true;
+            }
     }
 
         protected void Unnamed_LoggingOut(object sender, LoginCancelEventArgs e)
