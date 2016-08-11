@@ -1,6 +1,9 @@
 ﻿<%@ Page Title="Calendar" Language="C#" MasterPageFile="~/Site.Master" CodeBehind="Calendar.aspx.cs" Inherits="Project.Calendar" %>
 <asp:Content ID="CalendarContent" ContentPlaceHolderID="MainContent" runat="server">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" type="text/css" href="<%=Request.ApplicationPath%>Content/Site.css" />
+    <link rel="stylesheet" type="text/css" href="Content/dhtmlxScheduler/dhtmlxscheduler-responsive.css" />
+    <script type="text/javascript" src="Scripts/dhtmlxScheduler/dhtmlxscheduler-responsive.js"></script>
     <script>
         function ChangeIcon() {
             var button = document.getElementById("buttonspan");
@@ -47,11 +50,14 @@
 
     <!-- Row with calendar -->
     <div class="row">
-        <div class="col-xs-12" id="scheduler_here" runat="server" style="height:700px;width:100%;">
+        <div class="col-xs-12" id="scheduler_here" runat="server" style="height: 620px;margin-bottom: 10px;width:100%;">
             <h2 id="GroupTitle" runat="server"></h2>
             <%= this.Scheduler.Render()%>
         </div>
     </div>
 
 </div>
+
+    <br />
+    <br />
 </asp:Content>
