@@ -277,9 +277,14 @@ input[type="checkbox"] {
     padding-right: 10px;
 }
 
-#MainContent_ListedContactsGridView td{
+#MainContent_ListedContactsTable td{
+    padding-top: 2px;
     padding-left: 10px;
     border: 1px solid #e8e8e8;
+}
+
+#MainContent_ListedContactsTable tr{
+    padding-top: 2px;
 }
 
 #MainContent_ContactGridView td{
