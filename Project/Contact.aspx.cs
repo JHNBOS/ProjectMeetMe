@@ -15,6 +15,7 @@ namespace Project
     {
         meetmeEntities data = new meetmeEntities();
         string currentuser = HttpContext.Current.User.Identity.Name;
+        bool wasClicked = false;
 
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +29,7 @@ namespace Project
                 SearchTitle.Text = "";
                 AddContactsButton.Visible = false;
                 line.Visible = false;
+                line1.Visible = false;
             }
 
         }
@@ -56,14 +58,25 @@ namespace Project
                 }
             }
 
-            ListedContactsGridView.DataBind();
+            Response.Redirect("~/Contact.aspx");
         }
 
         //Method to run when search button is clicked
         private void SearchButton_Click1(object sender, EventArgs e)
         {
             this.FillGrid(SearchBox.Text);
-            line.Visible = true;
+
+            if(Request.Browser.ScreenPixelsWidth <= 640 && Request.Browser.IsMobileDevice)
+            {
+                line.Visible = true;
+                line1.Visible = true;
+            }
+            else
+            {
+                line.Visible = false;
+                line1.Visible = false;
+            }
+            
             SearchTitle.Text = "Contacts that match your search query.";
             AddContactsButton.Visible = true;
         }
@@ -123,5 +136,33 @@ namespace Project
 
         }
 
+        protected void DeleteButton_Click(object sender, EventArgs e)
+        {
+            wasClicked = true;
+
+            DataTable dt = new DataTable();
+            dt.Columns.AddRange(new DataColumn[3] { new DataColumn("First Name"), new DataColumn("Last Name"), new DataColumn("Email") });
+            foreach (GridViewRow row in ListedContactsGridView.Rows)
+            {
+                if (row.RowType == DataControlRowType.DataRow)
+                {
+                    Button delete = (row.Cells[3].FindControl("DeleteButton") as Button);
+                    if (wasClicked == true)
+                    {
+                        string first = row.Cells[0].Text;
+                        string last = row.Cells[1].Text;
+                        string email = row.Cells[2].Text;
+
+                        ListedContacts c = data.ListedContacts.Where(ev => ev.Username == email).FirstOrDefault();
+
+                        data.ListedContacts.Remove(c);
+                        data.SaveChanges();
+                    }
+                }
+            }
+
+            Response.Redirect("~/Contact.aspx");
+
+        }
     }
 }
