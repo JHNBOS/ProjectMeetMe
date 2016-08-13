@@ -24,7 +24,7 @@
     <div class="row collapse" id="settings">
         <h4>Members of this group.</h4>
         <div class="col-md-6" id="groupmembers" runat="server">
-            <asp:Table ID="MemberTable" runat="server"></asp:Table>
+            <asp:Table ID="MemberTable" runat="server" CellPadding="2" CellSpacing="2"></asp:Table>
             <br />
             <br />
         </div>

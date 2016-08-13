@@ -44,7 +44,7 @@ namespace Project
             catch (Exception ex)
             {
                 Message message = new Message();
-                message.Show("Group already exists!");
+                message.Show("Unable to create group!" + "\n" + "Group with the same name already exists?");
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 

@@ -82,65 +82,78 @@ namespace Project
 
             //Show members of this group.
             //Get list of all users.
-            List<Members> memberlist = data.Members.Where(ev => ev.Group == group).ToList();
-            List<AspNetUsers> userlist = data.AspNetUsers.ToList();
+            List<Members> memberlist = null;
+            List<AspNetUsers> userlist = null;
             AspNetUsers asp = null;
 
-            for (int i = 0; i < memberlist.Count; i++)
+            try
             {
-                if (userlist[i].UserName == memberlist[i].User)
+                memberlist = data.Members.Where(ev => ev.Group == group).ToList();
+                userlist = data.AspNetUsers.ToList();
+
+
+
+                for (int i = 0; i < memberlist.Count; i++)
                 {
-                    asp = userlist[i];
+                    if (userlist[i].UserName == memberlist[i].User)
+                    {
+                        asp = userlist[i];
+                    }
+                    else
+                    {
+                        asp = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
+                    }
                 }
-                else
-                {
-                    asp = data.AspNetUsers.Where(ev => ev.UserName == User.Identity.Name).FirstOrDefault();
-                }
-
-                //Color of user
-                string color = asp.Colour;
-
-                //Delete button
-                Button d = new Button();
-                d.ID = asp.UserName;
-                d.Text = "X";
-                d.CssClass = "MDeleteButton";
-                d.Height = 24;
-                d.Width = 24;
-                d.Click += D_Click;
-
-                //1. Table Row
-                //2 + 3. Table Cells
-                TableRow row = new TableRow();
-                TableCell cell1 = new TableCell();
-                TableCell cell2 = new TableCell();
-                TableCell cell3 = new TableCell();
-
-                //Width and height of cells
-                cell2.Width = 120;
-
-                cell1.Height = 30;
-                cell2.Height = 30;
-                cell3.Height = 30;
-
-                //Add glyphicon with color to table
-                cell1.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i>"));
-
-                //Add name to table
-                cell2.Controls.Add(new LiteralControl("<span style='font-size: 17px;float: right;'>" + asp.Firstname + " " + asp.Lastname + "</span>"));
-                
-                //Add button to table
-                cell3.Controls.Add(d);
-
-                //Add cells to row
-                row.Cells.Add(cell1);
-                row.Cells.Add(cell2);
-                row.Cells.Add(cell3);
-
-                //Add row to table
-                MemberTable.Rows.Add(row);
 
             }
+            catch (Exception)
+            {
+                System.Diagnostics.Debug.WriteLine("No members in this group!");
+            }
+
+            //Color of user
+            string color = asp.Colour;
+
+            //Delete button
+            Button d = new Button();
+            d.ID = asp.UserName;
+            d.Text = "X";
+            d.CssClass = "MDeleteButton";
+            d.Height = 24;
+            d.Width = 24;
+            d.Click += D_Click;
+
+            //1. Table Row
+            //2 + 3. Table Cells
+            TableRow row = new TableRow();
+            TableCell cell1 = new TableCell();
+            TableCell cell2 = new TableCell();
+            TableCell cell3 = new TableCell();
+
+            //Width and height of cells
+            cell2.Width = 120;
+
+            cell1.Height = 30;
+            cell2.Height = 30;
+            cell3.Height = 30;
+
+            //Add glyphicon with color to table
+            cell1.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i>"));
+
+            //Add name to table
+            cell2.Controls.Add(new LiteralControl("<span style='font-size: 17px;float: right;'>" + asp.Firstname + " " + asp.Lastname + "</span>"));
+                
+            //Add button to table
+            cell3.Controls.Add(d);
+
+            //Add cells to row
+            row.Cells.Add(cell1);
+            row.Cells.Add(cell2);
+            row.Cells.Add(cell3);
+
+            //Add row to table
+            MemberTable.Rows.Add(row);
+
         }
 
         private void D_Click(object sender, EventArgs e)

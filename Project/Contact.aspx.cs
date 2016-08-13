@@ -44,15 +44,23 @@ namespace Project
                     CheckBox chkRow = (row.Cells[0].FindControl("chkRow") as CheckBox);
                     if (chkRow.Checked)
                     {
-                        string first = row.Cells[1].Text;
-                        string last = row.Cells[2].Text;
-                        string email = row.Cells[3].Text;
-                        ListedContacts c = new ListedContacts();
-                        c.Username = email;
-                        c.Owner = User.Identity.Name;
+                        try { 
+                            string first = row.Cells[1].Text;
+                            string last = row.Cells[2].Text;
+                            string email = row.Cells[3].Text;
+                            ListedContacts c = new ListedContacts();
+                            c.Username = email;
+                            c.Owner = User.Identity.Name;
 
-                        data.ListedContacts.Add(c);
-                        data.SaveChanges();
+                            data.ListedContacts.Add(c);
+                            data.SaveChanges();
+                        }
+                        catch (Exception ex)
+                        {
+                            Message m = new Message();
+                            m.Show("Unable to add contact to list!");
+                            System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+                        }
                     }
                 }
             }
@@ -86,22 +94,31 @@ namespace Project
         //Fill GridView with search query
         private void FillGrid(string name)
         {
-            var griddata = data.AspNetUsers.Where(ev => ev.UserName.Contains(name) && ev.UserName != User.Identity.Name).Select(ev => new { ev.Firstname, ev.Lastname, ev.Email }).ToList();
-
             DataTable dt = new DataTable();
             dt.Columns.AddRange(new DataColumn[3] { new DataColumn("First Name"), new DataColumn("Last Name"), new DataColumn("Email")});
 
-            for (int i = 0; i < griddata.Count; i++)
+            try
             {
-                string first = griddata[i].Firstname;
-                string last = griddata[i].Lastname;
-                string email = griddata[i].Email;
+                var griddata = data.AspNetUsers.Where(ev => ev.UserName.Contains(name) && ev.UserName != User.Identity.Name).Select(ev => new { ev.Firstname, ev.Lastname, ev.Email }).ToList();
 
-                dt.Rows.Add(first, last, email);
+                for (int i = 0; i < griddata.Count; i++)
+                {
+                    string first = griddata[i].Firstname;
+                    string last = griddata[i].Lastname;
+                    string email = griddata[i].Email;
+
+                    dt.Rows.Add(first, last, email);
+                }
+
+                ContactGridView.DataSource = dt;
+                ContactGridView.DataBind();
             }
-
-            ContactGridView.DataSource = dt;
-            ContactGridView.DataBind();
+            catch (Exception ex)
+            {
+                Message m = new Message();
+                m.Show("Unable to show contacts!");
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+            }
         }
 
 
@@ -161,9 +178,19 @@ namespace Project
 
             string email = btn.ID;
 
-            ListedContacts lcontact = data.ListedContacts.Where(ev => ev.Username == email).FirstOrDefault();
-            data.ListedContacts.Remove(lcontact);
-            data.SaveChanges();
+            try
+            {
+                ListedContacts lcontact = data.ListedContacts.Where(ev => ev.Username == email).FirstOrDefault();
+                data.ListedContacts.Remove(lcontact);
+                data.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Message m = new Message();
+                m.Show("Unable to delete contact!");
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+            }
+            
 
             Response.Redirect("~/Contact.aspx");
         }

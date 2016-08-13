@@ -50,22 +50,19 @@
             </div>
             <div class="col-md-4">
                 <hr id="line1" runat="server" style="background: #8c8686; height: 1px;" />
-
             </div>
+
             <div class="col-md-4">
                 <h4>List of contacts.</h4>
-                <asp:GridView ID="ListedContactsGridView" runat="server" EnableTheming="true" HeaderStyle-Height="35" RowStyle-Height="30" CellPadding="5" CellSpacing="5" Width="100%" AllowSorting="True" AutoGenerateColumns="False" AllowPaging="true" BorderColor="#c5c5c5" BorderWidth="1" HeaderStyle-BackColor="#539AF2" HeaderStyle-ForeColor="White" HeaderStyle-VerticalAlign="Middle" ShowHeaderWhenEmpty="true">
-                    <Columns>
-                        <asp:BoundField HeaderText="First Name" DataField="First Name" ItemStyle-HorizontalAlign="Left" />
-                        <asp:BoundField HeaderText="Last Name" DataField="Last Name" ItemStyle-HorizontalAlign="Left" />
-                        <asp:BoundField HeaderText="Email" DataField="Email" ItemStyle-HorizontalAlign="Left" />
-                        <asp:TemplateField HeaderText="Remove" ItemStyle-HorizontalAlign="Left">
-                            <ItemTemplate>
-                                <asp:Button ID="DeleteButton" runat="server" CssClass="CDeleteButton" Text="X" OnClick="DeleteButton_Click" />
-                            </ItemTemplate>
-                        </asp:TemplateField>
-                    </Columns>
-                </asp:GridView>
+
+                <asp:Table ID="ListedContactsTable" runat="server" CellPadding="5" CellSpacing="5" Width="100%">
+                    <asp:TableHeaderRow BackColor="#539AF2" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle">
+                        <asp:TableHeaderCell>First Name</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Last Name</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Email</asp:TableHeaderCell>
+                        <asp:TableHeaderCell>Delete</asp:TableHeaderCell>
+                    </asp:TableHeaderRow>
+                </asp:Table>
 
                 <br />
                 <br />

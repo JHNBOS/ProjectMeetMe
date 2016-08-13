@@ -36,12 +36,13 @@ namespace Project
 
             foreach (var user in selected_users)
             {
-                Members m = new Members();
-                m.Group = groupname;
-                m.User = user;
-
                 try
                 {
+                    Members m = new Members();
+                    m.Group = groupname;
+                    m.User = user;
+
+                
                     data.Members.Add(m);
                     data.SaveChanges();
 
@@ -99,7 +100,7 @@ namespace Project
             catch (Exception ex)
             {
                 Message m = new Message();
-                m.Show("Member cannot be removed from group/Member is already removed!");
+                m.Show("Member cannot be removed from group!");
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 

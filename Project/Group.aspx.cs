@@ -38,15 +38,12 @@ namespace Project
             //3. Set Session Variable to send to Data.ashx
             //4. Redirect to Calendar.aspx
             data = new meetmeEntities();
-
             Button btn = (Button)sender;
-
-            System.Diagnostics.Debug.WriteLine("Button text: " + btn.Text);
-
-            List<Members> memberstodelete = data.Members.Where(ev => ev.Group == btn.ID).ToList();
 
             try
             {
+                List<Members> memberstodelete = data.Members.Where(ev => ev.Group == btn.ID).ToList();
+
                 data.Members.RemoveRange(memberstodelete);
                 data.SaveChanges();
 
@@ -55,6 +52,8 @@ namespace Project
             }
             catch (Exception ex)
             {
+                Message m = new Message();
+                m.Show("Unable to delete group!");
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
             
@@ -131,7 +130,10 @@ namespace Project
                 }
 
             }
-            catch (Exception ex) { System.Diagnostics.Debug.WriteLine(ex.StackTrace); }
+            catch (Exception ex)
+            {
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+            }
 
         }
 

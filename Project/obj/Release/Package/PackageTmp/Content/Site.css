@@ -163,11 +163,12 @@ input[type="select"] {
 }
 
 #collapsebutton {
-    width: 40px;
+    width: 20%;
     padding: 0 0 0 0; 
-    margin: 0 0 0 0;
     position: absolute;
+    top: 14%;
     left: 40%;
+    margin-left: 0px;
     vertical-align: middle;
     background: #539af2;
     border-color: #e5e5e5;
@@ -277,9 +278,14 @@ input[type="checkbox"] {
     padding-right: 10px;
 }
 
-#MainContent_ListedContactsGridView td{
+#MainContent_ListedContactsTable td{
+    padding-top: 2px;
     padding-left: 10px;
     border: 1px solid #e8e8e8;
+}
+
+#MainContent_ListedContactsTable tr{
+    padding-top: 2px;
 }
 
 #MainContent_ContactGridView td{
