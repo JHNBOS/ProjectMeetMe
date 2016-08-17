@@ -82,9 +82,10 @@ namespace Project
                     {
                         b.Style.Add("border-bottom", "1px solid #cccbcb");
                         b.Style.Add("border-bottom-left-radius", "15px");
+                        b.Style.Add("margin-bottom", "5px");
                     }
 
-                   
+
                     TableRow row = new TableRow();
                     TableCell cell = new TableCell();
                     
