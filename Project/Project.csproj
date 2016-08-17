@@ -294,6 +294,7 @@
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Group.aspx" />
+    <Content Include="GroupCalendars.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\dhtmlxScheduler\dhtmlxscheduler-responsive.js" />
@@ -733,6 +734,13 @@
     </Compile>
     <Compile Include="Group.aspx.designer.cs">
       <DependentUpon>Group.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="GroupCalendars.aspx.cs">
+      <DependentUpon>GroupCalendars.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="GroupCalendars.aspx.designer.cs">
+      <DependentUpon>GroupCalendars.aspx</DependentUpon>
     </Compile>
     <Compile Include="Groups.cs">
       <DependentUpon>DbContext.tt</DependentUpon>
