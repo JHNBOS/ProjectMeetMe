@@ -38,6 +38,19 @@ input[type="select"] {
 }
 
 
+@media only screen and (max-device-width: 760px) {
+
+    .GroupButton{
+        border-right: 1px solid #cccbcb !important;
+    }
+
+    #schedulerdiv{
+        border-top: 5px solid #cccbcb !important;
+        border-left: none !important;
+    }
+}
+
+
 /*BEGIN OF CALENDAR*/
 #scheduler_here table {
     border: none;
@@ -226,6 +239,9 @@ input#MainContent_colorPicker {
     padding: 0 0 0 0;
 }
 
+#schedulerdiv{
+    border-left: 5px solid #cccbcb;
+}
 /*END OF DIV'S*/
 
 /*BEGIN OF LISTS*/
