@@ -41,8 +41,10 @@ namespace Project
             Scheduler.Extensions.Add(SchedulerExtensions.Extension.QuickInfo);
             Scheduler.Templates.event_header = "{start_date:date(%H:%i)} - {end_date:date(%H:%i)}";
             Scheduler.Templates.event_text = "<b>{creator}:</b> {text}";
+            Scheduler.Config.displayed_event_text_color = "#ffffff";
+            Scheduler.Config.separate_short_events = true;
             Scheduler.BeforeInit.Add(string.Format("initResponsive({0})", Scheduler.Name));
-
+            Scheduler.Config.hour_size_px = 88;
         }
 
         private void CreateGroupButtons()
@@ -64,12 +66,25 @@ namespace Project
                 //Create and add buttons to div
                 for (int i = 0; i < count; i++)
                 {
+
                     Button b = new Button();
                     b.ID = grouplist[i].Name + i;
                     b.Text = grouplist[i].Name;
                     b.CssClass = "GroupButton";
                     b.Click += B_Click;
 
+                    if (i == 0)
+                    {
+                        b.Style.Add("border-top-left-radius", "15px");
+                    }
+
+                    if (i == count - 1)
+                    {
+                        b.Style.Add("border-bottom", "1px solid #cccbcb");
+                        b.Style.Add("border-bottom-left-radius", "15px");
+                    }
+
+                   
                     TableRow row = new TableRow();
                     TableCell cell = new TableCell();
                     
@@ -94,7 +109,28 @@ namespace Project
             Button btn = (Button)sender;
             Session["Group"] = btn.Text;
             GroupTitle.InnerText = btn.Text;
+            divider.Visible = true;
             scheduler_here.InnerHtml = this.Scheduler.Render();
+            AddMemberLink.Visible = true;
+
+        }
+
+        protected void Link_Click(object sender, EventArgs e)
+        {
+            LinkButton btn = (LinkButton)sender;
+            string group = null;
+
+            if (Session["Group"] !=null)
+            {
+                group = Session["Group"].ToString();
+            }
+            else if(GroupTitle.InnerText.Count() > 0)
+            {
+                group = GroupTitle.InnerText;
+            }
+
+            Session["AddContact"] = group;
+            HttpContext.Current.Response.Redirect("~/AddContacts.aspx");
         }
 
     }
