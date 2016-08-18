@@ -55,7 +55,7 @@ namespace Project
                 }
             }
 
-            Response.Redirect("~/Group.aspx");
+            Response.Redirect("~/GroupCalendars.aspx");
         }
 
         private void ListMembers()
@@ -66,21 +66,18 @@ namespace Project
             //3. Remove current user from list
             string groupname = Session["AddContact"].ToString();
 
-            List<Members> members = data.Members.Where(ev => ev.Group == groupname).ToList();
+            List<string> membernames = data.Members.Where(ev => ev.Group == groupname).Select(ev => ev.User).ToList();
             List<AspNetUsers> memberlist = null;
 
             try
             {
 
-                for (int i = 0; i < members.Count; i++)
+                for (int i = 0; i < membernames.Count; i++)
                 {
-                    string username = members[i].User;
-                    memberlist = data.AspNetUsers.Where(ep => ep.UserName != username).ToList();
+                    memberlist = data.AspNetUsers.Where(u => !membernames.Contains(u.UserName)).ToList();
                 }
 
                 AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault();
-
-
                 memberlist.Remove(current);
 
                 foreach (var member in memberlist)

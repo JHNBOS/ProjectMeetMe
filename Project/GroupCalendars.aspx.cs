@@ -75,13 +75,13 @@ namespace Project
 
                     if (i == 0)
                     {
-                        b.Style.Add("border-top-left-radius", "15px");
+                        b.Style.Add("border-top-left-radius", "5px");
                     }
 
                     if (i == count - 1)
                     {
                         b.Style.Add("border-bottom", "1px solid #cccbcb");
-                        b.Style.Add("border-bottom-left-radius", "15px");
+                        b.Style.Add("border-bottom-left-radius", "5px");
                         b.Style.Add("margin-bottom", "5px");
                     }
 

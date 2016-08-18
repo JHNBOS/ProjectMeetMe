@@ -9,6 +9,6 @@
     <br />
     <br />
     <asp:Button ID="CreateGroupButton" runat="server" Text="Create"  Width="100" Height="35" Font-Bold="true"
-        BackColor="#539AF2" ForeColor="White" BorderWidth="1" BorderStyle="Solid" BorderColor="#e5e5e5"  />
+        BackColor="#18BC9C" ForeColor="White" BorderWidth="1" BorderStyle="Solid" BorderColor="#e5e5e5"  />
 
 </asp:Content>
