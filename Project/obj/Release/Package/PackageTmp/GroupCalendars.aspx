@@ -24,12 +24,12 @@
 
     <div class="container-fluid" id="maindiv">
         <div class="row">
-            <div class="col-xs-2" id="GroupList" runat="server">
+            <div class="col-md-2" id="GroupList" runat="server">
                 <asp:Table ID="GroupListTable" runat="server" BackColor="White" CellPadding="2" CellSpacing="2"
                      HorizontalAlign="Center" Width="100%">
                 </asp:Table>
             </div>
-            <div class="col-xs-10" id="schedulerdiv">
+            <div class="col-md-10" id="schedulerdiv">
 
                 <h2 id="GroupTitle" runat="server"></h2>
                 <asp:LinkButton ID="AddMemberLink" runat="server" OnClick="Link_Click" Visible="false" Font-Size="Medium" Font-Bold="true" ForeColor="#0066ff">Add Member</asp:LinkButton>
