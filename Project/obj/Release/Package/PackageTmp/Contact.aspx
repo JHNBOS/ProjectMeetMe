@@ -14,10 +14,10 @@
 
         <!-- 1st Row  -->
         <div class="row">
-            <div class="col-md-4" id="searchdiv" runat="server">
+            <div class="col-xs-4" id="searchdiv" runat="server">
                 <asp:Label ID="Label1" runat="server" Text="Fill in a (partial) email address."></asp:Label>
                 <br />
-                <asp:TextBox ID="SearchBox" runat="server"></asp:TextBox><asp:Button ID="SearchButton" BorderColor="#e5e5e5" BackColor="#539AF2" ForeColor="White" Height="27" BorderWidth="1" BorderStyle="Solid" Font-Bold="true" runat="server" Text="Search" />
+                <asp:TextBox ID="SearchBox" runat="server"></asp:TextBox><asp:Button ID="SearchButton" BorderColor="#e5e5e5" BackColor="#18BC9C" ForeColor="White" Height="27" BorderWidth="1" BorderStyle="Solid" Font-Bold="true" runat="server" Text="Search" />
 
                 <br />
                 <br />
@@ -27,7 +27,7 @@
 
                 <asp:Label ID="SearchTitle" runat="server" Font-Size="Large" Text="Label"></asp:Label>
                 <br />
-                <asp:GridView ID="ContactGridView" runat="server" CellPadding="5" CellSpacing="5" Width="100%" BorderColor="#c5c5c5" BorderWidth="1" HeaderStyle-BackColor="#539AF2" HeaderStyle-ForeColor="White" AllowSorting="True" AutoGenerateColumns="False">
+                <asp:GridView ID="ContactGridView" runat="server" CellPadding="5" CellSpacing="5" Width="100%" BorderColor="#c5c5c5" BorderWidth="1" HeaderStyle-BackColor="#18BC9C" HeaderStyle-ForeColor="White" AllowSorting="True" AutoGenerateColumns="False">
                     <Columns>
                         <asp:TemplateField HeaderText="Select">
                             <ItemTemplate>
@@ -42,21 +42,21 @@
 
                 <br />
 
-                <asp:Button ID="AddContactsButton" runat="server" Text="Add Contacts" BorderColor="#e5e5e5" BackColor="#539AF2" ForeColor="White" Height="27" BorderWidth="1" BorderStyle="Solid" Font-Bold="true" />
+                <asp:Button ID="AddContactsButton" runat="server" Text="Add Contacts" BorderColor="#e5e5e5" BackColor="#18BC9C" ForeColor="White" Height="27" BorderWidth="1" BorderStyle="Solid" Font-Bold="true" />
 
                 <br />
                 <br />
 
             </div>
-            <div class="col-md-4">
+            <div class="col-xs-4">
                 <hr id="line1" runat="server" style="background: #8c8686; height: 1px;" />
             </div>
 
-            <div class="col-md-4">
+            <div class="col-xs-4">
                 <h4>List of contacts.</h4>
 
                 <asp:Table ID="ListedContactsTable" runat="server" CellPadding="5" CellSpacing="5" Width="100%">
-                    <asp:TableHeaderRow BackColor="#539AF2" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle">
+                    <asp:TableHeaderRow BackColor="#18BC9C" ForeColor="White" HorizontalAlign="Center" VerticalAlign="Middle">
                         <asp:TableHeaderCell>First Name</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Last Name</asp:TableHeaderCell>
                         <asp:TableHeaderCell>Email</asp:TableHeaderCell>
@@ -74,19 +74,19 @@
 
         <!-- 2nd Row  -->
         <div class="row">
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-4"></div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-4"></div>
         </div>
 
         <br />
 
         <!-- 3rd and Last Row  -->
         <div class="row">
-            <div class="col-md-3"></div>
-            <div class="col-md-4"></div>
-            <div class="col-md-3"></div>
-            <div class="col-md-2"></div>
+            <div class="col-xs-3"></div>
+            <div class="col-xs-4"></div>
+            <div class="col-xs-3"></div>
+            <div class="col-xs-2"></div>
         </div>
 
     </div>

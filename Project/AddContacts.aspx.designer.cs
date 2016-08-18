@@ -13,22 +13,13 @@ namespace Project {
     public partial class Contacts {
         
         /// <summary>
-        /// contactdiv control.
+        /// ContactCheckBoxList control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contactdiv;
-        
-        /// <summary>
-        /// ContaxtCheckBoxList control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.CheckBoxList ContaxtCheckBoxList;
+        protected global::System.Web.UI.WebControls.CheckBoxList ContactCheckBoxList;
         
         /// <summary>
         /// AddContactButton control.

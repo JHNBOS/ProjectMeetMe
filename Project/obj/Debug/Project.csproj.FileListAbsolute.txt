@@ -80,6 +80,7 @@ D:\Johan Bos\Documents\Visual Studio 2015\Projects\MeetMeWeb\Project\bin\Microso
 D:\Johan Bos\Documents\Visual Studio 2015\Projects\MeetMeWeb\Project\bin\Microsoft.Owin.Security.OAuth.xml
 D:\Johan Bos\Documents\Visual Studio 2015\Projects\MeetMeWeb\Project\obj\Debug\Project.dll
 D:\Johan Bos\Documents\Visual Studio 2015\Projects\MeetMeWeb\Project\obj\Debug\Project.pdb
+C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Github\ProjectMeetMe\Project\bin\roslyn\csc.exe
 C:\Github\ProjectMeetMe\Project\bin\roslyn\csc.exe.config
 C:\Github\ProjectMeetMe\Project\bin\roslyn\csc.rsp
@@ -135,7 +136,6 @@ C:\Github\ProjectMeetMe\Project\bin\Microsoft.Extensions.Logging.dll
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Extensions.Options.dll
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Extensions.Primitives.dll
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.dll
-C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Security.Cookies.dll
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Security.dll
 C:\Github\ProjectMeetMe\Project\bin\Microsoft.Owin.Security.Facebook.dll

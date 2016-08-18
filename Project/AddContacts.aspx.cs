@@ -28,7 +28,7 @@ namespace Project
             string groupname = Session["AddContact"].ToString();
             List<string> selected_users = new List<string>();
 
-            foreach (ListItem item in ContaxtCheckBoxList.Items)
+            foreach (ListItem item in ContactCheckBoxList.Items)
             {
                 if (item.Selected)
                     selected_users.Add(item.Value);
@@ -90,7 +90,7 @@ namespace Project
                     item.Text = first + " " + last + " - " + name;
                     item.Value = name;
 
-                    ContaxtCheckBoxList.Items.Add(item);
+                    ContactCheckBoxList.Items.Add(item);
                 }
 
             }
