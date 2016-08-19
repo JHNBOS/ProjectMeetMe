@@ -47,7 +47,9 @@ input[type="select"] {
 
     .GroupButton{
         border-right: 1px solid #cccbcb !important;
-        left: -28%;
+        left: 2% !important;
+        width: 100% !important; 
+
     }
 
     #schedulerdiv{

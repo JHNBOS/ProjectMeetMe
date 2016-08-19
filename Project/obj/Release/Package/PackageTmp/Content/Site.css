@@ -1,15 +1,20 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
 body {
-    padding-top: 45px;
+    padding-top: 45px; /*45*/
     padding-bottom: 0px;
+    height: 100%;
 }
 
 /* Wrapping element */
 /* Set some basic padding to keep content from hitting the edges */
 .body-content {
-    padding-left: 15px;
-    padding-right: 15px;
+    padding-left: 15px; /*15*/
+    padding-right: 15px; /*15*/
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    min-height: 100%;
 }
+
 
 /* Override the default bootstrap behavior where horizontal description lists 
    will truncate terms that are too long to fit in the left column 
@@ -42,11 +47,16 @@ input[type="select"] {
 
     .GroupButton{
         border-right: 1px solid #cccbcb !important;
+        left: -28%;
+        width: 100%; 
+
     }
 
     #schedulerdiv{
         border-top: 5px solid #cccbcb !important;
         border-left: none !important;
+        padding: 0 0 0 0;
+        width:83.333%;
     }
 }
 
@@ -68,6 +78,10 @@ input[type="select"] {
 
 #scheduler_here {
     margin: 0 0 0 0;
+}
+
+.dhx_cal_event_clear {
+    color: white !important;
 }
 /*END OF CALENDAR*/
 
@@ -91,6 +105,9 @@ input[type="select"] {
     border: 1px solid #fff;
     border-top: 1px solid #cccbcb;
     border-left: 1px solid #cccbcb;
+    width: 225px;
+    position: relative;
+    left: -25px;
 }
 
 .GroupButton:hover {
@@ -183,13 +200,25 @@ input[type="select"] {
     line-height: 0;
     white-space: nowrap;
     padding-right: 22px;
-    border: 1px solid #fff;
 }
+
+#MainContent_AddContactButton {
+    color: #464646;
+    background-color: #fff;
+    display: block;
+    padding: 6px 12px;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.42857143;
+    border: 1px solid #18BC9C;
+    box-shadow: none;
+}
+
 
 #MainContent_AddContactButton:hover {
     color: white;
     border: 1px solid #e5e5e5;
-    background: #539af2;
+    background: #18BC9C;
 }
 
 .AddM{
@@ -235,13 +264,21 @@ input#MainContent_colorPicker {
 }
 
 #MainContent_GroupList{
-    margin: 0 0 0 0;
+    margin: 0 0 0 -4%;
     padding: 0 0 0 0;
 }
 
 #schedulerdiv{
     border-left: 5px solid #cccbcb;
+    padding: 0 0 0 5%;
+    width: 87%;
 }
+
+.clear{
+    min-height: 20px;
+}
+
+
 /*END OF DIV'S*/
 
 /*BEGIN OF LISTS*/
@@ -310,6 +347,19 @@ input[type="checkbox"] {
 }
 /*END OF TABLES*/
 
-.dhx_cal_event_clear {
-    color: white !important;
+
+/*BEGIN OF FOOTER*/
+
+.footers{
+    text-align: center;
+    background: #18BC9C;
+    color: white;
+    width: 100%;
+    height: 20px;
+    position: absolute;
+    padding: 0 0 0 0;
+    margin: 25px 0 0 0;
+    left: 0;
+    overflow: hidden;
 }
+/*END OF FOOTER*/
