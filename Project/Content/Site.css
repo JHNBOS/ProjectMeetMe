@@ -57,6 +57,7 @@ input[type="select"] {
         border-left: none !important;
         padding: 0 0 0 0;
         width:83.333%;
+        margin: 0 0 0 5%;
     }
 }
 
