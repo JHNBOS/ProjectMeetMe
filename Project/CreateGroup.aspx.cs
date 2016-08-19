@@ -48,7 +48,7 @@ namespace Project
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 
-            Response.Redirect("~/Group.aspx");
+            Response.Redirect("~/GroupCalendars.aspx");
         }
     }
 }

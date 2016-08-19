@@ -27,8 +27,6 @@ namespace Project
             {
                 SearchTitle.Text = "";
                 AddContactsButton.Visible = false;
-                line.Visible = false;
-                line1.Visible = false;
             }
 
         }
@@ -75,17 +73,6 @@ namespace Project
         {
             this.FillGrid(SearchBox.Text);
 
-            if(Request.Browser.ScreenPixelsWidth <= 640 && Request.Browser.IsMobileDevice)
-            {
-                line.Visible = true;
-                line1.Visible = true;
-            }
-            else
-            {
-                line.Visible = false;
-                line1.Visible = false;
-            }
-            
             SearchTitle.Text = "Contacts that match your search query.";
             AddContactsButton.Visible = true;
         }

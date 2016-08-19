@@ -63,6 +63,26 @@ namespace Project
 
                 int count = grouplist.Count;
 
+                /* Create Add Group Button */
+                Button newGroup = new Button();
+                newGroup.ID = "newGroupButton";
+                newGroup.Text = "+";
+                newGroup.CssClass = "GroupButton";
+                newGroup.Style.Add("font-weight", "bold");
+                newGroup.Style.Add("font-size", "35px");
+                newGroup.Style.Add("color", "#18bc9c");
+                newGroup.Style.Add("line-height", "normal");
+                newGroup.Style.Add("border-top-left-radius", "5px");
+                newGroup.Click += NewGroup_Click;
+
+                TableRow rowplus = new TableRow();
+                TableCell cellplus = new TableCell();
+
+                cellplus.Controls.Add(newGroup);
+                rowplus.Cells.Add(cellplus);
+                GroupListTable.Rows.Add(rowplus);
+                /* End of Create Group Button */
+
                 //Create and add buttons to div
                 for (int i = 0; i < count; i++)
                 {
@@ -73,11 +93,6 @@ namespace Project
                     b.CssClass = "GroupButton";
                     b.Click += B_Click;
 
-                    if (i == 0)
-                    {
-                        b.Style.Add("border-top-left-radius", "5px");
-                    }
-
                     if (i == count - 1)
                     {
                         b.Style.Add("border-bottom", "1px solid #cccbcb");
@@ -85,11 +100,9 @@ namespace Project
                         b.Style.Add("margin-bottom", "5px");
                     }
 
-
                     TableRow row = new TableRow();
                     TableCell cell = new TableCell();
                     
-
                     cell.Controls.Add(b);
                     row.Cells.Add(cell);
                     GroupListTable.Rows.Add(row);
@@ -99,6 +112,11 @@ namespace Project
             {
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
+        }
+
+        private void NewGroup_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("~/CreateGroup.aspx");
         }
 
         private void B_Click(object sender, EventArgs e)
