@@ -4,18 +4,6 @@
     <link rel="stylesheet" type="text/css" href="<%=Request.ApplicationPath%>Content/Site.css" />
     <link rel="stylesheet" type="text/css" href="Content/dhtmlxScheduler/dhtmlxscheduler-responsive.css" />
     <script type="text/javascript" src="Scripts/dhtmlxScheduler/dhtmlxscheduler-responsive.js"></script>
-    <script>
-        function ChangeIcon() {
-            var button = document.getElementById("buttonspan");
-            if (button.className == "glyphicon glyphicon-chevron-up") {
-                button.className = "glyphicon glyphicon-chevron-down";
-
-            }
-            else {
-                button.className = "glyphicon glyphicon-chevron-up";
-            }
-        }
-    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -23,17 +11,33 @@
     <br />
 
     <div class="container" id="maindiv">
+        <!-- BEGIN OF ROW ONE -->
         <div class="row">
+           
             <div class="col-sm-2" id="GroupList" runat="server">
                 <asp:Table ID="GroupListTable" runat="server" BackColor="White" CellPadding="2" CellSpacing="2"
                      HorizontalAlign="Center" Width="100%">
                 </asp:Table>
             </div>
-            <div class="col-sm-10" id="schedulerdiv">
 
-                <h2 id="GroupTitle" runat="server"></h2>
-                <span runat="server" id="menulinks" visible="false" style="text-align:center;display:block;color:#0066ff;font-size: 16px;font-weight:bold">
-                <asp:LinkButton ID="AddMemberLink" runat="server" OnClick="Link_Click" Font-Size="Medium" Font-Bold="true" ForeColor="#0066ff">Add Member</asp:LinkButton> - <asp:LinkButton ID="DeleteLink" runat="server" Font-Size="Medium" Font-Bold="true" ForeColor="#0066ff" OnClick="DeleteLink_Click" >Delete Group</asp:LinkButton>
+             <div class="col-sm-8 collapse" id="showmembers">
+                <asp:Table ID="MemberTable" runat="server" CellPadding="2" CellSpacing="2"></asp:Table>
+            </div>
+
+            <div class="col-sm-10" id="schedulerdiv">
+                <span style="text-align:center;display:block;">
+                    <asp:Label ID="GroupTitle" Font-Bold="true" Font-Size="X-Large" runat="server" Text=""></asp:Label>
+                </span>
+                
+                <span runat="server" id="menulinks" visible="false" style="text-align:center;display:block;font-size: 13px;">
+
+                <asp:LinkButton ID="AddMemberLink" class="btn btn-default btn-sm"  runat="server" OnClick="Link_Click" Font-Size="13px" ForeColor="White">Add Member</asp:LinkButton>
+                  
+                <asp:LinkButton ID="DeleteLink" runat="server" class="btn btn-default btn-sm" Font-Size="13px" ForeColor="White" OnClick="DeleteLink_Click" >Delete Group</asp:LinkButton>
+                  
+                <a id="showbutton" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#showmembers" style="display:inline-block;">
+                    Members &#x21C5;
+                </a>
                 </span>
                         
                 <hr id="divider" runat="server" visible="false" />
@@ -42,6 +46,9 @@
 
             </div>
         </div>
+        <!-- END OF ROW ONE -->
+
+
     </div>
 </asp:Content>
 

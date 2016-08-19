@@ -134,12 +134,11 @@ namespace Project
             //4. Add Render of Scheduler to div
             Button btn = (Button)sender;
             Session["Group"] = btn.Text;
+            MemberList();
             GroupTitle.Text = btn.Text;
             divider.Visible = true;
             scheduler_here.InnerHtml = this.Scheduler.Render();
             menulinks.Visible = true;
-
-            CreateMemberList();
         }
 
         protected void Link_Click(object sender, EventArgs e)
@@ -193,102 +192,93 @@ namespace Project
             Response.Redirect("~/GroupCalendars.aspx");
         }
 
-        private void CreateMemberList()
+        private void MemberList()
         {
-            //1. Group
-            string group = Session["Group"].ToString();
+            //String of group
+            string group = null;
 
-            //Show members of this group.
-            //Get list of all users.
-            List<string> membernames = null;
-            List<AspNetUsers> userlist = null;
-            AspNetUsers asp = null;
+            //List of membernames and empty list of users
+            List<string> MemberNames = null;
+            List<AspNetUsers> Users = new List<AspNetUsers>();
+
+            if (Session["Group"] != null)
+            {
+                group = Session["Group"].ToString();
+            }
+            else if (GroupTitle.Text != null)
+            {
+                group = GroupTitle.Text;
+            }
 
             try
             {
-                membernames = data.Members.Where(ev => ev.Group == group).Select(ev => ev.User).ToList();
-                userlist = data.AspNetUsers.Where(ep => membernames.Contains(ep.UserName)).ToList();
+                //List of membernames and empty list of users
+                MemberNames = data.Members.Where(m => m.Group == group).Select(m => m.User).ToList();
 
-                for (int i = 0; i < userlist.Count; i++)
+                foreach (var name in MemberNames)
                 {
-                    asp = userlist[i];
-
-                    //Color of user
-                    string color = asp.Colour;
-
-                    //Delete button
-                    Button d = new Button();
-                    d.ID = asp.UserName;
-                    d.Text = "X";
-                    d.CssClass = "MDeleteButton";
-                    d.Height = 24;
-                    d.Width = 24;
-                    d.Click += D_Click;
-
-                    //1. Table Row
-                    //2 + 3. Table Cells
-                    TableRow row = new TableRow();
-                    TableCell cell1 = new TableCell();
-                    TableCell cell2 = new TableCell();
-                    TableCell cell3 = new TableCell();
-
-                    //Width and height of cells
-                    cell2.Width = 120;
-
-                    cell1.Height = 30;
-                    cell2.Height = 30;
-                    cell3.Height = 30;
-
-                    //Add glyphicon with color to table
-                    cell1.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i>"));
-
-                    //Add name to table
-                    cell2.Controls.Add(new LiteralControl("<span style='font-size: 17px;text-align: center;padding-left: 5px;'>" + asp.Firstname + " " + asp.Lastname + " " + "</span>"));
-
-                    //Add button to table
-                    cell3.Controls.Add(d);
-
-                    //Add cells to row
-                    row.Cells.Add(cell1);
-                    row.Cells.Add(cell2);
-                    row.Cells.Add(cell3);
-
-                    //Add row to table
-                    MemberTable.Rows.Add(row);
+                    AspNetUsers user = data.AspNetUsers.Where(u => u.UserName == name).FirstOrDefault();
+                    Users.Add(user);
                 }
-
             }
-            catch (Exception)
+            catch (Exception e)
             {
                 System.Diagnostics.Debug.WriteLine("No members in this group!");
+                System.Diagnostics.Debug.WriteLine(e.StackTrace);
+            }
+
+            foreach (var user in Users)
+            {
+                //User info
+                string color = user.Colour;
+                string username = user.UserName;
+                string firstname = user.Firstname;
+                string lastname = user.Lastname;
+
+                //Delete Button
+                Button delete = new Button();
+                delete.ID = username;
+                delete.Text = "X";
+                delete.CssClass = "MDeleteButton";
+                delete.Click += Delete_Click;
+                delete.OnClientClick = "Delete_Click()";
+                delete.Width = 24;
+                delete.Height = 24;
+
+                //Table Row and cells
+                TableRow row = new TableRow();
+                TableCell cell1 = new TableCell();
+                TableCell cell2 = new TableCell();
+                TableCell cell3 = new TableCell();
+
+                //Add content to cells
+                cell1.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i>"));
+                cell2.Controls.Add(new LiteralControl("<span style='font-size: 17px;text-align: center;padding-left: 5px;'>" + firstname + " " + lastname + " " + "</span>"));
+                cell3.Controls.Add(delete);
+
+                //Add cells to row
+                row.Cells.Add(cell1);
+                row.Cells.Add(cell2);
+                row.Cells.Add(cell3);
+
+                //Add row to table
+                MemberTable.Rows.Add(row);
             }
         }
 
-        private void D_Click(object sender, EventArgs e)
+        private void Delete_Click(object sender, EventArgs e)
         {
-            //1. New Button
-            //2. Database context
-            //3. Group
-
             Button btn = (Button)sender;
+
             string group = Session["Group"].ToString();
+            string[] tmp = btn.ID.Split('_');
+            string username = tmp[1];
 
-            try
-            {
-                //List of members
-                List<Members> memberstodelete = data.Members.Where(ev => ev.User == btn.ID).ToList();
-
-                data.Members.RemoveRange(memberstodelete);
-                data.SaveChanges();
-
-                Response.Redirect("~/GroupCalendars.aspx");
-            }
-            catch (Exception ex)
-            {
-                Message m = new Message();
-                m.Show("Cannot delete member!");
-                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
-            }
+            Members MemberToDelete = data.Members.Remove(data.Members.Where(m => m.User == username && m.Group == group).FirstOrDefault());
+            data.SaveChanges();
+            Response.Redirect(Request.RawUrl);
         }
+
+       
     }
 }
