@@ -25,6 +25,9 @@ namespace Project
             //Methods to run
             CreateGroupButtons();
 
+            DeleteLink.Style.Add("display", "inline-block");
+            AddMemberLink.Style.Add("display", "inline-block");
+
             //Scheduler settings
             this.Scheduler = new DHXScheduler();
             Scheduler.InitialDate = DateTime.Now;// the initial data of Scheduler
@@ -130,8 +133,7 @@ namespace Project
             GroupTitle.InnerText = btn.Text;
             divider.Visible = true;
             scheduler_here.InnerHtml = this.Scheduler.Render();
-            AddMemberLink.Visible = true;
-
+            menulinks.Visible = true;
         }
 
         protected void Link_Click(object sender, EventArgs e)
@@ -152,5 +154,37 @@ namespace Project
             HttpContext.Current.Response.Redirect("~/AddContacts.aspx");
         }
 
+        protected void DeleteLink_Click(object sender, EventArgs e)
+        { 
+            string group = null;
+
+            if (Session["Group"] != null)
+            {
+                group = Session["Group"].ToString();
+            }
+            else if (GroupTitle.InnerText.Count() > 0)
+            {
+                group = GroupTitle.InnerText;
+            }
+
+            try
+            {
+                List<Members> memberstodelete = data.Members.Where(ev => ev.Group == group).ToList();
+
+                data.Members.RemoveRange(memberstodelete);
+                data.SaveChanges();
+
+                data.Groups.Remove(data.Groups.Where(ev => ev.Name == group).FirstOrDefault());
+                data.SaveChanges();
+            }
+            catch (Exception ex)
+            {
+                Message m = new Message();
+                m.Show("Unable to delete group!");
+                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+            }
+
+            Response.Redirect("~/GroupCalendars.aspx");
+        }
     }
 }

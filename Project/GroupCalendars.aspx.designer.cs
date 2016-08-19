@@ -40,6 +40,15 @@ namespace Project {
         protected global::System.Web.UI.HtmlControls.HtmlGenericControl GroupTitle;
         
         /// <summary>
+        /// menulinks control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl menulinks;
+        
+        /// <summary>
         /// AddMemberLink control.
         /// </summary>
         /// <remarks>
@@ -47,6 +56,15 @@ namespace Project {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.LinkButton AddMemberLink;
+        
+        /// <summary>
+        /// DeleteLink control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton DeleteLink;
         
         /// <summary>
         /// divider control.

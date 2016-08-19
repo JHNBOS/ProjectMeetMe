@@ -32,8 +32,10 @@
             <div class="col-sm-10" id="schedulerdiv">
 
                 <h2 id="GroupTitle" runat="server"></h2>
-                <asp:LinkButton ID="AddMemberLink" runat="server" OnClick="Link_Click" Visible="false" Font-Size="Medium" Font-Bold="true" ForeColor="#0066ff">Add Member</asp:LinkButton>
-                                
+                <span runat="server" id="menulinks" visible="false" style="text-align:center;display:block;color:#0066ff;font-size: 16px;font-weight:bold">
+                <asp:LinkButton ID="AddMemberLink" runat="server" OnClick="Link_Click" Font-Size="Medium" Font-Bold="true" ForeColor="#0066ff">Add Member</asp:LinkButton> - <asp:LinkButton ID="DeleteLink" runat="server" Font-Size="Medium" Font-Bold="true" ForeColor="#0066ff" OnClick="DeleteLink_Click" >Delete Group</asp:LinkButton>
+                </span>
+                        
                 <hr id="divider" runat="server" visible="false" />
 
                 <div id="scheduler_here" runat="server" style="height:480px;width:100%;"></div>

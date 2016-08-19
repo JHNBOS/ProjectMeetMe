@@ -1,7 +1,12 @@
 ﻿/* Move down content because we have a fixed navbar that is 50px tall */
+html {
+    min-height: 100%;
+    position: relative;
+}
+
 body {
     padding-top: 45px; /*45*/
-    padding-bottom: 0px;
+    padding-bottom: 20px;
     height: 100%;
 }
 
@@ -57,6 +62,7 @@ input[type="select"] {
         border-left: none !important;
         padding: 0 0 0 0;
         width:83.333%;
+        margin: 0 0 0 5%;
     }
 }
 
@@ -276,6 +282,7 @@ input#MainContent_colorPicker {
 
 .clear{
     min-height: 20px;
+    padding-bottom: 20px;
 }
 
 
@@ -359,6 +366,8 @@ input[type="checkbox"] {
     position: absolute;
     padding: 0 0 0 0;
     margin: 25px 0 0 0;
+    top: 100%;
+    bottom: 0;
     left: 0;
     overflow: hidden;
 }
