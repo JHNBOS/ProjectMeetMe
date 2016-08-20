@@ -54,18 +54,17 @@ input[type="select"] {
         border-right: 1px solid #cccbcb !important;
         left: 2% !important;
         width: 100% !important; 
-
     }
 
     #schedulerdiv{
         border-top: 5px solid #cccbcb !important;
         border-left: none !important;
-        padding: 0 0 0 0;
-        width:83.333%;
-        margin: 0 0 0 5%;
+        padding: 0 0 0 0 !important; 
+        width: 100% !important; 
+        margin-left: 0 !important; 
     }
     #showmembers {
-        border-left: none;
+        border-left: none !important;
     }
 }
 
@@ -245,6 +244,10 @@ input[type="select"] {
     border: 1px solid white;
     margin: 0 0 0 25%;
     font-size: 15px;
+}
+
+#MainContent_DeleteMemberButton {
+    margin-bottom: 10px;
 }
 
 /*END OF BUTTONS*/
