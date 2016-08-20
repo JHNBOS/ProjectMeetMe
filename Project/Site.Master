@@ -88,7 +88,7 @@
             <div class="clear"></div>
 
             <footer class="footers">
-                <p>&copy; <%: DateTime.Now.Year %> - Powered by ASP.NET Application - Created By Johan Bos</p>
+                <p>&copy; <%: DateTime.Now.Year %> - Powered by ASP.NET - Created By Johan Bos</p>
             </footer>
         </div>
     </form>

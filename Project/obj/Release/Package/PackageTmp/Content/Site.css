@@ -157,6 +157,7 @@ input[type="select"] {
     margin: 0 20px 5px auto;
     white-space: nowrap;
     background-image: none;
+    border: 1px solid white;
 }
 
 .CDeleteButton:hover {
