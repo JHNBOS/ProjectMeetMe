@@ -64,6 +64,9 @@ input[type="select"] {
         width:83.333%;
         margin: 0 0 0 5%;
     }
+    #showmembers {
+        border-left: none;
+    }
 }
 
 
