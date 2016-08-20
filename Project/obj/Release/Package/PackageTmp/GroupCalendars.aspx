@@ -4,6 +4,19 @@
     <link rel="stylesheet" type="text/css" href="<%=Request.ApplicationPath%>Content/Site.css" />
     <link rel="stylesheet" type="text/css" href="Content/dhtmlxScheduler/dhtmlxscheduler-responsive.css" />
     <script type="text/javascript" src="Scripts/dhtmlxScheduler/dhtmlxscheduler-responsive.js"></script>
+    <script type = "text/javascript">
+        function Confirm() {
+            var confirm_value = document.createElement("INPUT");
+            confirm_value.type = "hidden";
+            confirm_value.name = "confirm_value";
+            if (confirm("Are you sure you want to delete this group?")) {
+                confirm_value.value = "Yes";
+            } else {
+                confirm_value.value = "No";
+            }
+            document.forms[0].appendChild(confirm_value);
+        }
+    </script>
 </asp:Content>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
@@ -22,6 +35,8 @@
 
              <div class="col-sm-8 collapse" id="showmembers">
                 <asp:Table ID="MemberTable" runat="server" CellPadding="2" CellSpacing="2"></asp:Table>
+                 <br />
+                 <asp:Button ID="DeleteMemberButton" runat="server" Text="Remove Members" BackColor="#18BC9C" ForeColor="White" BorderColor="#e5e5e5" BorderStyle="Solid" BorderWidth="1" OnClick="DeleteMemberButton_Click" />
             </div>
 
             <div class="col-sm-10" id="schedulerdiv">
@@ -33,7 +48,7 @@
 
                 <asp:LinkButton ID="AddMemberLink" class="btn btn-default btn-sm"  runat="server" OnClick="Link_Click" Font-Size="13px" ForeColor="White">Add Member</asp:LinkButton>
                   
-                <asp:LinkButton ID="DeleteLink" runat="server" class="btn btn-default btn-sm" Font-Size="13px" ForeColor="White" OnClick="DeleteLink_Click" >Delete Group</asp:LinkButton>
+                <asp:LinkButton ID="DeleteLink" runat="server" class="btn btn-default btn-sm" Font-Size="13px" ForeColor="White" OnClick="DeleteLink_Click" OnClientClick="Confirm()">Delete Group</asp:LinkButton>
                   
                 <a id="showbutton" class="btn btn-default btn-sm" data-toggle="collapse" data-target="#showmembers" style="display:inline-block;">
                     Members &#x21C5;

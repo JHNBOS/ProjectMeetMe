@@ -160,7 +160,7 @@ namespace Project
         }
 
         protected void DeleteLink_Click(object sender, EventArgs e)
-        { 
+        {
             string group = null;
 
             if (Session["Group"] != null)
@@ -172,24 +172,35 @@ namespace Project
                 group = GroupTitle.Text;
             }
 
-            try
+            string confirmValue = Request.Form["confirm_value"];
+
+            if (confirmValue == "Yes")
             {
-                List<Members> memberstodelete = data.Members.Where(ev => ev.Group == group).ToList();
+                try
+                {
+                    List<Members> memberstodelete = data.Members.Where(ev => ev.Group == group).ToList();
 
-                data.Members.RemoveRange(memberstodelete);
-                data.SaveChanges();
+                    data.Members.RemoveRange(memberstodelete);
+                    data.SaveChanges();
 
-                data.Groups.Remove(data.Groups.Where(ev => ev.Name == group).FirstOrDefault());
-                data.SaveChanges();
+                    data.Groups.Remove(data.Groups.Where(ev => ev.Name == group).FirstOrDefault());
+                    data.SaveChanges();
+
+                    Response.Redirect("~/GroupCalendars.aspx");
+
+                }
+                catch (Exception ex)
+                {
+                    Message m = new Message();
+                    m.Show("Unable to delete group!");
+                    System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+                }
             }
-            catch (Exception ex)
+            else
             {
-                Message m = new Message();
-                m.Show("Unable to delete group!");
-                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
-            }
+                Response.Redirect("~/GroupCalendars.aspx");
 
-            Response.Redirect("~/GroupCalendars.aspx");
+            }
         }
 
         private void MemberList()
@@ -235,50 +246,28 @@ namespace Project
                 string firstname = user.Firstname;
                 string lastname = user.Lastname;
 
-                //Delete Button
-                Button delete = new Button();
-                delete.ID = username;
-                delete.Text = "X";
-                delete.CssClass = "MDeleteButton";
-                delete.Click += Delete_Click;
-                delete.OnClientClick = "Delete_Click()";
-                delete.Width = 24;
-                delete.Height = 24;
-
                 //Table Row and cells
                 TableRow row = new TableRow();
                 TableCell cell1 = new TableCell();
                 TableCell cell2 = new TableCell();
-                TableCell cell3 = new TableCell();
 
                 //Add content to cells
                 cell1.Controls.Add(new LiteralControl("<i class='glyphicon glyphicon-calendar' style='color:" + color + ";'></i>"));
                 cell2.Controls.Add(new LiteralControl("<span style='font-size: 17px;text-align: center;padding-left: 5px;'>" + firstname + " " + lastname + " " + "</span>"));
-                cell3.Controls.Add(delete);
 
                 //Add cells to row
                 row.Cells.Add(cell1);
                 row.Cells.Add(cell2);
-                row.Cells.Add(cell3);
 
                 //Add row to table
                 MemberTable.Rows.Add(row);
             }
         }
 
-        private void Delete_Click(object sender, EventArgs e)
+        protected void DeleteMemberButton_Click(object sender, EventArgs e)
         {
-            Button btn = (Button)sender;
-
-            string group = Session["Group"].ToString();
-            string[] tmp = btn.ID.Split('_');
-            string username = tmp[1];
-
-            Members MemberToDelete = data.Members.Remove(data.Members.Where(m => m.User == username && m.Group == group).FirstOrDefault());
-            data.SaveChanges();
-            Response.Redirect(Request.RawUrl);
+            Session["GroupDelete"] = Session["Group"].ToString();
+            Response.Redirect("~/DeleteMembers.aspx");
         }
-
-       
     }
 }

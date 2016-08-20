@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="meetmeModel.Store" Provider="Npgsql" ProviderManifestToken="9.4.4" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="AspNetUsers">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="varchar" MaxLength="128" Nullable="false" />
+    <Property Name="UserName" Type="varchar" MaxLength="256" Nullable="false" />
+    <Property Name="PasswordHash" Type="varchar" MaxLength="256" />
+    <Property Name="SecurityStamp" Type="varchar" MaxLength="256" />
+    <Property Name="Email" Type="varchar" MaxLength="256" />
+    <Property Name="EmailConfirmed" Type="bool" Nullable="false" />
+    <Property Name="PhoneNumber" Type="varchar" MaxLength="256" />
+    <Property Name="PhoneNumberConfirmed" Type="bool" Nullable="false" />
+    <Property Name="TwoFactorEnabled" Type="bool" Nullable="false" />
+    <Property Name="LockoutEndDateUtc" Type="timestamp" />
+    <Property Name="LockoutEnabled" Type="bool" Nullable="false" />
+    <Property Name="AccessFailedCount" Type="int4" Nullable="false" />
+    <Property Name="Firstname" Type="text" />
+    <Property Name="Lastname" Type="text" />
+    <Property Name="Colour" Type="text" />
+  </EntityType>
+  <EntityType Name="Events">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="text" Type="text" />
+    <Property Name="start_date" Type="timestamp" />
+    <Property Name="end_date" Type="timestamp" />
+    <Property Name="creator" Type="text" />
+    <Property Name="group" Type="text" />
+    <Property Name="color" Type="text" />
+    <Property Name="email" Type="text" />
+  </EntityType>
+  <EntityType Name="Groups">
+    <Key>
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="Name" />
+      <PropertyRef Name="Creator" />
+    </Key>
+    <Property Name="Id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Name" Type="text" Nullable="false" />
+    <Property Name="Creator" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ListedContacts">
+    <Key>
+      <PropertyRef Name="Username" />
+      <PropertyRef Name="Owner" />
+    </Key>
+    <Property Name="Id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Username" Type="text" Nullable="false" />
+    <Property Name="Owner" Type="text" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Members">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Group" Type="text" />
+    <Property Name="User" Type="text" />
+    <Property Name="Id" Type="int4" StoreGeneratedPattern="Identity" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_groups_users' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_groups_users" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_members_groups' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_members_groups" />-->
+  <!--Errors Found During Generation:
+warning 6035: The relationship 'fk_members_users' has columns that are not part of the key of the table on the primary side of the relationship. The relationship was excluded.
+        <Association Name="fk_members_users" />-->
+  <EntityContainer Name="meetmeModelStoreContainer">
+    <EntitySet Name="AspNetUsers" EntityType="Self.AspNetUsers" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Events" EntityType="Self.Events" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Groups" EntityType="Self.Groups" Schema="public" store:Type="Tables" />
+    <EntitySet Name="ListedContacts" EntityType="Self.ListedContacts" Schema="public" store:Type="Tables" />
+    <EntitySet Name="Members" EntityType="Self.Members" Schema="public" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

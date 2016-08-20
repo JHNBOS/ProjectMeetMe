@@ -291,6 +291,7 @@
       <DependentUpon>DbContext.edmx</DependentUpon>
       <LastGenOutput>DbContext.cs</LastGenOutput>
     </Content>
+    <Content Include="DeleteMembers.aspx" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Group.aspx" />
@@ -721,6 +722,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="DeleteMembers.aspx.cs">
+      <DependentUpon>DeleteMembers.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="DeleteMembers.aspx.designer.cs">
+      <DependentUpon>DeleteMembers.aspx</DependentUpon>
     </Compile>
     <Compile Include="Events.cs">
       <DependentUpon>DbContext.tt</DependentUpon>

@@ -130,6 +130,7 @@ namespace Project
                     d.CssClass = "CDeleteButton";
                     d.ID = email;
                     d.Click += D_Click;
+                    d.OnClientClick = "Confirm()";
 
                     TableRow row = new TableRow();
                     TableCell cell1 = new TableCell();
@@ -165,21 +166,30 @@ namespace Project
 
             string email = btn.ID;
 
-            try
-            {
-                ListedContacts lcontact = data.ListedContacts.Where(ev => ev.Username == email).FirstOrDefault();
-                data.ListedContacts.Remove(lcontact);
-                data.SaveChanges();
-            }
-            catch (Exception ex)
-            {
-                Message m = new Message();
-                m.Show("Unable to delete contact!");
-                System.Diagnostics.Debug.WriteLine(ex.StackTrace);
-            }
-            
+            string confirmValue = Request.Form["confirm_value"];
 
-            Response.Redirect("~/Contact.aspx");
+            if (confirmValue == "Yes")
+            {
+                try
+                {
+                    ListedContacts lcontact = data.ListedContacts.Where(ev => ev.Username == email).FirstOrDefault();
+                    data.ListedContacts.Remove(lcontact);
+                    data.SaveChanges();
+
+                    Response.Redirect("~/Contact.aspx");
+                }
+                catch (Exception ex)
+                {
+                    Message m = new Message();
+                    m.Show("Unable to delete contact!");
+                    System.Diagnostics.Debug.WriteLine(ex.StackTrace);
+                }
+            }
+            else
+            {
+                Response.Redirect("~/Contact.aspx");
+            }
+
         }
     }
 }

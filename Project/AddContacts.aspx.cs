@@ -66,21 +66,22 @@ namespace Project
             //3. Remove current user from list
             string groupname = Session["AddContact"].ToString();
 
-            List<string> membernames = data.Members.Where(ev => ev.Group == groupname).Select(ev => ev.User).ToList();
-            List<AspNetUsers> memberlist = null;
+            List<string> ContactNames = data.ListedContacts.Where(c => c.Owner == User.Identity.Name).Select(c => c.Username).ToList();
+            List<string> MemberNames = data.Members.Where(ev => ev.Group == groupname && ContactNames.Contains(ev.User)).Select(ev => ev.User).ToList();
+            List<AspNetUsers> MemberList = null;
 
             try
             {
 
-                for (int i = 0; i < membernames.Count; i++)
+                for (int i = 0; i < MemberNames.Count; i++)
                 {
-                    memberlist = data.AspNetUsers.Where(u => !membernames.Contains(u.UserName)).ToList();
+                    MemberList = data.AspNetUsers.Where(u => !MemberNames.Contains(u.UserName)).ToList();
                 }
 
                 AspNetUsers current = data.AspNetUsers.Where(ev => ev.UserName == HttpContext.Current.User.Identity.Name).FirstOrDefault();
-                memberlist.Remove(current);
+                MemberList.Remove(current);
 
-                foreach (var member in memberlist)
+                foreach (var member in MemberList)
                 {
                     string name = member.UserName;
                     string first = member.Firstname;
@@ -96,8 +97,6 @@ namespace Project
             }
             catch (Exception ex)
             {
-                Message m = new Message();
-                m.Show("Member cannot be removed from group!");
                 System.Diagnostics.Debug.WriteLine(ex.StackTrace);
             }
 
